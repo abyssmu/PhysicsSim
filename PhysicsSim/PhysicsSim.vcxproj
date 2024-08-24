@@ -562,6 +562,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Scene.cpp" />
     <ClCompile Include="src\Simulation.cpp" />
+    <ClCompile Include="src\Texture.cpp" />
     <ClCompile Include="vendor\glad\src\glad.c" />
     <ClCompile Include="vendor\glfw\src\context.c" />
     <ClCompile Include="vendor\glfw\src\egl_context.c" />

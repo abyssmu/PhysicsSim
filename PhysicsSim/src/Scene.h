@@ -7,38 +7,41 @@
 #define _SCENE_
 
 #define GL_SILENCE_DEPRECATION
-#if defined(IMGUI_IMPL_OPENGL_ES2)
+#ifdef IMGUI_IMPL_OPENGL_ES2
 #include <GLES2/gl2.h>
 #endif
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include <fstream>
-#include <sstream>
+#include <memory>
 #include <string>
 #include <vector>
 
 using std::string;
 using std::vector;
+using std::unique_ptr;
+using std::make_unique;
 
 namespace Scene
 {
-	class Shader
+	class Texture
 	{
 	public:
-		Shader() = delete;
-		Shader(const char* vertexPath, const char* fragmentPath);
+		Texture() = delete;
+		~Texture();
+		Texture(const int& width, const int& height);
 
-		void Use();
-		void SetBool(const std::string& name, bool value) const;
-		void SetInt(const std::string& name, int value) const;
-		void SetFloat(const std::string& name, float value) const;
-
-	public:
-		unsigned int _id;
+		GLuint& GetTexture();
+		void Render(const int& width, const int& height, GLuint& shader, GLuint& vert_array);
 
 	private:
-		void CheckCompileErrors(unsigned int shader, std::string type);
+		void SetupFramebufferAndTexture(const int& width, const int& height);
+
+	private:
+		int _width;
+		int _height;
+		GLuint _frame_buffer;
+		GLuint _texture;
 	};
 
 	class Scene
@@ -59,25 +62,20 @@ namespace Scene
 	public:
 		int _width;
 		int _height;
-		int _tex_width;
-		int _tex_height;
 
 	private:
 		void SetupGLFW();
 		void SetupBufferData();
-		void SetupFramebufferAndTexture(const int& width, const int& height);
 
 	private:
 		const char* _glsl_version = nullptr;
 		GLFWwindow* _window = nullptr;
 		string _name;
-		GLuint VBO = 0;
-		GLuint VAO = 0;
-		//Shader* _shader;
+		unique_ptr<Texture> _texture;
+		GLuint _vertex_buffer = 0;
+		GLuint _vertex_array = 0;
 
-		GLuint framebuffer;
-		GLuint texture;
-		GLuint shaderProgram;
+		GLuint _shader;
 		const char* vertexShaderSource = R"(
 			#version 330 core
 			layout (location = 0) in vec3 aPos;
@@ -86,7 +84,7 @@ namespace Scene
 			}
 		)";
 
-				const char* fragmentShaderSource = R"(
+		const char* fragmentShaderSource = R"(
 			#version 330 core
 			out vec4 FragColor;
 			void main() {

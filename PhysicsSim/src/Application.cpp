@@ -21,7 +21,6 @@ namespace App
 		ImGui::CreateContext();
 		SetupImGuiIO();
 
-		// Setup Platform/Renderer backends
 		ImGui_ImplGlfw_InitForOpenGL(_scene->GetWindow(), true);
 		ImGui_ImplOpenGL3_Init(_scene->GetGlslVersion());
 	}
@@ -30,8 +29,7 @@ namespace App
 	{
 		if (_scene->GetWindow() == nullptr) return;
 
-		if (demo) LoopImGuiDemo();
-		else LoopImGuiSim();
+		LoopImGui(demo);
 	}
 
 	void Application::SetupImGuiIO()
@@ -40,12 +38,10 @@ namespace App
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;
 		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-		//io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
 		ImGui::StyleColorsDark();
 		//ImGui::StyleColorsLight();
 
-		// When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
 		ImGuiStyle& style = ImGui::GetStyle();
 		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
 		{
@@ -66,55 +62,10 @@ namespace App
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	}
 
-	void Application::LoopImGuiDemo()
+	void Application::LoopImGui(const bool& demo)
 	{
 		while (!glfwWindowShouldClose(_scene->GetWindow()))
 		{
-			// Poll and handle events (inputs, window resize, etc.)
-			// You can read the io.WantCaptureMouse, io.WantCaptureKeyboard flags to tell if dear imgui wants to use your inputs.
-			// - When io.WantCaptureMouse is true, do not dispatch mouse input data to your main application, or clear/overwrite your copy of the mouse data.
-			// - When io.WantCaptureKeyboard is true, do not dispatch keyboard input data to your main application, or clear/overwrite your copy of the keyboard data.
-			// Generally you may always pass all inputs to dear imgui, and hide them from your application based on those two flags.
-			glfwPollEvents();
-			if (glfwGetWindowAttrib(_scene->GetWindow(), GLFW_ICONIFIED) != 0)
-			{
-				ImGui_ImplGlfw_Sleep(10);
-				continue;
-			}
-
-			// Start the Dear ImGui frame
-			ImGui_ImplOpenGL3_NewFrame();
-			ImGui_ImplGlfw_NewFrame();
-			ImGui::NewFrame();
-
-			SetupDemoWindow();
-			DrawImGui();
-
-			ImGuiIO& io = ImGui::GetIO();
-
-			// Update and Render additional Platform Windows
-			// (Platform functions may change the current OpenGL context, so we save/restore it to make it easier to paste this code elsewhere.
-			if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-			{
-				GLFWwindow* backup_current_context = glfwGetCurrentContext();
-				ImGui::UpdatePlatformWindows();
-				ImGui::RenderPlatformWindowsDefault();
-				glfwMakeContextCurrent(backup_current_context);
-			}
-
-			glfwSwapBuffers(_scene->GetWindow());
-		}
-	}
-
-	void Application::LoopImGuiSim()
-	{
-		while (!glfwWindowShouldClose(_scene->GetWindow()))
-		{
-			// Poll and handle events (inputs, window resize, etc.)
-			// You can read the io.WantCaptureMouse, io.WantCaptureKeyboard flags to tell if dear imgui wants to use your inputs.
-			// - When io.WantCaptureMouse is true, do not dispatch mouse input data to your main application, or clear/overwrite your copy of the mouse data.
-			// - When io.WantCaptureKeyboard is true, do not dispatch keyboard input data to your main application, or clear/overwrite your copy of the keyboard data.
-			// Generally you may always pass all inputs to dear imgui, and hide them from your application based on those two flags.
 			glfwPollEvents();
 			if (glfwGetWindowAttrib(_scene->GetWindow(), GLFW_ICONIFIED) != 0)
 			{
@@ -124,18 +75,17 @@ namespace App
 
 			_scene->RenderTexture(_render_size.x, _render_size.y);
 
-			// Start the Dear ImGui frame
 			ImGui_ImplOpenGL3_NewFrame();
 			ImGui_ImplGlfw_NewFrame();
 			ImGui::NewFrame();
 
-			SetupSimWindow();
+			if (demo) SetupDemoWindow();
+			else SetupSimWindow();
+
 			DrawImGui();
 
 			ImGuiIO& io = ImGui::GetIO();
 
-			// Update and Render additional Platform Windows
-			// (Platform functions may change the current OpenGL context, so we save/restore it to make it easier to paste this code elsewhere.
 			if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
 			{
 				GLFWwindow* backup_current_context = glfwGetCurrentContext();
@@ -238,7 +188,7 @@ namespace App
 		ImGui::Begin(name.c_str(), nullptr, window_flags);
 		_render_size = ImGui::GetWindowSize();
 
-		ImGui::Image((void*)(intptr_t)_scene->GetTexture(), ImVec2(_scene->_tex_width, _scene->_tex_height));
+		ImGui::Image((void*)(intptr_t)_scene->GetTexture(), _render_size);
 		ImGui::End();
 	}
 

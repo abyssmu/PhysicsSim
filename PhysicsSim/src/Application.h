@@ -36,8 +36,7 @@ namespace App
 		void SetupImGuiIO();
 		void DrawImGui();
 
-		void LoopImGuiDemo();
-		void LoopImGuiSim();
+		void LoopImGui(const bool& demo);
 
 		void SetupDemoWindow();
 		void SetupSimWindow();
