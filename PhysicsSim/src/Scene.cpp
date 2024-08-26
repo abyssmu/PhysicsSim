@@ -2,131 +2,66 @@
 
 namespace Scene
 {
-	Scene::~Scene()
+	Scene::Scene(const string& name, const int& width, const int& height) : _name(name)
 	{
-		glfwDestroyWindow(_window);
+		_window = make_unique<WindowManager>(name, width, height);
+		_render = make_unique<RenderManager>(width, height);
+	}
 
-		glDeleteVertexArrays(1, &_vertex_array);
-		glDeleteBuffers(1, &_vertex_buffer);
-		glDeleteProgram(_shader);
-
+	void Scene::Terminate()
+	{
+		_render->Terminate();
+		_window->Terminate();
 		glfwTerminate();
-
-		_window = nullptr;
-		_glsl_version = nullptr;
 	}
 
-	Scene::Scene(const int& width, const int& height, const string& name) :
-		_width(width), _height(height), _name(name)
+	void Scene::RenderTexture()
 	{
-		SetupGLFW();
-		if (_window == nullptr) return;
-
-		glfwMakeContextCurrent(_window);
-		glfwSetFramebufferSizeCallback(_window, GLFWFramebufferSizeCallback);
-		glfwSetErrorCallback(GLFWErrorCallback);
-		glfwSwapInterval(1);
-
-		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-		{
-			return;
-		}
-
-		SetupBufferData();
-
-		GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-		glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-		glCompileShader(vertexShader);
-
-		GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-		glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-		glCompileShader(fragmentShader);
-
-		_shader = glCreateProgram();
-		glAttachShader(_shader, vertexShader);
-		glAttachShader(_shader, fragmentShader);
-		glLinkProgram(_shader);
-
-		glDeleteShader(vertexShader);
-		glDeleteShader(fragmentShader);
-
-		_texture = make_unique<Texture>(width, height);
+		_render->RenderTexture();
 	}
 
-	void Scene::RenderTexture(const int& width, const int& height)
-	{
-		_texture->Render(width, height, _shader, _vertex_array);
-	}
-
-	void Scene::DrawScene(const float& r, const float& g, const float& b, const float& a)
+	void Scene::Render(const float& r, const float& g, const float& b, const float& a)
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		int display_w, display_h;
-		glfwGetFramebufferSize(_window, &display_w, &display_h);
+		glfwGetFramebufferSize(_window->GetWindow(), &display_w, &display_h);
 		glViewport(0, 0, display_w, display_h);
 		glClearColor(r, g, b, a);
 		glClear(GL_COLOR_BUFFER_BIT);
 	}
 
-	const char* Scene::GetGlslVersion()
+	const char* Scene::GetGlslVersion() const
 	{
-		return _glsl_version;
+		return _window->GetGlslVersion();
 	}
 
-	GLFWwindow* Scene::GetWindow()
+	GLFWwindow* Scene::GetWindow() const
 	{
-		return _window;
+		return _window->GetWindow();
 	}
 
-	void Scene::CheckForWindowResize()
+	GLuint& Scene::GetTexture() const
 	{
-		int width = 0, height = 0;
-		glfwGetWindowSize(_window, &width, &height);
-
-		if (width != _width || height != _height)
-		{
-			_width = width;
-			_height = height;
-		}
+		return _render->GetTexture();
 	}
 
-	GLuint& Scene::GetTexture()
+	void Scene::ResizeTexture(const int& width, const int& height)
 	{
-		return _texture->GetTexture();
+		_render->ResizeTexture(width, height);
 	}
 
-	void Scene::SetupGLFW()
+	float Scene::GetTextureAspectRatio() const
 	{
-		glfwSetErrorCallback(GLFWErrorCallback);
-		if (!glfwInit())
-		{
-			glfwTerminate();
-			return;
-		}
-
-		_glsl_version = "#version 130";
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-
-		_window = glfwCreateWindow(_width, _height, _name.c_str(), nullptr, nullptr);
+		return _render->GetTextureAspectRatio();
 	}
 
-	void Scene::SetupBufferData()
+	bool Scene::WindowShouldClose() const
 	{
-		float vertices[] = {
-			-0.5f, -0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f,
-			 0.0f,  0.5f, 0.0f
-		};
+		return _window->ShouldClose();
+	}
 
-		glGenVertexArrays(1, &_vertex_array);
-		glGenBuffers(1, &_vertex_buffer);
-		glBindVertexArray(_vertex_array);
-		glBindBuffer(GL_ARRAY_BUFFER, _vertex_buffer);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-		glEnableVertexAttribArray(0);
+	void Scene::SwapBuffers() const
+	{
+		_window->SwapBuffers();
 	}
 }

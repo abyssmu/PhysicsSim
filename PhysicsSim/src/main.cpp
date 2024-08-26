@@ -10,8 +10,8 @@ int main(int, char**)
 	string name = "Physics Sim";
 	bool demo = false;
 
-	unique_ptr<App::Application> app = make_unique<App::Application>(width, height, name);
-	app->Run(demo);
+	unique_ptr<App::Application> app = make_unique<App::Application>();
+	if(app->Init(width, height, name)) app->Run(demo);
 
 	return 0;
 }

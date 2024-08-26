@@ -1,6 +1,3 @@
-// Most of the ImGui portion is copied from ImGui opengl3+glfw example
-// It has been reorginized a bit for better reading
-
 #pragma once
 
 #ifndef WIN32_LEAN_AND_MEAN
@@ -18,54 +15,73 @@
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
 
-#include <stdio.h>
-
 namespace App
 {
-	class Application
+	class ImGuiManager
 	{
 	public:
-		Application() = delete;
-		Application(const Application& other) = delete;
-		~Application();
-		Application(const int& width, const int height, const string name);
+		ImGuiManager() = delete;
+		ImGuiManager(const ImGuiManager& other) = delete;
+		ImGuiManager& operator=(const ImGuiManager& other) = delete;
+		ImGuiManager(const ImGuiManager&& other) = delete;
+		ImGuiManager& operator=(const ImGuiManager&& other) = delete;
 
-		void Run(bool demo);
+		ImGuiManager(ImVec4 clear_color, GLFWwindow* window, const char* glsl_version);
+
+		~ImGuiManager() = default;
+
+		void Terminate();
+		void AddDebugMessage(const string& msg);
+		void NewFrame();
+		void SetupDemoWindow();
+		void SetupSimWindow(bool& resize, GLuint& texture_id, float aspect_ratio);
+		ImVec4& GetClearColor();
+		ImVec2& GetRenderSize();
 
 	private:
-		void SetupImGuiIO();
-		void DrawImGui();
-
-		void LoopImGui(const bool& demo);
-
-		void SetupDemoWindow();
-		void SetupSimWindow();
-
-		void CreateBaseWindow(
-			const string& name,
-			const string& top_left,
-			const string& top_right,
-			const string& bot_left,
-			const string& bot_right,
-			ImGuiWindowFlags window_flags);
-		void CreateSelectionWindow(const string& name, ImGuiWindowFlags window_flags);
-		void CreateRenderWindow(const string& name, ImGuiWindowFlags window_flags);
-		void CreateStatsWindow(const string& name, ImGuiWindowFlags window_flags);
-		void CreateGraphWindow(const string& name, ImGuiWindowFlags window_flags);
-		void CreateDockspace(
-			const string& dockspace,
-			const string& top_left,
-			const string& top_right,
-			const string& bot_left,
-			const string& bot_right,
-			const ImGuiWindowFlags window_flags);
+		void CreateBaseWindow();
+		void CreateSelectionWindow();
+		void CreateRenderWindow(bool& resize, GLuint& texture_id, float aspect_ratio);
+		void CreateStatsWindow();
+		void CreateGraphWindow();
+		void CreateDebugWindow();
+		void CreateDockspace();
 
 	private:
 		ImVec4 _clear_color;
 		bool _show_demo_window;
 		bool _show_another_window;
-		unique_ptr<Scene::Scene> _scene;
+		string _debug_msg;
 		ImVec2 _render_size;
+		ImGuiWindowFlags _window_flags;
+
+		const string dockspace = "Dockspace";
+		const string simulation = "Simulation";
+		const string selection = "Selection";
+		const string render = "Render";
+		const string stats = "Stats";
+		const string graph = "Graph";
+		const string debug = "Debug";
+	};
+
+	class Application
+	{
+	public:
+		Application(const Application& other) = delete;
+		Application& operator=(const Application& other) = delete;
+		Application(const Application&& other) = delete;
+		Application& operator=(const Application&& other) = delete;
+
+		~Application();
+
+		Application() = default;
+
+		bool Init(const int& width, const int& height, const string& name);
+		void Run(bool demo);
+
+	private:
+		unique_ptr<ImGuiManager> _imgui;
+		unique_ptr<Scene::Scene> _scene;
 	};
 
 	static void HelpMarker(const char* desc)
