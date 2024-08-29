@@ -2,30 +2,35 @@
 
 namespace Simulation
 {
+	struct Simulator::SimulatorImpl
+	{
+		//Deleted constructors
+		SimulatorImpl() = delete;
+		SimulatorImpl(const SimulatorImpl& other) = delete;
+		SimulatorImpl& operator=(const SimulatorImpl& other) = delete;
+		SimulatorImpl(const SimulatorImpl&& other) = delete;
+		SimulatorImpl& operator=(const SimulatorImpl&& other) = delete;
+
+		//Custom constructors
+		SimulatorImpl(const std::string& name);
+
+		//Default constructors/destructor
+		~SimulatorImpl() = default;
+
+		//Member methods
+
+		//Member variables
+		std::string name;
+	};
+
+	Simulator::SimulatorImpl::SimulatorImpl(const std::string& name) :
+		name(name)
+	{}
+
+	Simulator::Simulator() {}
 	Simulator::~Simulator() {}
-	Simulator::Simulator(const string& name) : name(name) {}
 
-	string Simulator::GetName() { return name; }
-
-
-
-	Simulation::Simulation() {}
-	Simulation::~Simulation() {}
-	Simulation::Simulation(const Simulation& other) {}
-
-	void Simulation::CreateSimulator(const std::string& name)
-	{
-		sims.push_back(make_unique<Simulator>(name));
-	}
-
-	vector<string> Simulation::GetSimulatorNames()
-	{
-		vector<string> names;
-		for (size_t i = 0; i < sims.size(); ++i)
-		{
-			names.push_back(sims[i]->GetName());
-		}
-
-		return names;
-	}
+	Simulator::Simulator(const std::string& name) :
+		_impl(std::make_unique<SimulatorImpl>(name))
+	{}
 }

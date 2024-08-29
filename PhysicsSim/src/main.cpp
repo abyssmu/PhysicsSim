@@ -7,11 +7,11 @@ int main(int, char**)
 {
 	int width = 1280;
 	int height = 720;
-	string name = "Physics Sim";
+	std::string name = "Physics Sim";
 	bool demo = false;
 
-	unique_ptr<App::Application> app = make_unique<App::Application>();
-	if(app->Init(width, height, name)) app->Run(demo);
+	std::unique_ptr<App::Application> app = std::make_unique<App::Application>();
+	if(app->Init(name, width, height)) app->Run(demo);
 
 	return 0;
 }

@@ -79,6 +79,12 @@
     <Filter Include="vendor\spdlog\include\spdlog\sinks">
       <UniqueIdentifier>{6D3396BC-596F-9926-C281-B11DAEDC4141}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{878e6801-5d05-4293-8e2d-376404969d38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{fba841e6-c14e-4b6d-8768-db0f1824d035}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vendor\glad\include\KHR\khrplatform.h">
@@ -1455,20 +1461,38 @@
     <ClInclude Include="vendor\spdlog\include\spdlog\version.h">
       <Filter>vendor\spdlog\include\spdlog</Filter>
     </ClInclude>
-    <ClInclude Include="src\Application.h">
-      <Filter>src</Filter>
+    <ClInclude Include="include\Application.h">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="src\Simulation.h">
-      <Filter>src</Filter>
+    <ClInclude Include="include\DebugManager.h">
+      <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="src\Scene.h">
-      <Filter>src</Filter>
+    <ClInclude Include="include\GlfwAndDebugIncludes.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ImGuiManager.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\RenderManager.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Scene.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Shader.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Simulation.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Texture.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WindowManager.h">
+      <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="vendor\glad\src\glad.c">
       <Filter>vendor\glad\src</Filter>
     </ClCompile>
@@ -1541,34 +1565,37 @@
     <ClCompile Include="src\Application.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Simulation.cpp">
+    <ClCompile Include="src\ImGuiManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Scene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Texture.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Shader.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\RenderManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\WindowManager.cpp">
+    <ClCompile Include="src\Scene.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\ImGuiManager.cpp">
+    <ClCompile Include="src\Shader.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Simulation.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Texture.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WindowManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\fragment_shader.fs">
-      <Filter>src</Filter>
+    <None Include="shader\FragmentShader.fs">
+      <Filter>shader</Filter>
     </None>
-    <None Include="src\vertex_shader.vs">
-      <Filter>src</Filter>
+    <None Include="shader\VertexShader.vs">
+      <Filter>shader</Filter>
     </None>
   </ItemGroup>
 </Project>

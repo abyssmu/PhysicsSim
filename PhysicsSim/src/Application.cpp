@@ -1,71 +1,107 @@
 #include "Application.h"
 
+#include "GlfwAndDebugIncludes.h"
+#include "ImGuiManager.h"
+#include "Scene.h"
+
+#include "imgui.h"
+#include "backends/imgui_impl_glfw.h"
+
 namespace App
 {
-	Application::~Application()
+	struct Application::ApplicationImpl
 	{
-		_imgui->Terminate();
-		_scene->Terminate();
-	}
+		//Deleted constructors
+		ApplicationImpl(const ApplicationImpl& other) = delete;
+		ApplicationImpl& operator=(const ApplicationImpl& other) = delete;
+		ApplicationImpl(const ApplicationImpl&& other) = delete;
+		ApplicationImpl& operator=(const ApplicationImpl&& other) = delete;
 
-	bool Application::Init(const int& width, const int& height, const string& name)
+		//Custom constructors
+
+		//Default constructors/destructor
+		ApplicationImpl() = default;
+		~ApplicationImpl() = default;
+
+		//Member methods
+		bool Init(const std::string& name, const int& width, const int& height);
+		void Run(bool demo);
+
+		//Member variables
+		std::unique_ptr<ImGuiManager> imgui;
+		std::unique_ptr<Scene::Scene> scene;
+	};
+
+	bool Application::ApplicationImpl::Init(const std::string& name, const int& width, const int& height)
 	{
-		_scene = make_unique<Scene::Scene>(name, width, height);
-		if (_scene->GetWindow() == nullptr) return false;
+		scene = std::make_unique<Scene::Scene>(name, width, height);
 
-		_imgui = make_unique<ImGuiManager>(ImVec4(0.45f, 0.55f, 0.60f, 1.00f), _scene->GetWindow(), _scene->GetGlslVersion());
+		//If the scene creation failed, return false to exit program
+		if (scene->GetWindow() == nullptr) return false;
+
+		imgui = std::make_unique<ImGuiManager>(ImVec4(0.45f, 0.55f, 0.60f, 1.00f), scene->GetWindow(), scene->GetGlslVersion());
 
 		return true;
 	}
 
-	void Application::Run(bool demo)
+	void Application::ApplicationImpl::Run(bool demo)
 	{
-		if (_scene->GetWindow() == nullptr) return;
-
-		while (!_scene->WindowShouldClose())
+		//Check each frame if the window should close
+		while (!scene->WindowShouldClose())
 		{
+			//Poll GLFW events for input processing
 			glfwPollEvents();
-			if (glfwGetWindowAttrib(_scene->GetWindow(), GLFW_ICONIFIED) != 0)
+
+			//If the window is minimized, prevent rendering
+			if (glfwGetWindowAttrib(scene->GetWindow(), GLFW_ICONIFIED) != 0)
 			{
 				ImGui_ImplGlfw_Sleep(10);
 				continue;
 			}
 
-			if (!demo) _scene->RenderTexture();
+			//Create new ImGui frame
+			imgui->NewFrame();
 
-			_imgui->NewFrame();
-
-			if (demo) _imgui->SetupDemoWindow();
+			//Render either the demo or the actual application window
+			if (demo) imgui->SetupDemoWindow();
 			else
 			{
-				bool resize = false;
-				_imgui->SetupSimWindow(resize, _scene->GetTexture(), _scene->GetTextureAspectRatio());
+				//Render the texture for the ImGui render window
+				scene->RenderTexture();
 
-				if (resize)
-				{
-					ImVec2& size = _imgui->GetRenderSize();
-					_scene->ResizeTexture(size.x, size.y);
-				}
+				//Build the ImGui UI dockspace and framework for rendering
+				imgui->SetupWindow(scene->GetTexture(), scene->GetTextureAspectRatio());
 			}
-
+			
 			ImGui::Render();
 
-			ImVec4& cc = _imgui->GetClearColor();
-			_scene->Render(cc.x * cc.w, cc.y * cc.w, cc.z * cc.w, cc.w);
+			//Get ImGui background color and render scene
+			ImVec4& cc = imgui->GetClearColor();
+			scene->Render(cc.x * cc.w, cc.y * cc.w, cc.z * cc.w, cc.w);
 
-			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-			ImGuiIO& io = ImGui::GetIO();
-
-			if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-			{
-				GLFWwindow* backup_current_context = glfwGetCurrentContext();
-				ImGui::UpdatePlatformWindows();
-				ImGui::RenderPlatformWindowsDefault();
-				glfwMakeContextCurrent(backup_current_context);
-			}
-
-			_scene->SwapBuffers();
+			//Draw ImGui to OpenGL window and swap buffers to present frame to screen
+			imgui->RenderDrawData();
+			scene->SwapBuffers();
 		}
+	}
+
+	Application::Application() :
+		_impl(std::make_unique<ApplicationImpl>())
+	{}
+
+	Application::~Application() = default;
+
+	/*
+	* Initialization function used to capture a boolean to capture member variable failures
+	* and prevent compilation or execution failures and leaking memory.
+	*/
+	bool Application::Init(const std::string& name, const int& width, const int& height)
+	{
+		return _impl->Init(name, width, height);
+	}
+
+	void Application::Run(bool demo)
+	{
+		_impl->Run(demo);
 	}
 }

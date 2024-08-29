@@ -1,17 +1,46 @@
-#include "Scene.h"
+#include "Shader.h"
+#include "GlfwAndDebugIncludes.h"
+
+#include <fstream>
+#include <sstream>
 
 namespace Scene
 {
-	Shader::~Shader() {}
-
-	Shader::Shader(const string& vs_file, const string& fs_file)
+	struct Shader::ShaderImpl
 	{
-		string vertex_code;
-		string fragment_code;
-		ifstream vertex_shader_file;
-		ifstream fragment_shader_file;
-		stringstream vertex_shader_stream;
-		stringstream fragment_shader_stream;
+		//Deleted constructors
+		ShaderImpl() = delete;
+		ShaderImpl(const ShaderImpl& other) = delete;
+		ShaderImpl& operator=(const ShaderImpl& other) = delete;
+		ShaderImpl(const ShaderImpl&& other) = delete;
+		ShaderImpl& operator=(const ShaderImpl&& other) = delete;
+
+		//Custom constructors
+		ShaderImpl(const std::string& vs_file, const std::string& fs_file);
+
+		//Default constructors/destructor
+		~ShaderImpl();
+
+		//Member methods
+		void CheckCompileErrors(unsigned int shader, std::string type) const;
+
+		//Member variables
+		GLuint shader;
+	};
+
+	Shader::ShaderImpl::~ShaderImpl()
+	{
+		glDeleteProgram(shader);
+	}
+
+	Shader::ShaderImpl::ShaderImpl(const std::string& vs_file, const std::string& fs_file)
+	{
+		std::string vertex_code;
+		std::string fragment_code;
+		std::ifstream vertex_shader_file;
+		std::ifstream fragment_shader_file;
+		std::stringstream vertex_shader_stream;
+		std::stringstream fragment_shader_stream;
 
 		vertex_shader_file.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 		fragment_shader_file.exceptions(std::ifstream::failbit | std::ifstream::badbit);
@@ -32,7 +61,8 @@ namespace Scene
 		}
 		catch (std::ifstream::failure& e)
 		{
-			std::cout << "ERROR::SHADER::FILE_NOT_READ: " << e.what() << std::endl;
+			DebugMessage("ERROR::SHADER::FILE_NOT_READ: " + std::string(e.what()), __func__);
+			return;
 		}
 
 		vertex_code = vertex_shader_stream.str();
@@ -44,36 +74,29 @@ namespace Scene
 		unsigned int vertex, fragment;
 
 		vertex = glCreateShader(GL_VERTEX_SHADER);
-		glShaderSource(vertex, 1, &vertex_shader_code, NULL);
+		glShaderSource(vertex, 1, &vertex_shader_code, nullptr);
 		glCompileShader(vertex);
 		CheckCompileErrors(vertex, "VERTEX");
 
 		fragment = glCreateShader(GL_FRAGMENT_SHADER);
-		glShaderSource(fragment, 1, &fragment_shader_code, NULL);
+		glShaderSource(fragment, 1, &fragment_shader_code, nullptr);
 		glCompileShader(fragment);
 		CheckCompileErrors(fragment, "FRAGMENT");
 
-		_shader = glCreateProgram();
-		glAttachShader(_shader, vertex);
-		glAttachShader(_shader, fragment);
-		glLinkProgram(_shader);
-		CheckCompileErrors(_shader, "PROGRAM");
+		shader = glCreateProgram();
+		glAttachShader(shader, vertex);
+		glAttachShader(shader, fragment);
+		glLinkProgram(shader);
+		CheckCompileErrors(shader, "PROGRAM");
 
 		glDeleteShader(vertex);
 		glDeleteShader(fragment);
+
+		GLenum err = glGetError();
+		if (err != GL_NO_ERROR) DebugMessage("Shader failed to compile: " + std::to_string(err), __func__);
 	}
 
-	void Shader::Terminate()
-	{
-		glDeleteProgram(_shader);
-	}
-
-	GLuint& Shader::GetShader()
-	{
-		return _shader;
-	}
-
-	void Shader::CheckCompileErrors(unsigned int shader, std::string type) const
+	void Shader::ShaderImpl::CheckCompileErrors(unsigned int shader, std::string type) const
 	{
 		int success;
 		char infoLog[1024];
@@ -82,8 +105,8 @@ namespace Scene
 			glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
 			if (!success)
 			{
-				glGetShaderInfoLog(shader, 1024, NULL, infoLog);
-				std::cout << "ERROR::SHADER_COMPILATION_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
+				glGetShaderInfoLog(shader, 1024, nullptr, infoLog);
+				DebugMessage("ERROR::SHADER_COMPILATION_ERROR of type: " + type, __func__);
 			}
 		}
 		else
@@ -91,9 +114,21 @@ namespace Scene
 			glGetProgramiv(shader, GL_LINK_STATUS, &success);
 			if (!success)
 			{
-				glGetProgramInfoLog(shader, 1024, NULL, infoLog);
-				std::cout << "ERROR::PROGRAM_LINKING_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
+				glGetProgramInfoLog(shader, 1024, nullptr, infoLog);
+				DebugMessage("ERROR::PROGRAM_LINKING_ERROR of type: " + type, __func__);
 			}
 		}
+	}
+
+	Shader::Shader() = default;
+	Shader::~Shader() = default;
+
+	Shader::Shader(const std::string& vs_file, const std::string& fs_file) :
+		_impl(make_unique<ShaderImpl>(vs_file, fs_file))
+	{}
+
+	GLuint& Shader::GetShader()
+	{
+		return _impl->shader;
 	}
 }
