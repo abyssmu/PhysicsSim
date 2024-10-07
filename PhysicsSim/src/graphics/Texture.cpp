@@ -1,6 +1,7 @@
 #include "Texture.h"
+#include "utils/GlfwAndDebugIncludes.h"
 
-#include "GlfwAndDebugIncludes.h"
+#include "objects/Object.h"
 
 namespace Scene
 {
@@ -81,15 +82,18 @@ namespace Scene
 		return _impl->texture;
 	}
 
-	void Texture::Render(GLuint& shader, GLuint& vert_array)
+	void Texture::Render(GLuint& shader, std::vector<std::shared_ptr<Object::Object>>& objects)
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, _impl->frame_buffer);
 		glViewport(0, 0, _impl->width, _impl->height);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		glUseProgram(shader);
-		glBindVertexArray(vert_array);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+
+		for (auto o : objects)
+		{
+			o->Draw(shader);
+		}
 
 		GLenum err = glGetError();
 		if (err != GL_NO_ERROR) DebugMessage("Texture failed to render: " + std::to_string(err), __func__);

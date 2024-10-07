@@ -1,8 +1,9 @@
 #include "Scene.h"
 
-#include "GlfwAndDebugIncludes.h"
-#include "RenderManager.h"
-#include "WindowManager.h"
+#include "utils/GlfwAndDebugIncludes.h"
+#include "graphics/RenderManager.h"
+#include "graphics/WindowManager.h"
+#include "objects/Object.h"
 
 namespace Scene
 {
@@ -40,16 +41,16 @@ namespace Scene
 		glfwTerminate();
 	}
 
-	Scene::Scene() {}
-	Scene::~Scene() {}
+	Scene::Scene() = default;
+	Scene::~Scene() = default;
 
 	Scene::Scene(const std::string& name, const int& width, const int& height) :
 		_impl(std::make_unique<Scene::SceneImpl>(name, width, height))
 	{}
 
-	void Scene::RenderTexture()
+	void Scene::RenderTexture(std::vector<std::shared_ptr<Object::Object>>& objects)
 	{
-		_impl->render->RenderTexture();
+		_impl->render->RenderTexture(objects);
 	}
 
 	void Scene::Render(const float& r, const float& g, const float& b, const float& a)

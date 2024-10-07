@@ -8,16 +8,21 @@
 
 #include <memory>
 #include <string>
+#include <vector>
 
 //External forward declarations
 struct GLFWwindow;
+namespace Object
+{
+	class Object;
+}
 
 //Internal declarations
 namespace Scene
 {
 	//External forward declarations
 	class Texture;
-
+	
 	//Internal declarations
 	class Scene
 	{
@@ -36,7 +41,7 @@ namespace Scene
 		~Scene();
 
 		//Member methods
-		void RenderTexture();
+		void RenderTexture(std::vector<std::shared_ptr<Object::Object>>& objects);
 		void Render(const float& r, const float& g, const float& b, const float& a);
 		const char* GetGlslVersion() const;
 		GLFWwindow* GetWindow() const;

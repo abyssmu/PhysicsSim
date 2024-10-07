@@ -4,8 +4,13 @@
 #define _RENDERMANAGER_
 
 #include <memory>
+#include <vector>
 
 //External forward declarations
+namespace Object
+{
+	class Object;
+}
 
 //Internal declarations
 namespace Scene
@@ -32,7 +37,7 @@ namespace Scene
 		~RenderManager();
 
 		//Member methods
-		void RenderTexture();
+		void RenderTexture(std::vector<std::shared_ptr<Object::Object>>& objects);
 		std::shared_ptr<Texture> GetTexture();
 		float GetTextureAspectRatio() const;
 

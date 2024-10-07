@@ -4,6 +4,24 @@
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{C55F2ECF-B12C-89DA-DA45-7782C671BE68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\graphics">
+      <UniqueIdentifier>{2DF282EC-1955-1291-C2DA-4A47AE1CDE13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\objects">
+      <UniqueIdentifier>{06BFCA59-7274-434F-FB68-3D26671D3A53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\shader">
+      <UniqueIdentifier>{53FA0F79-3FB2-51C6-A8B9-2A229490ECB6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\simulation">
+      <UniqueIdentifier>{6145EDCD-4D13-E1D3-36A7-51FA2214BD38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{6DAA42B6-D914-F72C-2253-A8D28EFCD481}</UniqueIdentifier>
+    </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
     </Filter>
@@ -79,14 +97,38 @@
     <Filter Include="vendor\spdlog\include\spdlog\sinks">
       <UniqueIdentifier>{6D3396BC-596F-9926-C281-B11DAEDC4141}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include">
-      <UniqueIdentifier>{878e6801-5d05-4293-8e2d-376404969d38}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="shader">
-      <UniqueIdentifier>{fba841e6-c14e-4b6d-8768-db0f1824d035}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\core\Application.h">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\ImGuiManager.h">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\RenderManager.h">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Scene.h">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Shader.h">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Texture.h">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\WindowManager.h">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\simulation\Simulation.h">
+      <Filter>src\simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\DebugManager.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\GlfwAndDebugIncludes.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
     <ClInclude Include="vendor\glad\include\KHR\khrplatform.h">
       <Filter>vendor\glad\include\KHR</Filter>
     </ClInclude>
@@ -1461,38 +1503,44 @@
     <ClInclude Include="vendor\spdlog\include\spdlog\version.h">
       <Filter>vendor\spdlog\include\spdlog</Filter>
     </ClInclude>
-    <ClInclude Include="include\Application.h">
-      <Filter>include</Filter>
+    <ClInclude Include="src\objects\Circle.h">
+      <Filter>src\objects</Filter>
     </ClInclude>
-    <ClInclude Include="include\DebugManager.h">
-      <Filter>include</Filter>
+    <ClInclude Include="src\simulation\Particle.h">
+      <Filter>src\simulation</Filter>
     </ClInclude>
-    <ClInclude Include="include\GlfwAndDebugIncludes.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\ImGuiManager.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\RenderManager.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Scene.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Shader.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Simulation.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Texture.h">
-      <Filter>include</Filter>
-    </ClInclude>
-    <ClInclude Include="include\WindowManager.h">
-      <Filter>include</Filter>
+    <ClInclude Include="src\objects\Object.h">
+      <Filter>src\objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\core\Application.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\main.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\ImGuiManager.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\RenderManager.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\Scene.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\Shader.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\Texture.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\WindowManager.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simulation\Simulation.cpp">
+      <Filter>src\simulation</Filter>
+    </ClCompile>
     <ClCompile Include="vendor\glad\src\glad.c">
       <Filter>vendor\glad\src</Filter>
     </ClCompile>
@@ -1562,40 +1610,22 @@
     <ClCompile Include="vendor\imgui\imgui_widgets.cpp">
       <Filter>vendor\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Application.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="src\objects\Circle.cpp">
+      <Filter>src\objects</Filter>
     </ClCompile>
-    <ClCompile Include="src\ImGuiManager.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="src\simulation\Particle.cpp">
+      <Filter>src\simulation</Filter>
     </ClCompile>
-    <ClCompile Include="src\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderManager.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Scene.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Shader.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Simulation.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Texture.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\WindowManager.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="src\objects\Object.cpp">
+      <Filter>src\objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader\FragmentShader.fs">
-      <Filter>shader</Filter>
+    <None Include="src\shader\FragmentShader.fs">
+      <Filter>src\shader</Filter>
     </None>
-    <None Include="shader\VertexShader.vs">
-      <Filter>shader</Filter>
+    <None Include="src\shader\VertexShader.vs">
+      <Filter>src\shader</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -4,9 +4,14 @@
 #define _TEXTURE_
 
 #include <memory>
+#include <vector>
 
 //External forward declarations
 typedef unsigned int GLuint;
+namespace Object
+{
+	class Object;
+}
 
 //Internal declarations
 namespace Scene
@@ -32,7 +37,7 @@ namespace Scene
 
 		//Member methods
 		GLuint& GetTextureId();
-		void Render(GLuint& shader, GLuint& vert_array);
+		void Render(GLuint& shader, std::vector<std::shared_ptr<Object::Object>>& objects);
 		void SetupFramebufferAndTexture(const int& width, const int& height);
 		float GetAspectRatio() const;
 

@@ -1,7 +1,7 @@
 #include "ImGuiManager.h"
 
-#include "GlfwAndDebugIncludes.h"
-#include "Texture.h"
+#include "utils/GlfwAndDebugIncludes.h"
+#include "graphics/Texture.h"
 
 #include "imgui.h"
 #include "imgui_internal.h"
@@ -103,6 +103,15 @@ namespace App
 	void ImGuiManager::ImGuiManagerImpl::CreateSelectionWindow()
 	{
 		ImGui::Begin(selection.c_str(), nullptr, window_flags);
+
+		//Create a combo box for selecting the simulation
+
+		static const char* items[] = { "Simulation 1", "Simulation 2", "Simulation 3" };
+		static int item_current = 0;
+		ImGui::Combo("Simulation", &item_current, items, IM_ARRAYSIZE(items));
+
+		//ImGui::DragFloat("Scale", &scale, 0.01f, 0.0f, 10.0f, "%.2f");
+
 		ImGui::End();
 	}
 
@@ -141,6 +150,7 @@ namespace App
 	{
 		ImGui::Begin(debug.c_str(), nullptr, window_flags);
 
+		auto size = DEBUG_MSG.size();
 		for (auto s : DEBUG_MSG)
 		{
 			ImGui::TextWrapped(s.c_str());

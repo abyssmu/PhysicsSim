@@ -1,6 +1,6 @@
 #include "WindowManager.h"
 
-#include "GlfwAndDebugIncludes.h"
+#include "utils/GlfwAndDebugIncludes.h"
 
 namespace Scene
 {

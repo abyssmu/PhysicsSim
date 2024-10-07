@@ -11,6 +11,10 @@
 #include <string>
 
 //External forward declarations
+namespace Object
+{
+	class Object;
+}
 
 //Internal declarations
 namespace App

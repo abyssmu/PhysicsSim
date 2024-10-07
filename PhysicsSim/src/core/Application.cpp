@@ -1,8 +1,10 @@
 #include "Application.h"
 
-#include "GlfwAndDebugIncludes.h"
-#include "ImGuiManager.h"
-#include "Scene.h"
+#include "utils/GlfwAndDebugIncludes.h"
+#include "graphics/ImGuiManager.h"
+#include "graphics/Scene.h"
+#include "objects/Object.h"
+#include "simulation/Simulation.h"
 
 #include "imgui.h"
 #include "backends/imgui_impl_glfw.h"
@@ -30,6 +32,7 @@ namespace App
 		//Member variables
 		std::unique_ptr<ImGuiManager> imgui;
 		std::unique_ptr<Scene::Scene> scene;
+		std::unique_ptr<Simulation::ThermodynamicParticleSimulator> simulation;
 	};
 
 	bool Application::ApplicationImpl::Init(const std::string& name, const int& width, const int& height)
@@ -40,6 +43,7 @@ namespace App
 		if (scene->GetWindow() == nullptr) return false;
 
 		imgui = std::make_unique<ImGuiManager>(ImVec4(0.45f, 0.55f, 0.60f, 1.00f), scene->GetWindow(), scene->GetGlslVersion());
+		simulation = std::make_unique<Simulation::ThermodynamicParticleSimulator>(500, 0.01f);
 
 		return true;
 	}
@@ -67,7 +71,7 @@ namespace App
 			else
 			{
 				//Render the texture for the ImGui render window
-				scene->RenderTexture();
+				scene->RenderTexture(simulation->GetParticleCircles());
 
 				//Build the ImGui UI dockspace and framework for rendering
 				imgui->SetupWindow(scene->GetTexture(), scene->GetTextureAspectRatio());

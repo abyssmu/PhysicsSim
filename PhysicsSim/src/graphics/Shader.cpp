@@ -1,5 +1,6 @@
 #include "Shader.h"
-#include "GlfwAndDebugIncludes.h"
+
+#include "utils/GlfwAndDebugIncludes.h"
 
 #include <fstream>
 #include <sstream>

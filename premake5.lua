@@ -16,6 +16,8 @@ project "PhysicsSim"
     files { 
         "%{prj.location}/src/**.h", 
         "%{prj.location}/src/**.cpp",
+        "%{prj.location}/src/**.fs",
+        "%{prj.location}/src/**.vs",
         "%{prj.location}/vendor/glfw/include/GLFW/glfw3.h",
         "%{prj.location}/vendor/glfw/include/GLFW/glfw3native.h",
         "%{prj.location}/vendor/glfw/src/glfw_config.h",
