@@ -20,6 +20,7 @@ namespace Object
 namespace App
 {
 	//External forward declarations
+	struct ThermodynamicSimulationVariables;
 
 	//Internal declarations
 	class Application

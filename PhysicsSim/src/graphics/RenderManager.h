@@ -37,7 +37,10 @@ namespace Scene
 		~RenderManager();
 
 		//Member methods
-		void RenderTexture(std::vector<std::shared_ptr<Object::Object>>& objects);
+		void RenderTexture(
+			std::vector<std::shared_ptr<Object::Object>>& objects,
+			const int box_height_perc,
+			const int box_width_perc);
 		std::shared_ptr<Texture> GetTexture();
 		float GetTextureAspectRatio() const;
 

@@ -30,7 +30,10 @@ namespace Scene
 		std::unique_ptr<RenderManager> render;
 	};
 
-	Scene::SceneImpl::SceneImpl(const std::string& name, const int& width, const int& height) :
+	Scene::SceneImpl::SceneImpl(
+		const std::string& name,
+		const int& width,
+		const int& height) :
 		name(name),
 		window(std::make_unique<WindowManager>(name, width, height)),
 		render(std::make_unique<RenderManager>(width, height))
@@ -48,9 +51,12 @@ namespace Scene
 		_impl(std::make_unique<Scene::SceneImpl>(name, width, height))
 	{}
 
-	void Scene::RenderTexture(std::vector<std::shared_ptr<Object::Object>>& objects)
+	void Scene::RenderTexture(
+		std::vector<std::shared_ptr<Object::Object>>& objects,
+		const int box_height_perc,
+		const int box_width_perc)
 	{
-		_impl->render->RenderTexture(objects);
+		_impl->render->RenderTexture(objects, box_height_perc, box_width_perc);
 	}
 
 	void Scene::Render(const float& r, const float& g, const float& b, const float& a)
@@ -74,6 +80,11 @@ namespace Scene
 	GLFWwindow* Scene::GetWindow() const
 	{
 		return _impl->window->GetWindow();
+	}
+
+	std::pair<int, int> Scene::GetWindowSize() const
+	{
+		return _impl->window->GetWindowSize();
 	}
 
 	std::shared_ptr<Texture> Scene::GetTexture() const

@@ -20,6 +20,7 @@ namespace Scene
 namespace App
 {
 	//External forward declarations
+	struct ThermodynamicSimulationVariables;
 
 	//Internal declarations
 	class ImGuiManager
@@ -32,7 +33,10 @@ namespace App
 		ImGuiManager& operator=(const ImGuiManager&& other) = delete;
 
 		//Custom constructors
-		ImGuiManager(ImVec4 clear_color, GLFWwindow* window, const char* glsl_version);
+		ImGuiManager(
+			ImVec4 clear_color,
+			GLFWwindow* window,
+			const char* glsl_version);
 		
 		//Default constructors/destructor
 		ImGuiManager();
@@ -46,7 +50,13 @@ namespace App
 		void SetupDemoWindow();
 
 		//Application specific methods
-		void SetupWindow(std::shared_ptr<Scene::Texture> texture, float aspect_ratio);
+		void SetupWindow(
+			std::shared_ptr<Scene::Texture> texture,
+			float aspect_ratio);
+
+		//Simulation methods
+		std::string& CheckForStateChanged();
+		ThermodynamicSimulationVariables GetSimulationVariables();
 
 		//PIMPL idiom
 	private:

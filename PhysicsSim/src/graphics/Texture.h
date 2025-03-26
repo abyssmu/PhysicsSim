@@ -37,7 +37,11 @@ namespace Scene
 
 		//Member methods
 		GLuint& GetTextureId();
-		void Render(GLuint& shader, std::vector<std::shared_ptr<Object::Object>>& objects);
+		void Render(
+			GLuint& shader,
+			std::vector<std::shared_ptr<Object::Object>>& objects,
+			const int box_height_perc,
+			const int box_width_perc);
 		void SetupFramebufferAndTexture(const int& width, const int& height);
 		float GetAspectRatio() const;
 

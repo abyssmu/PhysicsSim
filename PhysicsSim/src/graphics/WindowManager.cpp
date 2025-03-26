@@ -79,6 +79,11 @@ namespace Scene
 		return _impl->window;
 	}
 
+	std::pair<int, int> WindowManager::GetWindowSize() const
+	{
+		return std::pair<int, int>(_impl->width, _impl->height);
+	}
+
 	const char* WindowManager::GetGlslVersion() const
 	{
 		return _impl->glsl_version;

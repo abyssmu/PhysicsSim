@@ -32,7 +32,7 @@ namespace Scene
 
 	Texture::TextureImpl::TextureImpl(const int& width, const int& height)
 	{
-		SetupFramebufferAndTexture(this->width, this->height);
+		SetupFramebufferAndTexture(width, height);
 	}
 
 	Texture::TextureImpl::~TextureImpl()
@@ -82,7 +82,11 @@ namespace Scene
 		return _impl->texture;
 	}
 
-	void Texture::Render(GLuint& shader, std::vector<std::shared_ptr<Object::Object>>& objects)
+	void Texture::Render(
+		GLuint& shader,
+		std::vector<std::shared_ptr<Object::Object>>& objects,
+		const int box_height_perc,
+		const int box_width_perc)
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, _impl->frame_buffer);
 		glViewport(0, 0, _impl->width, _impl->height);
@@ -90,9 +94,17 @@ namespace Scene
 		glClear(GL_COLOR_BUFFER_BIT);
 		glUseProgram(shader);
 
-		for (auto o : objects)
+		//Render all the simulation related objects
+		for (size_t i = 0; i < objects.size(); ++i)
 		{
-			o->Draw(shader);
+			objects[i]->Draw(shader);
+		}
+
+		//If the simulation requires a bounding box, render it here
+		if (box_height_perc > 0 && box_width_perc > 0)
+		{
+			//Render the bounding box using OpenGL3
+
 		}
 
 		GLenum err = glGetError();

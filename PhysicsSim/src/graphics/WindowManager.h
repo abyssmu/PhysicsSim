@@ -33,6 +33,7 @@ namespace Scene
 
 		//Member methods
 		GLFWwindow* GetWindow() const;
+		std::pair<int, int> GetWindowSize() const;
 		const char* GetGlslVersion() const;
 		bool ShouldClose() const;
 		void SwapBuffers();

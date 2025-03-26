@@ -41,10 +41,14 @@ namespace Scene
 		~Scene();
 
 		//Member methods
-		void RenderTexture(std::vector<std::shared_ptr<Object::Object>>& objects);
+		void RenderTexture(
+			std::vector<std::shared_ptr<Object::Object>>& objects,
+			const int box_height_perc,
+			const int box_width_perc);
 		void Render(const float& r, const float& g, const float& b, const float& a);
 		const char* GetGlslVersion() const;
 		GLFWwindow* GetWindow() const;
+		std::pair<int, int> GetWindowSize() const;
 		std::shared_ptr<Texture> GetTexture() const;
 		float GetTextureAspectRatio() const;
 		bool WindowShouldClose() const;

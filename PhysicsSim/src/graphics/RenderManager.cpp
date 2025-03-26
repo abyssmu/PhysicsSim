@@ -21,7 +21,7 @@ namespace Scene
 
 		//Custom constructors
 		RenderManagerImpl(const int& width, const int& height);
-		
+
 		//Default constructors/destructor
 		~RenderManagerImpl() = default;
 
@@ -43,7 +43,10 @@ namespace Scene
 	RenderManager::RenderManager(const int& width, const int& height) :
 		_impl(std::make_unique<RenderManagerImpl>(width, height)) {}
 
-	void RenderManager::RenderTexture(std::vector<std::shared_ptr<Object::Object>>& objects)
+	void RenderManager::RenderTexture(
+		std::vector<std::shared_ptr<Object::Object>>& objects,
+		const int box_height_perc,
+		const int box_width_perc)
 	{
 		float aspect_ratio = _impl->texture->GetAspectRatio();
 		float ortho_height = 1.0f;
@@ -57,7 +60,11 @@ namespace Scene
 		GLenum err = glGetError();
 		if (err != GL_NO_ERROR) DebugMessage("OpenGL error in RenderTexture: " + std::to_string(err), __func__);
 
-		_impl->texture->Render(_impl->shader->GetShader(), objects);
+		_impl->texture->Render(
+			_impl->shader->GetShader(),
+			objects,
+			box_height_perc,
+			box_width_perc);
 	}
 
 	std::shared_ptr<Texture> RenderManager::GetTexture()
