@@ -14,7 +14,7 @@ project "PhysicsSim"
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
     files { 
-        "%{prj.location}/src/**.h", 
+        "%{prj.location}/src/**.hpp", 
         "%{prj.location}/src/**.cpp",
         "%{prj.location}/src/**.fs",
         "%{prj.location}/src/**.vs"
@@ -37,7 +37,7 @@ project "PhysicsSim"
         "opengl32.lib",
         "imgui_build",
         "glfw_build",
-        "spdlog"
+        "spdlog_build"
     }
 
     filter "configurations:Debug"
@@ -161,7 +161,7 @@ project "glfw_build"
         runtime "Release"
         optimize "On"
 
-project "spdlog"
+project "spdlog_build"
     location "PhysicsSim"
     kind "StaticLib"
     language "C++"

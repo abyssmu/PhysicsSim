@@ -1,7 +1,7 @@
-#include "ImGuiManager.h"
+#include "ImGuiManager.hpp"
 
-#include "utils/GlfwAndDebugIncludes.h"
-#include "graphics/Texture.h"
+#include "utils/GlfwIncludes.hpp"
+#include "graphics/Texture.hpp"
 
 #include "imgui.h"
 #include "imgui_internal.h"
@@ -11,6 +11,17 @@
 namespace App
 {
 	//Structures to hold the simulators' data.
+
+	/**
+	* @brief Structure to hold the thermodynamic simulation variables.
+	* @param num_particles The number of particles to simulate.
+	* @param box_width_perc The width of the simulation box as a percentage of the window.
+	* @param box_height_perc The height of the simulation box as a percentage of the window.
+	* @param energy_value The energy value for the simulation.
+	* @param temperature The temperature for the simulation.
+	* @param chem_potential The chemical potential for the simulation.
+	* @param radius The radius of the particles in the simulation.
+	*/
 	struct ThermodynamicSimulationVariables
 	{
 		int num_particles = 0;
@@ -22,60 +33,123 @@ namespace App
 		float radius = 0.0f;
 	};
 
+	/// @brief ImGuiManager PIMPL implementation structure.
 	struct ImGuiManager::ImGuiManagerImpl
 	{
 		//Deleted constructors
+
+		/// @brief Deleted default constructor.
 		ImGuiManagerImpl() = delete;
+		/// @brief Deleted copy constructor.
 		ImGuiManagerImpl(const ImGuiManagerImpl& other) = delete;
+		/// @brief Deleted copy assignment operator.
 		ImGuiManagerImpl& operator=(const ImGuiManagerImpl& other) = delete;
+		/// @brief Deleted move constructor.
 		ImGuiManagerImpl(const ImGuiManagerImpl&& other) = delete;
+		/// @brief Deleted move assignment operator.
 		ImGuiManagerImpl& operator=(const ImGuiManagerImpl&& other) = delete;
 
 		//Custom constructors
+
+		/**
+		* @brief
+		* Custom constructor for the ImGuiManagerImpl class.
+		* @param cc The clear color for the ImGuiManager.
+		*/
 		ImGuiManagerImpl(const ImVec4& cc);
 
 		//Default constructors/destructor
+
+		/// @brief Destructor.
 		~ImGuiManagerImpl();
 
 		//Member methods
+
+		/**
+		* @brief
+		* ImGui help marker method to display a tooltip with a description.
+		* @param desc The description to display in the tooltip.
+		*/
 		void HelpMarker(const char* desc);
 
 		//Application specific methods
+
+		/// @brief Create the base window.
 		void CreateBaseWindow();
+		/// @brief Create the simulation selection window.
 		void CreateSelectionWindow();
+		/**
+		* @brief
+		* Create the render window for the simulation.
+		* @param texture The texture to render in the window.
+		* @param aspect_ratio The aspect ratio of the window.
+		*/
 		void CreateRenderWindow(
 			std::shared_ptr<Scene::Texture> texture,
 			float aspect_ratio);
+		/// @brief Create the stats window.
 		void CreateStatsWindow();
+		/// @brief Create the graph window.
 		void CreateGraphWindow();
+		/// @brief Create the debug window.
 		void CreateDebugWindow();
+		/// @brief Create the dockspace for the ImGui windows.
 		void CreateDockspace();
 
 		//Member variables
+
+		/// @brief Background color for the ImGuiManager.
 		ImVec4 clear_color;
+		/// @brief Flag to show the demo window.
 		bool show_demo_window;
+		/// @brief Flag to show another window.
 		bool show_another_window;
+		/// @brief Size of the render window.
 		ImVec2 render_size;
+		/// @brief Application wide ImGui window flags.
 		ImGuiWindowFlags window_flags;
 
 		//Simulation variables
+
+		/// @brief Simulation variables for the ImGuiManager.
 		ThermodynamicSimulationVariables simulation_variables;
+		/// @brief The current state of the simulation.
 		std::string current_state;
 
 		//Simulation methods
+
+		/**
+		* @brief
+		* Get the simulation variables from the ImGuiManager.
+		* @return
+		* Structure containing the simulation variables.
+		*/
 		ThermodynamicSimulationVariables GetSimulationVariables() const;
-		bool CheckForStateChanged();
 
 		//Application specific member variables
+		/// @brief The name of the dockspace window.
 		const std::string dockspace = "Dockspace";
+		/// @brief The name of the simulation window.
 		const std::string simulation = "Simulation";
+		/// @brief The name of the selection window.
 		const std::string selection = "Selection";
+		/// @brief The name of the render window.
 		const std::string render = "Render";
+		/// @brief The name of the stats window.
 		const std::string stats = "Stats";
+		/// @brief The name of the graph window.
 		const std::string graph = "Graph";
+		/// @brief The name of the debug window.
 		const std::string debug = "Debug";
 	};
 
+	/**
+	* @details
+	* Custom constructor for the ImGuiManagerImpl class. Initializes the background
+	* color with the cc parameter, the demo window and another window are set to
+	* false, the render size is initialized to 0.0f, the window flags
+	* are empty, and the current state is set to an empty string.
+	*/
 	ImGuiManager::ImGuiManagerImpl::ImGuiManagerImpl(const ImVec4& cc) :
 		clear_color(cc),
 		show_demo_window(false),
@@ -85,6 +159,10 @@ namespace App
 		current_state("")
 	{}
 
+	/**
+	* @details
+	* Shutdown ImGui by shutting down OpenGL, GLFW, and destroying the ImGui context.
+	*/
 	ImGuiManager::ImGuiManagerImpl::~ImGuiManagerImpl()
 	{
 		ImGui_ImplOpenGL3_Shutdown();
@@ -92,6 +170,11 @@ namespace App
 		ImGui::DestroyContext();
 	}
 
+	/**
+	* @details
+	* Create a help marker for ImGui tooltips. Based on the ImGui demo in
+	* imgui_demo.cpp.
+	*/
 	void ImGuiManager::ImGuiManagerImpl::HelpMarker(const char* desc)
 	{
 		ImGui::TextDisabled("(?)");
@@ -104,10 +187,12 @@ namespace App
 		}
 	}
 
-	/*
-	* Start application specific methods.
-	* These functions will need to be rewritten and renamed since they depend
-	* on the specifics of the application being built.
+	/**
+	* @details
+	* Create the base window of the ImGuiManager. Add the NoDocking flag to the
+	* window flags to prevent docking of the main window. Then get the main viewport,
+	* assign the position and size of the window to the viewport, and set the viewport.
+	* Finally create the Application specific dockspace.
 	*/
 	void ImGuiManager::ImGuiManagerImpl::CreateBaseWindow()
 	{
@@ -123,6 +208,13 @@ namespace App
 		ImGui::End();
 	}
 
+	/**
+	* @details
+	* Create the simulation selection window. Creates drop down menus that allow
+	* the selection of the simulation type and subsimulation type. Then creates
+	* the simulation specific parameters to define the simulation. Finally, adds
+	* two buttons to setup and start the simulation.
+	*/
 	void ImGuiManager::ImGuiManagerImpl::CreateSelectionWindow()
 	{
 		ImGui::Begin(selection.c_str(), nullptr, window_flags);
@@ -190,17 +282,17 @@ namespace App
 				{
 				case 0: //Microcanonical ensemble
 					description =
-						"A simulation with a constant number of particles,"
+						"A simulation with a constant number of particles, "
 						"constant volume, and constant energy.";
 					break;
 				case 1: //Canonincal ensemble
 					description =
-						"A simulation with a constant number of particles,"
+						"A simulation with a constant number of particles, "
 						"constant volume, and constant temperature.";
 					break;
 				case 2: //Grand canonical ensemble
 					description =
-						"A simulation with a constant chemical potential,"
+						"A simulation with a constant chemical potential, "
 						"constant volume, and constant temperature";
 				}
 
@@ -334,6 +426,11 @@ namespace App
 		ImGui::End();
 	}
 
+	/**
+	* Creates the render window for the simulation. Takes the provided texture and
+	* aspect ratio and scales the texture to fit in the render window. Then
+	* converts the image to an ImGui image and displays it in the window.
+	*/
 	void ImGuiManager::ImGuiManagerImpl::CreateRenderWindow(
 		std::shared_ptr<Scene::Texture> texture,
 		float aspect_ratio)
@@ -353,39 +450,55 @@ namespace App
 
 		if (glIsTexture(texture->GetTextureId()))
 			ImGui::Image((void*)(intptr_t)texture->GetTextureId(), size);
-		else DebugMessage("Invalid Texture ID.", __func__);
+		//else DebugMessage("Invalid Texture ID.", __func__);
 
 		ImGui::End();
 	}
 
+	/**
+	* @details
+	* Creates the statistics window. WORK IN PROGRESS
+	*/
 	void ImGuiManager::ImGuiManagerImpl::CreateStatsWindow()
 	{
 		ImGui::Begin(stats.c_str(), nullptr, window_flags);
 		ImGui::End();
 	}
 
+	/**
+	* @details
+	* Creates the graph window. WORK IN PROGRESS
+	*/
 	void ImGuiManager::ImGuiManagerImpl::CreateGraphWindow()
 	{
 		ImGui::Begin(graph.c_str(), nullptr, window_flags);
 		ImGui::End();
 	}
 
+	/**
+	* @details
+	* Creates the debug window. WORK IN PROGRESS
+	*/
 	void ImGuiManager::ImGuiManagerImpl::CreateDebugWindow()
 	{
 		ImGui::Begin(debug.c_str(), nullptr, window_flags);
 
-		auto size = DEBUG_MSG.size();
+		/*auto size = DEBUG_MSG.size();
 		for (auto s : DEBUG_MSG)
 		{
 			ImGui::TextWrapped(s.c_str());
-		}
+		}*/
 
 		ImGui::End();
 	}
 
-	/*
-	* The general structure of this method will stay the same since it builds the
-	* starting dockspace for the application.
+	/**
+	* @details
+	* The dockspace will need to be redesigned for each application.
+	* 
+	* Creates the ImGui dockspace to allow window docking. Defines the structure
+	* of the dockspace for each window and locks the windows in place, but allows
+	* for resizing.
 	*/
 	void ImGuiManager::ImGuiManagerImpl::CreateDockspace()
 	{
@@ -451,19 +564,27 @@ namespace App
 			}
 		}
 	}
-	//End Application specific methods
 
-	//Simulation methods
+	/**
+	* @details
+	* Get the structure containing the simulation variables.
+	*/
 	ThermodynamicSimulationVariables ImGuiManager::ImGuiManagerImpl::GetSimulationVariables() const
 	{
 		return simulation_variables;
 	}
 
-	bool ImGuiManager::ImGuiManagerImpl::CheckForStateChanged()
-	{
-		return false;
-	}
-
+	/**
+	* @details
+	* Custom constructor for the ImGuiManager class. Sets the background color,
+	* creates the context, style, OpenGL, and GLFW for ImGui, and sets the window
+	* flags to the following:
+	* NoCollapse
+	* NoResize
+	* NoMove
+	* NoBringToFrontOnFocus
+	* NoNavFocus
+	*/
 	ImGuiManager::ImGuiManager(
 		ImVec4 clear_color,
 		GLFWwindow* window,
@@ -498,9 +619,22 @@ namespace App
 		_impl->window_flags |= ImGuiWindowFlags_NoNavFocus;
 	}
 
+	/**
+	* @details
+	* Default constructor for the ImGuiManager class.
+	*/
 	ImGuiManager::ImGuiManager() = default;
+
+	/**
+	* @details
+	* Default destructor for the ImGuiManager class.
+	*/
 	ImGuiManager::~ImGuiManager() = default;
 
+	/**
+	* @details
+	* Generate a new frame for ImGui using OpenGL and GLFW.
+	*/
 	void ImGuiManager::NewFrame()
 	{
 		ImGui_ImplOpenGL3_NewFrame();
@@ -508,16 +642,28 @@ namespace App
 		ImGui::NewFrame();
 	}
 
+	/**
+	* @details
+	* Get the background color for ImGui.
+	*/
 	ImVec4& ImGuiManager::GetClearColor()
 	{
 		return _impl->clear_color;
 	}
 
+	/**
+	* @details
+	* Get the size of the ImGui render window.
+	*/
 	ImVec2& ImGuiManager::GetRenderSize()
 	{
 		return _impl->render_size;
 	}
 
+	/**
+	* @details
+	* Render the ImGui draw data to the OpenGL window.
+	*/
 	void ImGuiManager::RenderDrawData()
 	{
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -533,6 +679,11 @@ namespace App
 		}
 	}
 
+	/**
+	* @details
+	* Generate the demo window for ImGui. This is based on the ImGui demo in
+	* imgui_demo.cpp.
+	*/
 	void ImGuiManager::SetupDemoWindow()
 	{
 		static float f = 0.0f;
@@ -572,9 +723,10 @@ namespace App
 		if (_impl->show_demo_window) ImGui::ShowDemoWindow(&_impl->show_demo_window);
 	}
 
-	/*
-	* This is another application specific function. The functions used inside will
-	* need to be updated according to the functions declared in the PIMPL idiom.
+	/**
+	* @details
+	* Generate the application window. The is application dependent and will need
+	* to be changed for each application.
 	*/
 	void ImGuiManager::SetupWindow(
 		std::shared_ptr<Scene::Texture> texture,
@@ -588,11 +740,19 @@ namespace App
 		_impl->CreateStatsWindow();
 	}
 
+	/**
+	* @details
+	* Check for state change in ImGuiManager. WORK IN PROGRESS
+	*/
 	std::string& ImGuiManager::CheckForStateChanged()
 	{
 		return _impl->current_state;
 	}
 
+	/**
+	* @details
+	* Get the simulation variables from the ImGuiManager.
+	*/
 	ThermodynamicSimulationVariables ImGuiManager::GetSimulationVariables()
 	{
 		return _impl->GetSimulationVariables();

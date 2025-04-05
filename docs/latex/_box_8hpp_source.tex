@@ -1,0 +1,64 @@
+\doxysection{Box.\+hpp}
+\hypertarget{_box_8hpp_source}{}\label{_box_8hpp_source}\index{PhysicsSim/src/objects/Box.hpp@{PhysicsSim/src/objects/Box.hpp}}
+\mbox{\hyperlink{_box_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ \_BOX\_}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ \_BOX\_}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_object_8hpp}{Object.hpp}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_object}{Object}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_object_1_1_box_a5c82e98ab7bc99d8dcfc03131c7265bc}{Box}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{namespace_object}{Object}}}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Deleted\ constructors}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_object_1_1_box_a5c82e98ab7bc99d8dcfc03131c7265bc}{Box}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_object_1_1_box_a5c82e98ab7bc99d8dcfc03131c7265bc}{Box}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_object_1_1_box_a5c82e98ab7bc99d8dcfc03131c7265bc}{Box}}\&\ \mbox{\hyperlink{class_object_1_1_box_a744f54e87740acb1a31cee10665ed12c}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_object_1_1_box_a5c82e98ab7bc99d8dcfc03131c7265bc}{Box}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_object_1_1_box_acc14c5dfeb8a23c8be9e9983c47d0abf}{Box}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_object_1_1_box_a5c82e98ab7bc99d8dcfc03131c7265bc}{Box}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_object_1_1_box_a5c82e98ab7bc99d8dcfc03131c7265bc}{Box}}\&\ \mbox{\hyperlink{class_object_1_1_box_a37562558def7d4aec8b9869cb7195f39}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_object_1_1_box_a5c82e98ab7bc99d8dcfc03131c7265bc}{Box}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Custom\ constructors}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_object_1_1_box_ad4c3d4e352ac80e0bb9e73e6add56722}{Box}}(}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ center\_x,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ center\_y,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ box\_width\_perc,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ box\_height\_perc,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ max\_width,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ max\_height);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Default\ constructors/destructor}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_object_1_1_box_ad4c3d4e352ac80e0bb9e73e6add56722}{Box}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_object_1_1_box_a94533a12fae912e5912548ae7264a7dd}{\string~Box}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Member\ methods}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//PIMPL\ idiom}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_object_1_1_box_1_1_box_impl}{BoxImpl}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ std::unique\_ptr<BoxImpl>\ \_impl;}
+\DoxyCodeLine{00079\ \ \ \ \ \};}
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

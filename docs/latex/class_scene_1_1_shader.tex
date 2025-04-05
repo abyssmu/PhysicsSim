@@ -1,0 +1,104 @@
+\doxysection{Scene\+::Shader Class Reference}
+\hypertarget{class_scene_1_1_shader}{}\label{class_scene_1_1_shader}\index{Scene::Shader@{Scene::Shader}}
+
+
+\doxylink{class_scene_1_1_shader}{Shader} class.  
+
+
+
+
+{\ttfamily \#include $<$Shader.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_scene_1_1_shader_1_1_shader_impl}{Shader\+Impl}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_scene_1_1_shader}{Shader} PIMPL implementation structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_scene_1_1_shader_a851f641aed23337e421f56ce0cb23420}\label{class_scene_1_1_shader_a851f641aed23337e421f56ce0cb23420} 
+{\bfseries Shader} (const \mbox{\hyperlink{class_scene_1_1_shader}{Shader}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_1_1_shader_a67b53b0d8bd685c5f0facc5757b26b70}\label{class_scene_1_1_shader_a67b53b0d8bd685c5f0facc5757b26b70} 
+\mbox{\hyperlink{class_scene_1_1_shader}{Shader}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_scene_1_1_shader}{Shader}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_1_1_shader_a468df0ac026d01df605f5a5f54c6f60f}\label{class_scene_1_1_shader_a468df0ac026d01df605f5a5f54c6f60f} 
+{\bfseries Shader} (\mbox{\hyperlink{class_scene_1_1_shader}{Shader}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_1_1_shader_a664eee2832a6cad70280176d55fb1632}\label{class_scene_1_1_shader_a664eee2832a6cad70280176d55fb1632} 
+\mbox{\hyperlink{class_scene_1_1_shader}{Shader}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_scene_1_1_shader}{Shader}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene_1_1_shader_a71841a0a81925a14868e4bea585a1103}{Shader}} (const std\+::string \&vs\+\_\+file, const std\+::string \&fs\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Custom constructor for the \doxylink{class_scene_1_1_shader}{Shader} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene_1_1_shader_ac3d63a3675b98d91ec41199666291191}{Shader}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene_1_1_shader_adac9e7e807e6ba0c6f7dd149ad6041b5}{\texorpdfstring{$\sim$}{\string~}\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_shader_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} \& \mbox{\hyperlink{class_scene_1_1_shader_a26a66e2d323ab6df0610184bd83aa8d3}{Get\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em Get the Open\+GL shader ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_scene_1_1_shader}{Shader} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_scene_1_1_shader_a71841a0a81925a14868e4bea585a1103}\index{Scene::Shader@{Scene::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Scene::Shader@{Scene::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_scene_1_1_shader_a71841a0a81925a14868e4bea585a1103} 
+Scene\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vs\+\_\+file}{, }\item[{const std\+::string \&}]{fs\+\_\+file}{}\end{DoxyParamCaption})}
+
+
+
+Custom constructor for the \doxylink{class_scene_1_1_shader}{Shader} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vs\+\_\+file} & The vertex shader file. \\
+\hline
+{\em fs\+\_\+file} & The fragment shader file.\\
+\hline
+\end{DoxyParams}
+Custom shader constructor. Passes the vertex and fragment shader files to the PIMPL implementation. \Hypertarget{class_scene_1_1_shader_ac3d63a3675b98d91ec41199666291191}\index{Scene::Shader@{Scene::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Scene::Shader@{Scene::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_scene_1_1_shader_ac3d63a3675b98d91ec41199666291191} 
+Scene\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+Default shader constructor. \Hypertarget{class_scene_1_1_shader_adac9e7e807e6ba0c6f7dd149ad6041b5}\index{Scene::Shader@{Scene::Shader}!````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}}
+\index{````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}!Scene::Shader@{Scene::Shader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Shader()}{\string~Shader()}}
+{\footnotesize\ttfamily \label{class_scene_1_1_shader_adac9e7e807e6ba0c6f7dd149ad6041b5} 
+Scene\+::\+Shader\+::\texorpdfstring{$\sim$}{\string~}\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+Default shader destructor. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_scene_1_1_shader_a26a66e2d323ab6df0610184bd83aa8d3}\index{Scene::Shader@{Scene::Shader}!GetShader@{GetShader}}
+\index{GetShader@{GetShader}!Scene::Shader@{Scene::Shader}}
+\doxysubsubsection{\texorpdfstring{GetShader()}{GetShader()}}
+{\footnotesize\ttfamily \label{class_scene_1_1_shader_a26a66e2d323ab6df0610184bd83aa8d3} 
+\mbox{\hyperlink{_shader_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} \& Scene\+::\+Shader\+::\+Get\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the Open\+GL shader ID. 
+
+\begin{DoxyReturn}{Returns}
+The Open\+GL shader ID.
+\end{DoxyReturn}
+Get the Open\+GL shader ID. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Physics\+Sim/src/graphics/\mbox{\hyperlink{_shader_8hpp}{Shader.\+hpp}}\item 
+Physics\+Sim/src/graphics/\mbox{\hyperlink{_shader_8cpp}{Shader.\+cpp}}\end{DoxyCompactItemize}

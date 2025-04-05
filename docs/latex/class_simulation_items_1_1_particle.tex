@@ -1,0 +1,114 @@
+\doxysection{Simulation\+Items\+::Particle Class Reference}
+\hypertarget{class_simulation_items_1_1_particle}{}\label{class_simulation_items_1_1_particle}\index{SimulationItems::Particle@{SimulationItems::Particle}}
+
+
+\doxylink{class_simulation_items_1_1_particle}{Particle} class.  
+
+
+
+
+{\ttfamily \#include $<$Particle.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_simulation_items_1_1_particle_1_1_particle_impl}{Particle\+Impl}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_simulation_items_1_1_particle}{Particle} PIMPL implementation structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_simulation_items_1_1_particle_aa12a34eeb39b5c138d8433dd9c8643bd}\label{class_simulation_items_1_1_particle_aa12a34eeb39b5c138d8433dd9c8643bd} 
+{\bfseries Particle} (const \mbox{\hyperlink{class_simulation_items_1_1_particle}{Particle}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_simulation_items_1_1_particle_a74657bdbf9a2ba4171ad63b3186f21d7}\label{class_simulation_items_1_1_particle_a74657bdbf9a2ba4171ad63b3186f21d7} 
+\mbox{\hyperlink{class_simulation_items_1_1_particle}{Particle}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_simulation_items_1_1_particle}{Particle}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{class_simulation_items_1_1_particle_a90e7898932d79b0a3dfc6a3db7068e42}\label{class_simulation_items_1_1_particle_a90e7898932d79b0a3dfc6a3db7068e42} 
+{\bfseries Particle} (const \mbox{\hyperlink{class_simulation_items_1_1_particle}{Particle}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_simulation_items_1_1_particle_ac91ae96519cd6e380b80b23eb15963e0}\label{class_simulation_items_1_1_particle_ac91ae96519cd6e380b80b23eb15963e0} 
+\mbox{\hyperlink{class_simulation_items_1_1_particle}{Particle}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_simulation_items_1_1_particle}{Particle}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_simulation_items_1_1_particle_a720f5182fc337e628d6350f230bab6a7}{Particle}} (const float radius, const float x, const float y, const float z, const float red, const float green, const float blue)
+\begin{DoxyCompactList}\small\item\em Custom constructor for the \doxylink{class_simulation_items_1_1_particle}{Particle} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_simulation_items_1_1_particle_ab9eccfec6c9401e5948def1db3d9b3d6}{Particle}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_simulation_items_1_1_particle}{Particle} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_simulation_items_1_1_particle_ae03dbe2b9788117c6bec456afd3a36ac}{\texorpdfstring{$\sim$}{\string~}\+Particle}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_simulation_items_1_1_particle}{Particle} class. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_object_1_1_object}{Object\+::\+Object}} $>$ \mbox{\hyperlink{class_simulation_items_1_1_particle_ad2a4352e5bb8b422ef98bcf4a1799d88}{Get\+Circle}} ()
+\begin{DoxyCompactList}\small\item\em Get the circle object representing the particle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_simulation_items_1_1_particle}{Particle} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_simulation_items_1_1_particle_a720f5182fc337e628d6350f230bab6a7}\index{SimulationItems::Particle@{SimulationItems::Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!SimulationItems::Particle@{SimulationItems::Particle}}
+\doxysubsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_simulation_items_1_1_particle_a720f5182fc337e628d6350f230bab6a7} 
+Simulation\+Items\+::\+Particle\+::\+Particle (\begin{DoxyParamCaption}\item[{const float}]{radius}{, }\item[{const float}]{x}{, }\item[{const float}]{y}{, }\item[{const float}]{z}{, }\item[{const float}]{red}{, }\item[{const float}]{green}{, }\item[{const float}]{blue}{}\end{DoxyParamCaption})}
+
+
+
+Custom constructor for the \doxylink{class_simulation_items_1_1_particle}{Particle} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em radius} & The radius of the particle. \\
+\hline
+{\em x} & The x-\/coordinate of the particle. \\
+\hline
+{\em y} & The y-\/coordinate of the particle. \\
+\hline
+{\em z} & The z-\/coordinate of the particle. \\
+\hline
+{\em red} & The red color value of the particle. \\
+\hline
+{\em green} & The green color value of the particle. \\
+\hline
+{\em blue} & The blue color value of the particle.\\
+\hline
+\end{DoxyParams}
+Custom constructor for the \doxylink{class_simulation_items_1_1_particle}{Particle} class. Passes the radius, position, and color values to the \doxylink{struct_simulation_items_1_1_particle_1_1_particle_impl}{Particle\+Impl} constructor. \Hypertarget{class_simulation_items_1_1_particle_ab9eccfec6c9401e5948def1db3d9b3d6}\index{SimulationItems::Particle@{SimulationItems::Particle}!Particle@{Particle}}
+\index{Particle@{Particle}!SimulationItems::Particle@{SimulationItems::Particle}}
+\doxysubsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_simulation_items_1_1_particle_ab9eccfec6c9401e5948def1db3d9b3d6} 
+Simulation\+Items\+::\+Particle\+::\+Particle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor for the \doxylink{class_simulation_items_1_1_particle}{Particle} class. 
+
+Default constructor for the \doxylink{class_simulation_items_1_1_particle}{Particle} class. \Hypertarget{class_simulation_items_1_1_particle_ae03dbe2b9788117c6bec456afd3a36ac}\index{SimulationItems::Particle@{SimulationItems::Particle}!````~Particle@{\texorpdfstring{$\sim$}{\string~}Particle}}
+\index{````~Particle@{\texorpdfstring{$\sim$}{\string~}Particle}!SimulationItems::Particle@{SimulationItems::Particle}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Particle()}{\string~Particle()}}
+{\footnotesize\ttfamily \label{class_simulation_items_1_1_particle_ae03dbe2b9788117c6bec456afd3a36ac} 
+Simulation\+Items\+::\+Particle\+::\texorpdfstring{$\sim$}{\string~}\+Particle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor for the \doxylink{class_simulation_items_1_1_particle}{Particle} class. 
+
+Default destructor for the \doxylink{class_simulation_items_1_1_particle}{Particle} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_simulation_items_1_1_particle_ad2a4352e5bb8b422ef98bcf4a1799d88}\index{SimulationItems::Particle@{SimulationItems::Particle}!GetCircle@{GetCircle}}
+\index{GetCircle@{GetCircle}!SimulationItems::Particle@{SimulationItems::Particle}}
+\doxysubsubsection{\texorpdfstring{GetCircle()}{GetCircle()}}
+{\footnotesize\ttfamily \label{class_simulation_items_1_1_particle_ad2a4352e5bb8b422ef98bcf4a1799d88} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_object_1_1_object}{Object\+::\+Object}} $>$ Simulation\+Items\+::\+Particle\+::\+Get\+Circle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the circle object representing the particle. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to the circle object.
+\end{DoxyReturn}
+Get the circle object representing the particle. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Physics\+Sim/src/simulation/\mbox{\hyperlink{_particle_8hpp}{Particle.\+hpp}}\item 
+Physics\+Sim/src/simulation/\mbox{\hyperlink{_particle_8cpp}{Particle.\+cpp}}\end{DoxyCompactItemize}

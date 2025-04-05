@@ -1,0 +1,71 @@
+\doxysection{Particle.\+hpp}
+\hypertarget{_particle_8hpp_source}{}\label{_particle_8hpp_source}\index{PhysicsSim/src/simulation/Particle.hpp@{PhysicsSim/src/simulation/Particle.hpp}}
+\mbox{\hyperlink{_particle_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ \_PARTICLE\_}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ \_PARTICLE\_}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_object}{Object}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_object_1_1_object}{Object}};}
+\DoxyCodeLine{00022\ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_simulation}{Simulation}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_simulation_1_1_simulation_items}{SimulationItems}}}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ad7ba6bea6906ccd06c985a9217d9fb48}{Particle}}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Deleted\ constructors}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ad7ba6bea6906ccd06c985a9217d9fb48}{Particle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ad7ba6bea6906ccd06c985a9217d9fb48}{Particle}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ad7ba6bea6906ccd06c985a9217d9fb48}{Particle}}\&\ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_a9fd2e3327d0efa2f136c65c24f49f2b1}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ad7ba6bea6906ccd06c985a9217d9fb48}{Particle}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_a14bb9a5c8e78bde257eea7322a988f45}{Particle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ad7ba6bea6906ccd06c985a9217d9fb48}{Particle}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ad7ba6bea6906ccd06c985a9217d9fb48}{Particle}}\&\ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_a269c2338079e0b1021ebe7e77fd1e222}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ad7ba6bea6906ccd06c985a9217d9fb48}{Particle}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Custom\ constructors}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ad1e020fe21cbe4e398244be21326ee79}{Particle}}(}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ radius,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ x,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ y,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ z,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ red,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ green,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ blue);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Default\ constructors/destructor}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ad1e020fe21cbe4e398244be21326ee79}{Particle}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_a8fc505fe163396b718c337aee880300a}{\string~Particle}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Member\ methods}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Object::Object>\ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ae8d59e107f43d2a0b602e16caf98e4c3}{GetCircle}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//PIMPL\ idiom}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_simulation_1_1_simulation_items_1_1_particle_1_1_particle_impl}{ParticleImpl}};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<ParticleImpl>\ \_impl;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -21,46 +21,43 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\core\Application.h">
+    <ClInclude Include="src\core\Application.hpp">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\ImGuiManager.h">
+    <ClInclude Include="src\graphics\ImGuiManager.hpp">
       <Filter>graphics</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\RenderManager.h">
+    <ClInclude Include="src\graphics\RenderManager.hpp">
       <Filter>graphics</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\Scene.h">
+    <ClInclude Include="src\graphics\Scene.hpp">
       <Filter>graphics</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\Shader.h">
+    <ClInclude Include="src\graphics\Shader.hpp">
       <Filter>graphics</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\Texture.h">
+    <ClInclude Include="src\graphics\Texture.hpp">
       <Filter>graphics</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\WindowManager.h">
+    <ClInclude Include="src\graphics\WindowManager.hpp">
       <Filter>graphics</Filter>
     </ClInclude>
-    <ClInclude Include="src\objects\Box.h">
+    <ClInclude Include="src\objects\Box.hpp">
       <Filter>objects</Filter>
     </ClInclude>
-    <ClInclude Include="src\objects\Circle.h">
+    <ClInclude Include="src\objects\Circle.hpp">
       <Filter>objects</Filter>
     </ClInclude>
-    <ClInclude Include="src\objects\Object.h">
+    <ClInclude Include="src\objects\Object.hpp">
       <Filter>objects</Filter>
     </ClInclude>
-    <ClInclude Include="src\simulation\Particle.h">
+    <ClInclude Include="src\simulation\Particle.hpp">
       <Filter>simulation</Filter>
     </ClInclude>
-    <ClInclude Include="src\simulation\Simulation.h">
+    <ClInclude Include="src\simulation\Simulation.hpp">
       <Filter>simulation</Filter>
     </ClInclude>
-    <ClInclude Include="src\utils\DebugManager.h">
-      <Filter>utils</Filter>
-    </ClInclude>
-    <ClInclude Include="src\utils\GlfwAndDebugIncludes.h">
+    <ClInclude Include="src\utils\GlfwIncludes.hpp">
       <Filter>utils</Filter>
     </ClInclude>
   </ItemGroup>

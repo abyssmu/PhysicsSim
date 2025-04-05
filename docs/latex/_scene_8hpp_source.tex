@@ -1,0 +1,86 @@
+\doxysection{Scene.\+hpp}
+\hypertarget{_scene_8hpp_source}{}\label{_scene_8hpp_source}\index{PhysicsSim/src/graphics/Scene.hpp@{PhysicsSim/src/graphics/Scene.hpp}}
+\mbox{\hyperlink{_scene_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ \_SCENE\_}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ \_SCENE\_}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }GLFWwindow;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_object}{Object}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_object_1_1_object}{Object}};}
+\DoxyCodeLine{00028\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_scene}{Scene}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_1_1_texture}{Texture}};}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{namespace_scene}{Scene}}}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Deleted\ constructors}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_1_1_scene_a9385b15982c5fdc3b022139439b55936}{Scene}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_scene}{Scene}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_scene}{Scene}}\&\ \mbox{\hyperlink{class_scene_1_1_scene_a48c27071da02452af0bfd7870ab139b7}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_scene}{Scene}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_1_1_scene_a8f0c14e864eee801eadda3b0e159b93c}{Scene}}(\mbox{\hyperlink{namespace_scene}{Scene}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_scene}{Scene}}\&\ \mbox{\hyperlink{class_scene_1_1_scene_ad96e1e675371463caaae4956c4b4c7f6}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespace_scene}{Scene}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Custom\ constructors}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_scene}{Scene}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ width,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ height);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Default\ constructors/destructor}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_1_1_scene_a36e8ef3997da7eb38ae95a6fbba54d21}{Scene}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_1_1_scene_a483b51528bec6d5309e567efa8f361f2}{\string~Scene}}();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Member\ methods}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_1_1_scene_ac0af3317730d57574f6c2f4c539195f2}{RenderTexture}}(}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::shared\_ptr<Object::Object>>\&\ objects,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ box\_height\_perc,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ box\_width\_perc);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_1_1_scene_afc51a2f481f10b3103bc03d677411694}{Render}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ r,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ g,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ a);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_scene_1_1_scene_a2e8ca55072d7442e6df6b7b06e7d2e28}{GetGlslVersion}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ GLFWwindow*\ \mbox{\hyperlink{class_scene_1_1_scene_ac9675ac62cc259b168eb822e84aeaa00}{GetWindow}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ std::pair<int,\ int>\ \mbox{\hyperlink{class_scene_1_1_scene_a38f978f90cfdccb304a7b3a18c2ae7f9}{GetWindowSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ std::shared\_ptr<Texture>\ \mbox{\hyperlink{class_scene_1_1_scene_ac9d157aa7491a3af660582833f5a44f1}{GetTexture}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_scene_1_1_scene_ada4c6ffee7ae7d27cac5b4c058feb279}{GetTextureAspectRatio}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scene_1_1_scene_a6ddc78c1929532a5d6e2d356075bd429}{WindowShouldClose}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_1_1_scene_a4deec50a6c4ad9959250d094eefa6a31}{SwapBuffers}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{comment}{//PIMPL\ idiom}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_scene_1_1_scene_1_1_scene_impl}{SceneImpl}};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ std::unique\_ptr<SceneImpl>\ \_impl;}
+\DoxyCodeLine{00141\ \ \ \ \ \};}
+\DoxyCodeLine{00142\ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,68 @@
+\doxysection{Application.\+hpp}
+\hypertarget{_application_8hpp_source}{}\label{_application_8hpp_source}\index{PhysicsSim/src/core/Application.hpp@{PhysicsSim/src/core/Application.hpp}}
+\mbox{\hyperlink{_application_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ \_APPLICATION\_}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ \_APPLICATION\_}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_object}{Object}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{namespace_object}{Object}};}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_app}{App}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{struct\ }ThermodynamicSimulationVariables;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_app_1_1_application_ae62b7bd40a1f6b2a0709ac45a3a3efa1}{Application}}}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Deleted\ constructors}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_app_1_1_application_ae62b7bd40a1f6b2a0709ac45a3a3efa1}{Application}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_app_1_1_application_ae62b7bd40a1f6b2a0709ac45a3a3efa1}{Application}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_app_1_1_application_ae62b7bd40a1f6b2a0709ac45a3a3efa1}{Application}}\&\ \mbox{\hyperlink{class_app_1_1_application_a9a8f22953ffbda05189c8313a888a0bc}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_app_1_1_application_ae62b7bd40a1f6b2a0709ac45a3a3efa1}{Application}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_app_1_1_application_a7afd7a670c4a6d5d68ab5dc9196b5fb2}{Application}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_app_1_1_application_ae62b7bd40a1f6b2a0709ac45a3a3efa1}{Application}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_app_1_1_application_ae62b7bd40a1f6b2a0709ac45a3a3efa1}{Application}}\&\ \mbox{\hyperlink{class_app_1_1_application_a3c142e1a5bfffa79645f66571dedc5e3}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_app_1_1_application_ae62b7bd40a1f6b2a0709ac45a3a3efa1}{Application}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Custom\ constructors}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Default\ constructors/destructor}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_app_1_1_application_a46d2fac94e91f97ae52c4235f5dc5372}{Application}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_app_1_1_application_a962c9c2702bd049bc7b796974e621fd1}{\string~Application}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Member\ methods}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_app_1_1_application_a9d8062f4d2cdaa201e7b36f66f6567ee}{Init}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ width,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ height);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_app_1_1_application_a14693c20fe434e71dff209e79cac4eab}{Run}}(\textcolor{keywordtype}{bool}\ demo);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//PIMPL\ idiom}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl}{ApplicationImpl}};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ std::unique\_ptr<ApplicationImpl>\ \_impl;}
+\DoxyCodeLine{00088\ \ \ \ \ \};}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

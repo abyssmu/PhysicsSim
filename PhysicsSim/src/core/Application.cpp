@@ -1,17 +1,36 @@
-#include "Application.h"
+/**
+* @file Application.cpp
+* @brief
+* Function definitions for the application. Uses the PIMPL idiom to hide 
+* implementation details.
+*/
 
-#include "utils/GlfwAndDebugIncludes.h"
-#include "graphics/ImGuiManager.h"
-#include "graphics/Scene.h"
-#include "objects/Object.h"
-#include "simulation/Simulation.h"
+#include "Application.hpp"
+
+#include "utils/GlfwIncludes.hpp"
+#include "graphics/ImGuiManager.hpp"
+#include "graphics/Scene.hpp"
+#include "objects/Object.hpp"
+#include "simulation/Simulation.hpp"
 
 #include "imgui.h"
 #include "backends/imgui_impl_glfw.h"
 
+/// @brief Application namespace.
 namespace App
 {
 	//Structures to hold the simulators' data.
+
+	/**
+	* @brief Structure to hold the thermodynamic simulation variables.
+	* @param num_particles The number of particles to simulate.
+	* @param box_width_perc The width of the simulation box as a percentage of the window.
+	* @param box_height_perc The height of the simulation box as a percentage of the window.
+	* @param energy_value The energy value for the simulation.
+	* @param temperature The temperature for the simulation.
+	* @param chem_potential The chemical potential for the simulation.
+	* @param radius The radius of the particles in the simulation.
+	*/
 	struct ThermodynamicSimulationVariables
 	{
 		int num_particles = 0;
@@ -23,32 +42,65 @@ namespace App
 		float radius = 0.0f;
 	};
 
+	/// @brief Application PIMPL implementation structure.
 	struct Application::ApplicationImpl
 	{
 		//Deleted constructors
+
+		/// @brief Deleted copy constructor.
 		ApplicationImpl(const ApplicationImpl& other) = delete;
+		/// @brief Deleted copy assignment operator.
 		ApplicationImpl& operator=(const ApplicationImpl& other) = delete;
+		/// @brief Deleted move constructor.
 		ApplicationImpl(const ApplicationImpl&& other) = delete;
+		/// @brief Deleted move assignment operator.
 		ApplicationImpl& operator=(const ApplicationImpl&& other) = delete;
 
 		//Custom constructors
 
 		//Default constructors/destructor
+
+		/// @brief Default constructor.
 		ApplicationImpl() = default;
+		/// @brief Default destructor.
 		~ApplicationImpl() = default;
 
 		//Member methods
+		
+		/**
+		* @brief Initialize the application.
+		* @param name The name of the application.
+		* @param width The width of the application window.
+		* @param height The height of the application window.
+		* @return True if the application was initialized successfully, false otherwise.
+		*/
 		bool Init(const std::string& name, const int& width, const int& height);
+
+		/**
+		* @brief Run the application.
+		* @param demo True if the application is running in demo mode, false otherwise.
+		*/
 		void Run(bool demo);
 
 		//Member variables
+
+		/// @brief Unique pointer to the ImGuiManager.
 		std::unique_ptr<ImGuiManager> imgui;
+		/// @brief Unique pointer to the Scene.
 		std::unique_ptr<Scene::Scene> scene;
+		/// @brief Unique pointer to the ThermodynamicParticleSimulator.
 		std::unique_ptr<Simulation::ThermodynamicParticleSimulator> simulation;
+		/// @brief The width of the simulation box as a percentage of the window.
 		int box_width_perc = 0;
+		/// @brief The height of the simulation box as a percentage of the window.
 		int box_height_perc = 0;
 	};
 
+	/**
+	* @details
+	* Create the Scene and ImGuiManager objects for the application. Return false
+	* if either object creation fails.
+	*/
 	bool Application::ApplicationImpl::Init(
 		const std::string& name,
 		const int& width,
@@ -70,6 +122,18 @@ namespace App
 		return true;
 	}
 
+	/**
+	* @details
+	* Run the application loop using the following steps:
+	* 1. Poll GLFW events for input processing.
+	* 2. Check if the window is minimized and prevent rendering if it is.
+	* 3. Create a new ImGui frame.
+	* 4. Render either the demo or the actual application window.
+	* 5. Check for ImGui state changes.
+	* 6. Render the texture for the ImGui render window.
+	* 7. Get ImGui background color and render the scene.
+	* 8. Draw ImGui to OpenGL window and swap buffers to present frame to screen.
+	*/
 	void Application::ApplicationImpl::Run(bool demo)
 	{
 		//Check each frame if the window should close
@@ -163,16 +227,24 @@ namespace App
 		}
 	}
 
+	/**
+	* @details
+	* Constructor for the Application class. Initializes the PIMPL pointer.
+	*/
 	Application::Application() :
 		_impl(std::make_unique<ApplicationImpl>())
 	{}
 
+	/**
+	* @details
+	* Default destructor for the Application class.
+	*/
 	Application::~Application() = default;
 
-	/*
-	* Initialization function used to capture a boolean to capture member
-	* variable failures and prevent compilation or execution failures and
-	* leaking memory.
+	/**
+	* @details
+	* Initializes the Application class by passing the name, width, and height
+	* to the PIMPL implementation.
 	*/
 	bool Application::Init(
 		const std::string& name,
@@ -182,6 +254,10 @@ namespace App
 		return _impl->Init(name, width, height);
 	}
 
+	/**
+	* @details
+	* Run the Application by passing the demo flag to the PIMPL implementation.
+	*/
 	void Application::Run(bool demo)
 	{
 		_impl->Run(demo);

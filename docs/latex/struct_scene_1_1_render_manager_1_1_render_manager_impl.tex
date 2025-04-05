@@ -1,0 +1,67 @@
+\doxysection{Scene\+::Render\+Manager\+::Render\+Manager\+Impl Struct Reference}
+\hypertarget{struct_scene_1_1_render_manager_1_1_render_manager_impl}{}\label{struct_scene_1_1_render_manager_1_1_render_manager_impl}\index{Scene::RenderManager::RenderManagerImpl@{Scene::RenderManager::RenderManagerImpl}}
+
+
+\doxylink{class_scene_1_1_render_manager}{Render\+Manager} PIMPL implementation structure.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_scene_1_1_render_manager_1_1_render_manager_impl_a27680f7fc597aaff1c135d0292745b03}\label{struct_scene_1_1_render_manager_1_1_render_manager_impl_a27680f7fc597aaff1c135d0292745b03} 
+{\bfseries Render\+Manager\+Impl} ()=delete
+\begin{DoxyCompactList}\small\item\em Deleted default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{struct_scene_1_1_render_manager_1_1_render_manager_impl_ab8d53506f28ae65ee1bed94bd3534c8e}\label{struct_scene_1_1_render_manager_1_1_render_manager_impl_ab8d53506f28ae65ee1bed94bd3534c8e} 
+{\bfseries Render\+Manager\+Impl} (const \mbox{\hyperlink{struct_scene_1_1_render_manager_1_1_render_manager_impl}{Render\+Manager\+Impl}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{struct_scene_1_1_render_manager_1_1_render_manager_impl_aa78113996b89d11b9f06f884f82c2d16}\label{struct_scene_1_1_render_manager_1_1_render_manager_impl_aa78113996b89d11b9f06f884f82c2d16} 
+\mbox{\hyperlink{struct_scene_1_1_render_manager_1_1_render_manager_impl}{Render\+Manager\+Impl}} \& {\bfseries operator=} (const \mbox{\hyperlink{struct_scene_1_1_render_manager_1_1_render_manager_impl}{Render\+Manager\+Impl}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{struct_scene_1_1_render_manager_1_1_render_manager_impl_a2cecff00eaa6a9d99e22f854cb2d6b90}\label{struct_scene_1_1_render_manager_1_1_render_manager_impl_a2cecff00eaa6a9d99e22f854cb2d6b90} 
+{\bfseries Render\+Manager\+Impl} (const \mbox{\hyperlink{struct_scene_1_1_render_manager_1_1_render_manager_impl}{Render\+Manager\+Impl}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor. \end{DoxyCompactList}\item 
+\Hypertarget{struct_scene_1_1_render_manager_1_1_render_manager_impl_aabb46392ff512bc4155eee773cb7d1d5}\label{struct_scene_1_1_render_manager_1_1_render_manager_impl_aabb46392ff512bc4155eee773cb7d1d5} 
+\mbox{\hyperlink{struct_scene_1_1_render_manager_1_1_render_manager_impl}{Render\+Manager\+Impl}} \& {\bfseries operator=} (const \mbox{\hyperlink{struct_scene_1_1_render_manager_1_1_render_manager_impl}{Render\+Manager\+Impl}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_scene_1_1_render_manager_1_1_render_manager_impl_a079ef7eacf46f7af501bbb3b17575192}{Render\+Manager\+Impl}} (const int \&width, const int \&height)
+\begin{DoxyCompactList}\small\item\em Custom constructor for the \doxylink{struct_scene_1_1_render_manager_1_1_render_manager_impl}{Render\+Manager\+Impl} class. \end{DoxyCompactList}\item 
+\Hypertarget{struct_scene_1_1_render_manager_1_1_render_manager_impl_a3921e3cbaa556de2281d92f900e9170a}\label{struct_scene_1_1_render_manager_1_1_render_manager_impl_a3921e3cbaa556de2281d92f900e9170a} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Render\+Manager\+Impl} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_scene_1_1_render_manager_1_1_render_manager_impl_add9ed9e55ef26c3e7fe004fb4cc7a439}\label{struct_scene_1_1_render_manager_1_1_render_manager_impl_add9ed9e55ef26c3e7fe004fb4cc7a439} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_scene_1_1_texture}{Texture}} $>$ {\bfseries texture}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the \doxylink{class_scene_1_1_texture}{Texture}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_scene_1_1_render_manager_1_1_render_manager_impl_af2b2fa3454aa8384b896746b8e67a3ec}\label{struct_scene_1_1_render_manager_1_1_render_manager_impl_af2b2fa3454aa8384b896746b8e67a3ec} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_scene_1_1_shader}{Shader}} $>$ {\bfseries shader}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the \doxylink{class_scene_1_1_shader}{Shader}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_scene_1_1_render_manager}{Render\+Manager} PIMPL implementation structure. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_scene_1_1_render_manager_1_1_render_manager_impl_a079ef7eacf46f7af501bbb3b17575192}\index{Scene::RenderManager::RenderManagerImpl@{Scene::RenderManager::RenderManagerImpl}!RenderManagerImpl@{RenderManagerImpl}}
+\index{RenderManagerImpl@{RenderManagerImpl}!Scene::RenderManager::RenderManagerImpl@{Scene::RenderManager::RenderManagerImpl}}
+\doxysubsubsection{\texorpdfstring{RenderManagerImpl()}{RenderManagerImpl()}}
+{\footnotesize\ttfamily \label{struct_scene_1_1_render_manager_1_1_render_manager_impl_a079ef7eacf46f7af501bbb3b17575192} 
+Scene\+::\+Render\+Manager\+::\+Render\+Manager\+Impl\+::\+Render\+Manager\+Impl (\begin{DoxyParamCaption}\item[{const int \&}]{width}{, }\item[{const int \&}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Custom constructor for the \doxylink{struct_scene_1_1_render_manager_1_1_render_manager_impl}{Render\+Manager\+Impl} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the texture. \\
+\hline
+{\em height} & The height of the texture.\\
+\hline
+\end{DoxyParams}
+Custom constructor for the \doxylink{struct_scene_1_1_render_manager_1_1_render_manager_impl}{Render\+Manager\+Impl} class. Passes parameters to the texture and shader classes for initialization. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics\+Sim/src/graphics/\mbox{\hyperlink{_render_manager_8cpp}{Render\+Manager.\+cpp}}\end{DoxyCompactItemize}

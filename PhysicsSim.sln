@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glfw_build", "PhysicsSim\gl
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "imgui_build", "PhysicsSim\imgui_build.vcxproj", "{6F0284A6-DBB7-FC9B-64AC-F672D060F39F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spdlog", "PhysicsSim\spdlog.vcxproj", "{8EAD431C-7A4F-6EF2-630A-82464F4BF542}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spdlog_build", "PhysicsSim\spdlog_build.vcxproj", "{7D8A28B5-69ED-B759-1273-F00FFEB483DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +27,10 @@ Global
 		{6F0284A6-DBB7-FC9B-64AC-F672D060F39F}.Debug|x64.Build.0 = Debug|x64
 		{6F0284A6-DBB7-FC9B-64AC-F672D060F39F}.Release|x64.ActiveCfg = Release|x64
 		{6F0284A6-DBB7-FC9B-64AC-F672D060F39F}.Release|x64.Build.0 = Release|x64
-		{8EAD431C-7A4F-6EF2-630A-82464F4BF542}.Debug|x64.ActiveCfg = Debug|x64
-		{8EAD431C-7A4F-6EF2-630A-82464F4BF542}.Debug|x64.Build.0 = Debug|x64
-		{8EAD431C-7A4F-6EF2-630A-82464F4BF542}.Release|x64.ActiveCfg = Release|x64
-		{8EAD431C-7A4F-6EF2-630A-82464F4BF542}.Release|x64.Build.0 = Release|x64
+		{7D8A28B5-69ED-B759-1273-F00FFEB483DC}.Debug|x64.ActiveCfg = Debug|x64
+		{7D8A28B5-69ED-B759-1273-F00FFEB483DC}.Debug|x64.Build.0 = Debug|x64
+		{7D8A28B5-69ED-B759-1273-F00FFEB483DC}.Release|x64.ActiveCfg = Release|x64
+		{7D8A28B5-69ED-B759-1273-F00FFEB483DC}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

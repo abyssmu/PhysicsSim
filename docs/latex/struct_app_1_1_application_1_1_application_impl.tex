@@ -1,0 +1,108 @@
+\doxysection{App\+::Application\+::Application\+Impl Struct Reference}
+\hypertarget{struct_app_1_1_application_1_1_application_impl}{}\label{struct_app_1_1_application_1_1_application_impl}\index{App::Application::ApplicationImpl@{App::Application::ApplicationImpl}}
+
+
+\doxylink{class_app_1_1_application}{Application} PIMPL implementation structure.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_a0dfe9eada3ad4cf95d7dd53a8bd1b3a5}\label{struct_app_1_1_application_1_1_application_impl_a0dfe9eada3ad4cf95d7dd53a8bd1b3a5} 
+{\bfseries Application\+Impl} (const \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl}{Application\+Impl}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_ae4fd006989f0c15bd5cd8f53cf8481b9}\label{struct_app_1_1_application_1_1_application_impl_ae4fd006989f0c15bd5cd8f53cf8481b9} 
+\mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl}{Application\+Impl}} \& {\bfseries operator=} (const \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl}{Application\+Impl}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_ab249cadcbde10beb2e074524bc321905}\label{struct_app_1_1_application_1_1_application_impl_ab249cadcbde10beb2e074524bc321905} 
+{\bfseries Application\+Impl} (const \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl}{Application\+Impl}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor. \end{DoxyCompactList}\item 
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_adc1ca7a1a84b4aa765852f5a52704ee7}\label{struct_app_1_1_application_1_1_application_impl_adc1ca7a1a84b4aa765852f5a52704ee7} 
+\mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl}{Application\+Impl}} \& {\bfseries operator=} (const \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl}{Application\+Impl}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_ac74b3a0089aff08ccc31c9a941db8745}\label{struct_app_1_1_application_1_1_application_impl_ac74b3a0089aff08ccc31c9a941db8745} 
+{\bfseries Application\+Impl} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_af3985dcb44217c3e45cbd7adc36c3c79}\label{struct_app_1_1_application_1_1_application_impl_af3985dcb44217c3e45cbd7adc36c3c79} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Application\+Impl} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl_adb3c76a16e2c41162582c2f877e9caee}{Init}} (const std\+::string \&name, const int \&width, const int \&height)
+\begin{DoxyCompactList}\small\item\em Initialize the application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl_aa089543871b37dd056b1e1d22e4a3282}{Run}} (bool demo)
+\begin{DoxyCompactList}\small\item\em Run the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_ab2b18f0340844518b066b90dea511805}\label{struct_app_1_1_application_1_1_application_impl_ab2b18f0340844518b066b90dea511805} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}} $>$ {\bfseries imgui}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_ad42c30a039ad386d72079b7989b68b7f}\label{struct_app_1_1_application_1_1_application_impl_ad42c30a039ad386d72079b7989b68b7f} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_scene_1_1_scene}{Scene\+::\+Scene}} $>$ {\bfseries scene}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the \doxylink{namespace_scene}{Scene}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_a727a086a65a7ec2b313cdacea8d82aa9}\label{struct_app_1_1_application_1_1_application_impl_a727a086a65a7ec2b313cdacea8d82aa9} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_simulation_1_1_thermodynamic_particle_simulator}{Simulation\+::\+Thermodynamic\+Particle\+Simulator}} $>$ {\bfseries simulation}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the Thermodynamic\+Particle\+Simulator. \end{DoxyCompactList}\item 
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_a5f671ccf28375c8e0781bc4537f1fbc6}\label{struct_app_1_1_application_1_1_application_impl_a5f671ccf28375c8e0781bc4537f1fbc6} 
+int {\bfseries box\+\_\+width\+\_\+perc} = 0
+\begin{DoxyCompactList}\small\item\em The width of the simulation box as a percentage of the window. \end{DoxyCompactList}\item 
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_a380d46224d583bb47800fee4fe3d466b}\label{struct_app_1_1_application_1_1_application_impl_a380d46224d583bb47800fee4fe3d466b} 
+int {\bfseries box\+\_\+height\+\_\+perc} = 0
+\begin{DoxyCompactList}\small\item\em The height of the simulation box as a percentage of the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_app_1_1_application}{Application} PIMPL implementation structure. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_adb3c76a16e2c41162582c2f877e9caee}\index{App::Application::ApplicationImpl@{App::Application::ApplicationImpl}!Init@{Init}}
+\index{Init@{Init}!App::Application::ApplicationImpl@{App::Application::ApplicationImpl}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{struct_app_1_1_application_1_1_application_impl_adb3c76a16e2c41162582c2f877e9caee} 
+bool App\+::\+Application\+::\+Application\+Impl\+::\+Init (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const int \&}]{width}{, }\item[{const int \&}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the application. \\
+\hline
+{\em width} & The width of the application window. \\
+\hline
+{\em height} & The height of the application window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the application was initialized successfully, false otherwise.
+\end{DoxyReturn}
+Create the \doxylink{namespace_scene}{Scene} and \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager} objects for the application. Return false if either object creation fails. \Hypertarget{struct_app_1_1_application_1_1_application_impl_aa089543871b37dd056b1e1d22e4a3282}\index{App::Application::ApplicationImpl@{App::Application::ApplicationImpl}!Run@{Run}}
+\index{Run@{Run}!App::Application::ApplicationImpl@{App::Application::ApplicationImpl}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{struct_app_1_1_application_1_1_application_impl_aa089543871b37dd056b1e1d22e4a3282} 
+void App\+::\+Application\+::\+Application\+Impl\+::\+Run (\begin{DoxyParamCaption}\item[{bool}]{demo}{}\end{DoxyParamCaption})}
+
+
+
+Run the application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em demo} & True if the application is running in demo mode, false otherwise.\\
+\hline
+\end{DoxyParams}
+Run the application loop using the following steps\+:
+\begin{DoxyEnumerate}
+\item Poll GLFW events for input processing.
+\item Check if the window is minimized and prevent rendering if it is.
+\item Create a new Im\+Gui frame.
+\item Render either the demo or the actual application window.
+\item Check for Im\+Gui state changes.
+\item Render the texture for the Im\+Gui render window.
+\item Get Im\+Gui background color and render the scene.
+\item Draw Im\+Gui to Open\+GL window and swap buffers to present frame to screen. 
+\end{DoxyEnumerate}
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics\+Sim/src/core/\mbox{\hyperlink{_application_8cpp}{Application.\+cpp}}\end{DoxyCompactItemize}

@@ -94,20 +94,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\core\Application.h" />
-    <ClInclude Include="src\graphics\ImGuiManager.h" />
-    <ClInclude Include="src\graphics\RenderManager.h" />
-    <ClInclude Include="src\graphics\Scene.h" />
-    <ClInclude Include="src\graphics\Shader.h" />
-    <ClInclude Include="src\graphics\Texture.h" />
-    <ClInclude Include="src\graphics\WindowManager.h" />
-    <ClInclude Include="src\objects\Box.h" />
-    <ClInclude Include="src\objects\Circle.h" />
-    <ClInclude Include="src\objects\Object.h" />
-    <ClInclude Include="src\simulation\Particle.h" />
-    <ClInclude Include="src\simulation\Simulation.h" />
-    <ClInclude Include="src\utils\DebugManager.h" />
-    <ClInclude Include="src\utils\GlfwAndDebugIncludes.h" />
+    <ClInclude Include="src\core\Application.hpp" />
+    <ClInclude Include="src\graphics\ImGuiManager.hpp" />
+    <ClInclude Include="src\graphics\RenderManager.hpp" />
+    <ClInclude Include="src\graphics\Scene.hpp" />
+    <ClInclude Include="src\graphics\Shader.hpp" />
+    <ClInclude Include="src\graphics\Texture.hpp" />
+    <ClInclude Include="src\graphics\WindowManager.hpp" />
+    <ClInclude Include="src\objects\Box.hpp" />
+    <ClInclude Include="src\objects\Circle.hpp" />
+    <ClInclude Include="src\objects\Object.hpp" />
+    <ClInclude Include="src\simulation\Particle.hpp" />
+    <ClInclude Include="src\simulation\Simulation.hpp" />
+    <ClInclude Include="src\utils\GlfwIncludes.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\Application.cpp" />
@@ -135,8 +134,8 @@
     <ProjectReference Include="glfw_build.vcxproj">
       <Project>{C469C4C9-B021-0617-1929-DF720500A107}</Project>
     </ProjectReference>
-    <ProjectReference Include="spdlog.vcxproj">
-      <Project>{8EAD431C-7A4F-6EF2-630A-82464F4BF542}</Project>
+    <ProjectReference Include="spdlog_build.vcxproj">
+      <Project>{7D8A28B5-69ED-B759-1273-F00FFEB483DC}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

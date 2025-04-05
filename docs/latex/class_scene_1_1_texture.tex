@@ -1,0 +1,161 @@
+\doxysection{Scene\+::Texture Class Reference}
+\hypertarget{class_scene_1_1_texture}{}\label{class_scene_1_1_texture}\index{Scene::Texture@{Scene::Texture}}
+
+
+\doxylink{class_scene_1_1_texture}{Texture} class.  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_scene_1_1_texture_1_1_texture_impl}{Texture\+Impl}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_scene_1_1_texture}{Texture} PIMPL implementation structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_scene_1_1_texture_a86b24b89ff7cc6f9391814eef6d4ff5c}\label{class_scene_1_1_texture_a86b24b89ff7cc6f9391814eef6d4ff5c} 
+{\bfseries Texture} (const \mbox{\hyperlink{class_scene_1_1_texture}{Texture}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_1_1_texture_ac900cbe44b0d86379a798af7edc9f576}\label{class_scene_1_1_texture_ac900cbe44b0d86379a798af7edc9f576} 
+\mbox{\hyperlink{class_scene_1_1_texture}{Texture}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_scene_1_1_texture}{Texture}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_1_1_texture_a904d50ff2ffb7c4aa2f4a75d9098e17b}\label{class_scene_1_1_texture_a904d50ff2ffb7c4aa2f4a75d9098e17b} 
+{\bfseries Texture} (\mbox{\hyperlink{class_scene_1_1_texture}{Texture}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_1_1_texture_a5d5695cad4f2b21cecde802472119aba}\label{class_scene_1_1_texture_a5d5695cad4f2b21cecde802472119aba} 
+\mbox{\hyperlink{class_scene_1_1_texture}{Texture}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_scene_1_1_texture}{Texture}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene_1_1_texture_a23cd08315c9bbb1681c21cf262b4e850}{Texture}} (const int \&width, const int \&height)
+\begin{DoxyCompactList}\small\item\em Custom constructor for the \doxylink{class_scene_1_1_texture}{Texture} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene_1_1_texture_ae544c410116bedd49176c959ec232784}{Texture}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene_1_1_texture_a9acd4f73fa91c7d25751186bff43b2fc}{\texorpdfstring{$\sim$}{\string~}\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_shader_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} \& \mbox{\hyperlink{class_scene_1_1_texture_a7bb8da66637f01088de1040d05843436}{Get\+Texture\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the Open\+GL texture ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_1_1_texture_ab493b64e8d90a1f4316f3421abd0dc5f}{Render}} (\mbox{\hyperlink{_shader_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} \&shader, std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_object_1_1_object}{Object\+::\+Object}} $>$ $>$ \&objects, const int box\+\_\+height\+\_\+perc, const int box\+\_\+width\+\_\+perc)
+\begin{DoxyCompactList}\small\item\em Render the texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_1_1_texture_a580bb988dd7c4fb51d5f9ea8f129ccf5}{Setup\+Framebuffer\+And\+Texture}} (const int \&width, const int \&height)
+\begin{DoxyCompactList}\small\item\em Setup the framebuffer and texture. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_scene_1_1_texture_afa44ddc025d364a0e9ae5e4e9b5dedcb}{Get\+Aspect\+Ratio}} () const
+\begin{DoxyCompactList}\small\item\em Get the aspect ratio of the texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_scene_1_1_texture}{Texture} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_scene_1_1_texture_a23cd08315c9bbb1681c21cf262b4e850}\index{Scene::Texture@{Scene::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Scene::Texture@{Scene::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_scene_1_1_texture_a23cd08315c9bbb1681c21cf262b4e850} 
+Scene\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{const int \&}]{width}{, }\item[{const int \&}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Custom constructor for the \doxylink{class_scene_1_1_texture}{Texture} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the texture. \\
+\hline
+{\em height} & The height of the texture.\\
+\hline
+\end{DoxyParams}
+Custom constructor for the \doxylink{class_scene_1_1_texture}{Texture} class. Passes the width and height to the PIMPL implementation. \Hypertarget{class_scene_1_1_texture_ae544c410116bedd49176c959ec232784}\index{Scene::Texture@{Scene::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Scene::Texture@{Scene::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_scene_1_1_texture_ae544c410116bedd49176c959ec232784} 
+Scene\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+Default constructor for the \doxylink{class_scene_1_1_texture}{Texture} class. \Hypertarget{class_scene_1_1_texture_a9acd4f73fa91c7d25751186bff43b2fc}\index{Scene::Texture@{Scene::Texture}!````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}}
+\index{````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}!Scene::Texture@{Scene::Texture}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Texture()}{\string~Texture()}}
+{\footnotesize\ttfamily \label{class_scene_1_1_texture_a9acd4f73fa91c7d25751186bff43b2fc} 
+Scene\+::\+Texture\+::\texorpdfstring{$\sim$}{\string~}\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+Default destructor for the \doxylink{class_scene_1_1_texture}{Texture} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_scene_1_1_texture_afa44ddc025d364a0e9ae5e4e9b5dedcb}\index{Scene::Texture@{Scene::Texture}!GetAspectRatio@{GetAspectRatio}}
+\index{GetAspectRatio@{GetAspectRatio}!Scene::Texture@{Scene::Texture}}
+\doxysubsubsection{\texorpdfstring{GetAspectRatio()}{GetAspectRatio()}}
+{\footnotesize\ttfamily \label{class_scene_1_1_texture_afa44ddc025d364a0e9ae5e4e9b5dedcb} 
+float Scene\+::\+Texture\+::\+Get\+Aspect\+Ratio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the aspect ratio of the texture. 
+
+\begin{DoxyReturn}{Returns}
+The aspect ratio of the texture.
+\end{DoxyReturn}
+Get the aspect ratio of the texture. \Hypertarget{class_scene_1_1_texture_a7bb8da66637f01088de1040d05843436}\index{Scene::Texture@{Scene::Texture}!GetTextureId@{GetTextureId}}
+\index{GetTextureId@{GetTextureId}!Scene::Texture@{Scene::Texture}}
+\doxysubsubsection{\texorpdfstring{GetTextureId()}{GetTextureId()}}
+{\footnotesize\ttfamily \label{class_scene_1_1_texture_a7bb8da66637f01088de1040d05843436} 
+\mbox{\hyperlink{_shader_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} \& Scene\+::\+Texture\+::\+Get\+Texture\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the Open\+GL texture ID. 
+
+\begin{DoxyReturn}{Returns}
+The Open\+GL texture ID.
+\end{DoxyReturn}
+Get the Open\+GL texture ID. \Hypertarget{class_scene_1_1_texture_ab493b64e8d90a1f4316f3421abd0dc5f}\index{Scene::Texture@{Scene::Texture}!Render@{Render}}
+\index{Render@{Render}!Scene::Texture@{Scene::Texture}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_scene_1_1_texture_ab493b64e8d90a1f4316f3421abd0dc5f} 
+void Scene\+::\+Texture\+::\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_shader_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} \&}]{shader}{, }\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_object_1_1_object}{Object\+::\+Object}} $>$ $>$ \&}]{objects}{, }\item[{const int}]{box\+\_\+height\+\_\+perc}{, }\item[{const int}]{box\+\_\+width\+\_\+perc}{}\end{DoxyParamCaption})}
+
+
+
+Render the texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader to use for rendering. \\
+\hline
+{\em objects} & A vector of objects to render to the texture. \\
+\hline
+{\em box\+\_\+height\+\_\+perc} & The height of the bounding box as a percentage of the window. \\
+\hline
+{\em box\+\_\+width\+\_\+perc} & The width of the bounding box as a percentage of the window.\\
+\hline
+\end{DoxyParams}
+Render the texture with the given shader and objects. Use the box width and height percentages to render a bounding box if needed. \Hypertarget{class_scene_1_1_texture_a580bb988dd7c4fb51d5f9ea8f129ccf5}\index{Scene::Texture@{Scene::Texture}!SetupFramebufferAndTexture@{SetupFramebufferAndTexture}}
+\index{SetupFramebufferAndTexture@{SetupFramebufferAndTexture}!Scene::Texture@{Scene::Texture}}
+\doxysubsubsection{\texorpdfstring{SetupFramebufferAndTexture()}{SetupFramebufferAndTexture()}}
+{\footnotesize\ttfamily \label{class_scene_1_1_texture_a580bb988dd7c4fb51d5f9ea8f129ccf5} 
+void Scene\+::\+Texture\+::\+Setup\+Framebuffer\+And\+Texture (\begin{DoxyParamCaption}\item[{const int \&}]{width}{, }\item[{const int \&}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Setup the framebuffer and texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the texture. \\
+\hline
+{\em height} & The height of the texture.\\
+\hline
+\end{DoxyParams}
+Pass the width and height to the PIMPL implementation to setup the frame buffer and texture. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Physics\+Sim/src/graphics/\mbox{\hyperlink{_texture_8hpp}{Texture.\+hpp}}\item 
+Physics\+Sim/src/graphics/\mbox{\hyperlink{_texture_8cpp}{Texture.\+cpp}}\end{DoxyCompactItemize}

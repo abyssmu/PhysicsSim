@@ -1,36 +1,76 @@
-#include "Object.h"
-#include "utils/GlfwAndDebugIncludes.h"
+/**
+* @file Object.cpp
+* @brief
+* Function definitions for the Object class. Uses the PIMPL idiom to hide
+* implementation details.
+*/
+
+#include "Object.hpp"
+#include "utils/GlfwIncludes.hpp"
 
 #include <glm/gtc/type_ptr.hpp>
 
+/// @brief Object namespace
 namespace Object
 {
+	/// @brief Object PIMPL implementation structure.
 	struct Object::ObjectImpl
 	{
 		//Deleted constructors
+
+		/// @brief Deleted default constructor.
 		ObjectImpl() = delete;
+		/// @brief Deleted copy constructor.
 		ObjectImpl(const ObjectImpl& other) = delete;
+		/// @brief Deleted copy assignment operator.
 		ObjectImpl& operator=(const ObjectImpl& other) = delete;
+		/// @brief Deleted move constructor.
 		ObjectImpl(const ObjectImpl&& other) = delete;
+		/// @brief Deleted move assignment operator.
 		ObjectImpl& operator=(const ObjectImpl&& other) = delete;
 
 		//Custom constructors
+
+		/**
+		* @brief Custom constructor for the ObjectImpl class.
+		* @param pos The position of the object.
+		* @param color The color of the object.
+		*/
 		ObjectImpl(glm::vec3 pos, glm::vec3 color);
 
 		//Default constructors/destructor
+
+		/// @brief Destructor for the ObjectImpl class.
 		~ObjectImpl();
 
 		//Member methods
+
+		/**
+		* @brief Set the vertices of the object.
+		* @param vertices The vector of vertices to set.
+		*/
 		void SetVertices(std::vector<glm::vec2> vertices);
 
 		//Member variables
+
+		/// @brief Position of the object.
 		glm::vec3 position;
+		/// @brief Color of the object.
 		glm::vec3 color;
+		/// @brief Vector of vertices for the object.
 		std::vector<glm::vec2> vertices;
+		/// @brief Vertex array object.
 		GLuint vao;
+		/// @brief Vertex buffer object.
 		GLuint vbo;
 	};
 
+	/**
+	* @details
+	* Custom constructor for the ObjectImpl class. Initializes the position and
+	* the color of the object. Sets the vertices to an empty vector and the
+	* vertex array object and vertex buffer object to 0.
+	*/
 	Object::ObjectImpl::ObjectImpl(glm::vec3 pos, glm::vec3 color) :
 		position(pos),
 		color(color),
@@ -39,12 +79,22 @@ namespace Object
 		vbo(0)
 	{}
 
+	/**
+	* @details
+	* Destructor for the ObjectImpl class. Deletes the vertex array object and
+	* deletes the buffers.
+	*/
 	Object::ObjectImpl::~ObjectImpl()
 	{
 		glDeleteVertexArrays(1, &vao);
 		glDeleteBuffers(1, &vbo);
 	}
 
+	/**
+	* @details
+	* Sets the vertices for the object. Generates a vertex array object and a vertex
+	* buffer array. Binds the vertex buffer and sets the vertex attribute pointers.
+	*/
 	void Object::ObjectImpl::SetVertices(std::vector<glm::vec2> verts)
 	{
 		vertices = std::move(verts);
@@ -63,6 +113,11 @@ namespace Object
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
+	/**
+	* @details
+	* Custom constructor for the Object class. Passes the position and color to
+	* the PIMPL implementation.
+	*/
 	Object::Object(
 		const float x,
 		const float y,
@@ -73,9 +128,24 @@ namespace Object
 		_object_impl(std::make_unique<ObjectImpl>(glm::vec3(x,y,z), glm::vec3(r,g,b)))
 	{}
 
+	/**
+	* @details
+	* Default constructor for the Object class.
+	*/
 	Object::Object() = default;
+
+	/**
+	* @details
+	* Default destructor for the Object class.
+	*/
 	Object::~Object() = default;
 
+	/**
+	* @details
+	* Draws the object with the given shader. Sets the color and model matrix
+	* and then binds the vertex array object. Draws the object using the triangle
+	* fan.
+	*/
 	void Object::Draw(GLuint shader) const
 	{
 		glUseProgram(shader);
@@ -92,11 +162,19 @@ namespace Object
 		glBindVertexArray(0);
 	}
 
+	/**
+	* @details
+	* Passes the vertices to the PIMPL implementation.
+	*/
 	void Object::SetVertices(std::vector<glm::vec2> vertices)
 	{
 		_object_impl->SetVertices(vertices);
 	}
 
+	/**
+	* @details
+	* Gets the position of the object. Returns a reference to the position.
+	*/
 	glm::vec3& Object::GetPosition() const
 	{
 		return _object_impl->position;

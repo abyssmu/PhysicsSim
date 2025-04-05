@@ -1,0 +1,204 @@
+\doxysection{App\+::Im\+Gui\+Manager Class Reference}
+\hypertarget{class_app_1_1_im_gui_manager}{}\label{class_app_1_1_im_gui_manager}\index{App::ImGuiManager@{App::ImGuiManager}}
+
+
+\doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager} class.  
+
+
+
+
+{\ttfamily \#include $<$Im\+Gui\+Manager.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl}{Im\+Gui\+Manager\+Impl}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager} PIMPL implementation structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_app_1_1_im_gui_manager_ae07ecc09aff4330675ecec73e4c87e19}\label{class_app_1_1_im_gui_manager_ae07ecc09aff4330675ecec73e4c87e19} 
+{\bfseries Im\+Gui\+Manager} (const \mbox{\hyperlink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_app_1_1_im_gui_manager_ae738272aea93989111b1092619dbc858}\label{class_app_1_1_im_gui_manager_ae738272aea93989111b1092619dbc858} 
+\mbox{\hyperlink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\item 
+\Hypertarget{class_app_1_1_im_gui_manager_afe0c439583a96bdad00ca8eda5dfa0e5}\label{class_app_1_1_im_gui_manager_afe0c439583a96bdad00ca8eda5dfa0e5} 
+{\bfseries Im\+Gui\+Manager} (const \mbox{\hyperlink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_app_1_1_im_gui_manager_a0947b6e3433c7f8425a85e497bb82e50}\label{class_app_1_1_im_gui_manager_a0947b6e3433c7f8425a85e497bb82e50} 
+\mbox{\hyperlink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app_1_1_im_gui_manager_a3f144694a149248fb9fcfd667f91cd6d}{Im\+Gui\+Manager}} (Im\+Vec4 clear\+\_\+color, GLFWwindow \texorpdfstring{$\ast$}{*}window, const char \texorpdfstring{$\ast$}{*}glsl\+\_\+version)
+\begin{DoxyCompactList}\small\item\em Custom constructor for the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app_1_1_im_gui_manager_a448af8a5fc2ee9aef6aa47d9888fa019}{Im\+Gui\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app_1_1_im_gui_manager_ad9f69b2db60fe3003ecfb4deaaab73c2}{\texorpdfstring{$\sim$}{\string~}\+Im\+Gui\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_app_1_1_im_gui_manager_a1b3ee66454a9c57781e33989c6093c0a}{New\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Generate a new frame for Im\+Gui. \end{DoxyCompactList}\item 
+Im\+Vec4 \& \mbox{\hyperlink{class_app_1_1_im_gui_manager_a9f1c5749d6947644572766e52918f0cc}{Get\+Clear\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Get the background color for the Im\+Gui. \end{DoxyCompactList}\item 
+Im\+Vec2 \& \mbox{\hyperlink{class_app_1_1_im_gui_manager_af68463b62c8ab90c5e88f625c73aa8ef}{Get\+Render\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the size of the render window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_app_1_1_im_gui_manager_aecdd089cc9b3b22e6f1243ae2e26a3de}{Render\+Draw\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Render the Im\+Gui draw data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_app_1_1_im_gui_manager_a84192d943202b68069810f64ca0611dc}{Setup\+Demo\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Setup Im\+Gui\textquotesingle{}s demo window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_app_1_1_im_gui_manager_a0c4ed40ff891cdaa06546ef1df1fb8eb}{Setup\+Window}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_scene_1_1_texture}{Scene\+::\+Texture}} $>$ texture, float aspect\+\_\+ratio)
+\begin{DoxyCompactList}\small\item\em Setup simulation window. \end{DoxyCompactList}\item 
+std\+::string \& \mbox{\hyperlink{class_app_1_1_im_gui_manager_a38fdd5c6cf48c8984940fae9da0d32ae}{Check\+For\+State\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Check for state change in the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_app_1_1_thermodynamic_simulation_variables}{Thermodynamic\+Simulation\+Variables}} \mbox{\hyperlink{class_app_1_1_im_gui_manager_a4d63f2cebe41c02d8125676d19618396}{Get\+Simulation\+Variables}} ()
+\begin{DoxyCompactList}\small\item\em Get the simulation variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_app_1_1_im_gui_manager_a3f144694a149248fb9fcfd667f91cd6d}\index{App::ImGuiManager@{App::ImGuiManager}!ImGuiManager@{ImGuiManager}}
+\index{ImGuiManager@{ImGuiManager}!App::ImGuiManager@{App::ImGuiManager}}
+\doxysubsubsection{\texorpdfstring{ImGuiManager()}{ImGuiManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_app_1_1_im_gui_manager_a3f144694a149248fb9fcfd667f91cd6d} 
+App\+::\+Im\+Gui\+Manager\+::\+Im\+Gui\+Manager (\begin{DoxyParamCaption}\item[{Im\+Vec4}]{clear\+\_\+color}{, }\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{glsl\+\_\+version}{}\end{DoxyParamCaption})}
+
+
+
+Custom constructor for the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+\_\+color} & The clear color for the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}. \\
+\hline
+{\em window} & The GLFW window to render the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}.\\
+\hline
+\end{DoxyParams}
+Custom constructor for the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager} class. Sets the background color, creates the context, style, Open\+GL, and GLFW for Im\+Gui, and sets the window flags to the following\+: No\+Collapse No\+Resize No\+Move No\+Bring\+To\+Front\+On\+Focus No\+Nav\+Focus \Hypertarget{class_app_1_1_im_gui_manager_a448af8a5fc2ee9aef6aa47d9888fa019}\index{App::ImGuiManager@{App::ImGuiManager}!ImGuiManager@{ImGuiManager}}
+\index{ImGuiManager@{ImGuiManager}!App::ImGuiManager@{App::ImGuiManager}}
+\doxysubsubsection{\texorpdfstring{ImGuiManager()}{ImGuiManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_app_1_1_im_gui_manager_a448af8a5fc2ee9aef6aa47d9888fa019} 
+App\+::\+Im\+Gui\+Manager\+::\+Im\+Gui\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+Default constructor for the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager} class. \Hypertarget{class_app_1_1_im_gui_manager_ad9f69b2db60fe3003ecfb4deaaab73c2}\index{App::ImGuiManager@{App::ImGuiManager}!````~ImGuiManager@{\texorpdfstring{$\sim$}{\string~}ImGuiManager}}
+\index{````~ImGuiManager@{\texorpdfstring{$\sim$}{\string~}ImGuiManager}!App::ImGuiManager@{App::ImGuiManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ImGuiManager()}{\string~ImGuiManager()}}
+{\footnotesize\ttfamily \label{class_app_1_1_im_gui_manager_ad9f69b2db60fe3003ecfb4deaaab73c2} 
+App\+::\+Im\+Gui\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Im\+Gui\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+Default destructor for the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_app_1_1_im_gui_manager_a38fdd5c6cf48c8984940fae9da0d32ae}\index{App::ImGuiManager@{App::ImGuiManager}!CheckForStateChanged@{CheckForStateChanged}}
+\index{CheckForStateChanged@{CheckForStateChanged}!App::ImGuiManager@{App::ImGuiManager}}
+\doxysubsubsection{\texorpdfstring{CheckForStateChanged()}{CheckForStateChanged()}}
+{\footnotesize\ttfamily \label{class_app_1_1_im_gui_manager_a38fdd5c6cf48c8984940fae9da0d32ae} 
+std\+::string \& App\+::\+Im\+Gui\+Manager\+::\+Check\+For\+State\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check for state change in the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}. 
+
+\begin{DoxyReturn}{Returns}
+State change type.
+\end{DoxyReturn}
+Check for state change in \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}. WORK IN PROGRESS \Hypertarget{class_app_1_1_im_gui_manager_a9f1c5749d6947644572766e52918f0cc}\index{App::ImGuiManager@{App::ImGuiManager}!GetClearColor@{GetClearColor}}
+\index{GetClearColor@{GetClearColor}!App::ImGuiManager@{App::ImGuiManager}}
+\doxysubsubsection{\texorpdfstring{GetClearColor()}{GetClearColor()}}
+{\footnotesize\ttfamily \label{class_app_1_1_im_gui_manager_a9f1c5749d6947644572766e52918f0cc} 
+Im\+Vec4 \& App\+::\+Im\+Gui\+Manager\+::\+Get\+Clear\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the background color for the Im\+Gui. 
+
+\begin{DoxyReturn}{Returns}
+Background color for the Im\+Gui.
+\end{DoxyReturn}
+Get the background color for Im\+Gui. \Hypertarget{class_app_1_1_im_gui_manager_af68463b62c8ab90c5e88f625c73aa8ef}\index{App::ImGuiManager@{App::ImGuiManager}!GetRenderSize@{GetRenderSize}}
+\index{GetRenderSize@{GetRenderSize}!App::ImGuiManager@{App::ImGuiManager}}
+\doxysubsubsection{\texorpdfstring{GetRenderSize()}{GetRenderSize()}}
+{\footnotesize\ttfamily \label{class_app_1_1_im_gui_manager_af68463b62c8ab90c5e88f625c73aa8ef} 
+Im\+Vec2 \& App\+::\+Im\+Gui\+Manager\+::\+Get\+Render\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the size of the render window. 
+
+\begin{DoxyReturn}{Returns}
+Size of the render window.
+\end{DoxyReturn}
+Get the size of the Im\+Gui render window. \Hypertarget{class_app_1_1_im_gui_manager_a4d63f2cebe41c02d8125676d19618396}\index{App::ImGuiManager@{App::ImGuiManager}!GetSimulationVariables@{GetSimulationVariables}}
+\index{GetSimulationVariables@{GetSimulationVariables}!App::ImGuiManager@{App::ImGuiManager}}
+\doxysubsubsection{\texorpdfstring{GetSimulationVariables()}{GetSimulationVariables()}}
+{\footnotesize\ttfamily \label{class_app_1_1_im_gui_manager_a4d63f2cebe41c02d8125676d19618396} 
+\mbox{\hyperlink{struct_app_1_1_thermodynamic_simulation_variables}{Thermodynamic\+Simulation\+Variables}} App\+::\+Im\+Gui\+Manager\+::\+Get\+Simulation\+Variables (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the simulation variables. 
+
+\begin{DoxyReturn}{Returns}
+Structure containing the simulation variables.
+\end{DoxyReturn}
+Get the simulation variables from the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}. \Hypertarget{class_app_1_1_im_gui_manager_a1b3ee66454a9c57781e33989c6093c0a}\index{App::ImGuiManager@{App::ImGuiManager}!NewFrame@{NewFrame}}
+\index{NewFrame@{NewFrame}!App::ImGuiManager@{App::ImGuiManager}}
+\doxysubsubsection{\texorpdfstring{NewFrame()}{NewFrame()}}
+{\footnotesize\ttfamily \label{class_app_1_1_im_gui_manager_a1b3ee66454a9c57781e33989c6093c0a} 
+void App\+::\+Im\+Gui\+Manager\+::\+New\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Generate a new frame for Im\+Gui. 
+
+Generate a new frame for Im\+Gui using Open\+GL and GLFW. \Hypertarget{class_app_1_1_im_gui_manager_aecdd089cc9b3b22e6f1243ae2e26a3de}\index{App::ImGuiManager@{App::ImGuiManager}!RenderDrawData@{RenderDrawData}}
+\index{RenderDrawData@{RenderDrawData}!App::ImGuiManager@{App::ImGuiManager}}
+\doxysubsubsection{\texorpdfstring{RenderDrawData()}{RenderDrawData()}}
+{\footnotesize\ttfamily \label{class_app_1_1_im_gui_manager_aecdd089cc9b3b22e6f1243ae2e26a3de} 
+void App\+::\+Im\+Gui\+Manager\+::\+Render\+Draw\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Render the Im\+Gui draw data. 
+
+Render the Im\+Gui draw data to the Open\+GL window. \Hypertarget{class_app_1_1_im_gui_manager_a84192d943202b68069810f64ca0611dc}\index{App::ImGuiManager@{App::ImGuiManager}!SetupDemoWindow@{SetupDemoWindow}}
+\index{SetupDemoWindow@{SetupDemoWindow}!App::ImGuiManager@{App::ImGuiManager}}
+\doxysubsubsection{\texorpdfstring{SetupDemoWindow()}{SetupDemoWindow()}}
+{\footnotesize\ttfamily \label{class_app_1_1_im_gui_manager_a84192d943202b68069810f64ca0611dc} 
+void App\+::\+Im\+Gui\+Manager\+::\+Setup\+Demo\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Setup Im\+Gui\textquotesingle{}s demo window. 
+
+Generate the demo window for Im\+Gui. This is based on the Im\+Gui demo in imgui\+\_\+demo.\+cpp. \Hypertarget{class_app_1_1_im_gui_manager_a0c4ed40ff891cdaa06546ef1df1fb8eb}\index{App::ImGuiManager@{App::ImGuiManager}!SetupWindow@{SetupWindow}}
+\index{SetupWindow@{SetupWindow}!App::ImGuiManager@{App::ImGuiManager}}
+\doxysubsubsection{\texorpdfstring{SetupWindow()}{SetupWindow()}}
+{\footnotesize\ttfamily \label{class_app_1_1_im_gui_manager_a0c4ed40ff891cdaa06546ef1df1fb8eb} 
+void App\+::\+Im\+Gui\+Manager\+::\+Setup\+Window (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_scene_1_1_texture}{Scene\+::\+Texture}} $>$}]{texture}{, }\item[{float}]{aspect\+\_\+ratio}{}\end{DoxyParamCaption})}
+
+
+
+Setup simulation window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & The texture to render in the window. \\
+\hline
+{\em aspect\+\_\+ratio} & The aspect ratio of the window.\\
+\hline
+\end{DoxyParams}
+Generate the application window. The is application dependent and will need to be changed for each application. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Physics\+Sim/src/graphics/\mbox{\hyperlink{_im_gui_manager_8hpp}{Im\+Gui\+Manager.\+hpp}}\item 
+Physics\+Sim/src/graphics/Im\+Gui\+Manager.\+cpp\end{DoxyCompactItemize}
