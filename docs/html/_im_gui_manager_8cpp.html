@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PhysicsSim: Member List</title>
+<title>PhysicsSim: PhysicsSim/src/graphics/ImGuiManager.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() { codefold.init(0); });
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('struct_simulation_items_1_1_particle_1_1_particle_impl.html',''); initResizable(true); });
+$(function(){initNavTree('_im_gui_manager_8cpp.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -102,25 +102,41 @@ $(function(){initNavTree('struct_simulation_items_1_1_particle_1_1_particle_impl
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">SimulationItems::Particle::ParticleImpl Member List</div></div>
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
+  <div class="headertitle"><div class="title">ImGuiManager.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>This is the complete list of members for <a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html">SimulationItems::Particle::ParticleImpl</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html#a76cb164a7d3d3ce782c198d7b8486be4">circle</a></td><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html">SimulationItems::Particle::ParticleImpl</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html#a3dfc7c1c564746b3d01d2bc56d06acbf">operator=</a>(const ParticleImpl &amp;other)=delete</td><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html">SimulationItems::Particle::ParticleImpl</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html#a3e38385c6aa28e86e2a72db9c726d3d1">operator=</a>(const ParticleImpl &amp;&amp;other)=delete</td><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html">SimulationItems::Particle::ParticleImpl</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html#aa49cb44ac3ca5050e338586f0f68b180">ParticleImpl</a>()=delete</td><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html">SimulationItems::Particle::ParticleImpl</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html#ad11747465c04d920a22f91c91234d396">ParticleImpl</a>(const ParticleImpl &amp;&amp;other)=delete</td><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html">SimulationItems::Particle::ParticleImpl</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html#a29323f779d53e78c091f19eddc4af3ca">ParticleImpl</a>(const float radius, const float x, const float y, const float z, const float red, const float green, const float blue)</td><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html">SimulationItems::Particle::ParticleImpl</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html#a2d5b75a86ca9e6492c3e86662f5aab74">ParticleImpl</a>(const ParticleImpl &amp;other)=default</td><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html">SimulationItems::Particle::ParticleImpl</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html#acc664cfc49e74f1ddf13d37a889ffa68">~ParticleImpl</a>()=default</td><td class="entry"><a class="el" href="struct_simulation_items_1_1_particle_1_1_particle_impl.html">SimulationItems::Particle::ParticleImpl</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<div class="textblock"><code>#include &quot;<a class="el" href="_im_gui_manager_8hpp_source.html">ImGuiManager.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_glfw_includes_8hpp_source.html">utils/GlfwIncludes.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_texture_8hpp_source.html">graphics/Texture.hpp</a>&quot;</code><br />
+<code>#include &quot;imgui.h&quot;</code><br />
+<code>#include &quot;imgui_internal.h&quot;</code><br />
+<code>#include &quot;backends/imgui_impl_glfw.h&quot;</code><br />
+<code>#include &quot;backends/imgui_impl_opengl3.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_app_1_1_thermodynamic_simulation_variables.html">App::ThermodynamicSimulationVariables</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to hold the thermodynamic simulation variables.  <a href="struct_app_1_1_thermodynamic_simulation_variables.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html">App::ImGuiManager::ImGuiManagerImpl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_app_1_1_im_gui_manager.html" title="ImGuiManager class.">ImGuiManager</a> PIMPL implementation structure.  <a href="struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_app.html">App</a></td></tr>
+<tr class="memdesc:namespace_app"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_app_1_1_application.html" title="Application class.">Application</a> namespace. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="dir_efa0be1464ff3d0b431aaf5bca6c9050.html">PhysicsSim</a></li><li class="navelem"><a class="el" href="dir_ed49fd3e41db6305d4fd034cf0107a0e.html">src</a></li><li class="navelem"><a class="el" href="dir_720cfc10202877f558f843bd694fedcf.html">graphics</a></li><li class="navelem"><a class="el" href="_im_gui_manager_8cpp.html">ImGuiManager.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

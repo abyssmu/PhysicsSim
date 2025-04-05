@@ -26,7 +26,12 @@ var NAVTREE =
 [
   [ "PhysicsSim", "index.html", [
     [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -43,7 +48,8 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Typedefs", "globals_type.html", null ]
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -52,8 +58,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_application_8cpp.html",
-"class_scene_1_1_texture.html#a904d50ff2ffb7c4aa2f4a75d9098e17b",
-"struct_object_1_1_box_1_1_box_impl.html#a39e7951eda9cce34be70e48d68b05b5c"
+"class_scene_1_1_shader.html#a851f641aed23337e421f56ce0cb23420",
+"struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html#ab51562ba3df0afd0eeda3564e659ac5e",
+"struct_simulation_1_1_thermodynamic_particle_simulator_1_1_thermodynamic_particle_simulator_impl.html#ae3d62a0da78e5d4a492d13fee5faf8dd"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

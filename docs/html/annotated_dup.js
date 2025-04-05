@@ -3,7 +3,7 @@ var annotated_dup =
     [ "App", "namespace_app.html", [
       [ "Application", "class_app_1_1_application.html", "class_app_1_1_application" ],
       [ "ImGuiManager", "class_app_1_1_im_gui_manager.html", "class_app_1_1_im_gui_manager" ],
-      [ "ThermodynamicSimulationVariables", "struct_app_1_1_thermodynamic_simulation_variables.html", null ]
+      [ "ThermodynamicSimulationVariables", "struct_app_1_1_thermodynamic_simulation_variables.html", "struct_app_1_1_thermodynamic_simulation_variables" ]
     ] ],
     [ "NewNamespace", "namespace_new_namespace.html", [
       [ "NewClass", "class_new_namespace_1_1_new_class.html", "class_new_namespace_1_1_new_class" ]
