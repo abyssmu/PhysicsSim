@@ -15,13 +15,10 @@
 
 //External forward declarations
 
-/// @brief Forward declaration of GLuint.
-typedef unsigned int GLuint;
-
 //Internal declarations
 
 /// @brief Scene namespace
-namespace Scene
+namespace Graphics
 {
 	//External fordward declarations
 
@@ -61,10 +58,16 @@ namespace Scene
 		//Member methods
 
 		/**
+		* @brief Get the error status of the shader.
+		* @return True if there is an error, false otherwise.
+		*/
+		bool GetErrorStatus() const;
+
+		/**
 		* @brief Get the OpenGL shader ID.
 		* @return The OpenGL shader ID.
 		*/
-		GLuint& GetShader();
+		unsigned int& GetGLFWShader();
 
 		//PIMPL idiom
 	private:

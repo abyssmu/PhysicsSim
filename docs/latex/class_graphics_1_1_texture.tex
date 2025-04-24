@@ -1,0 +1,201 @@
+\doxysection{Graphics\+::Texture Class Reference}
+\hypertarget{class_graphics_1_1_texture}{}\label{class_graphics_1_1_texture}\index{Graphics::Texture@{Graphics::Texture}}
+
+
+\doxylink{class_graphics_1_1_texture}{Texture} class.  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_graphics_1_1_texture_1_1_texture_impl}{Texture\+Impl}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_graphics_1_1_texture}{Texture} PIMPL implementation structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graphics_1_1_texture_a351d570908415234c8aa67d91f24b73f}{Texture}} (const \mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \& \mbox{\hyperlink{class_graphics_1_1_texture_af0cb79f937035a0baea0adf65597e296}{operator=}} (const \mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_texture_a27d52c8907510a2b507d31e4e9569c8d}{Texture}} (\mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \& \mbox{\hyperlink{class_graphics_1_1_texture_ae33b31ad422c2216513c7d97a0f96189}{operator=}} (const \mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_texture_aff07512e70878f488c8782686033f650}{Texture}} (const int \&width, const int \&height)
+\begin{DoxyCompactList}\small\item\em Custom constructor for the \doxylink{class_graphics_1_1_texture}{Texture} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_texture_af971000a9d74dae71ae6d7ca49c85f7c}{Texture}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_texture_a7a2d0f063054c5572980b4913395a78e}{\texorpdfstring{$\sim$}{\string~}\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_graphics_1_1_texture_aaf5cdf8c1a63a2005dbdf5ba9dadfd82}{Get\+Error\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Get the texture error status. \end{DoxyCompactList}\item 
+unsigned int \& \mbox{\hyperlink{class_graphics_1_1_texture_abc5ebf4e6007479905b29e98856909f1}{Get\+Texture\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the Open\+GL texture ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graphics_1_1_texture_a8074905f09c1807c93e29b655fea43c4}{Render}} ()
+\begin{DoxyCompactList}\small\item\em Render the texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graphics_1_1_texture_a403ceba0a68d04ff23ede6b26acee9ff}{Setup\+Framebuffer\+And\+Texture}} (const int \&width, const int \&height)
+\begin{DoxyCompactList}\small\item\em Setup the framebuffer and texture. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_graphics_1_1_texture_a661b3eb834a720620fc4af42d72736d4}{Get\+Aspect\+Ratio}} () const
+\begin{DoxyCompactList}\small\item\em Get the aspect ratio of the texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_graphics_1_1_texture}{Texture} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_graphics_1_1_texture_a351d570908415234c8aa67d91f24b73f}\index{Graphics::Texture@{Graphics::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_a351d570908415234c8aa67d91f24b73f} 
+Graphics\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy constructor. 
+
+\Hypertarget{class_graphics_1_1_texture_a27d52c8907510a2b507d31e4e9569c8d}\index{Graphics::Texture@{Graphics::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_a27d52c8907510a2b507d31e4e9569c8d} 
+Graphics\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted move constructor. 
+
+\Hypertarget{class_graphics_1_1_texture_aff07512e70878f488c8782686033f650}\index{Graphics::Texture@{Graphics::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_aff07512e70878f488c8782686033f650} 
+Graphics\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{const int \&}]{width}{, }\item[{const int \&}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Custom constructor for the \doxylink{class_graphics_1_1_texture}{Texture} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the texture. \\
+\hline
+{\em height} & The height of the texture.\\
+\hline
+\end{DoxyParams}
+Custom constructor for the \doxylink{class_graphics_1_1_texture}{Texture} class. Passes the width and height to the PIMPL implementation. \Hypertarget{class_graphics_1_1_texture_af971000a9d74dae71ae6d7ca49c85f7c}\index{Graphics::Texture@{Graphics::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_af971000a9d74dae71ae6d7ca49c85f7c} 
+Graphics\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+Default constructor for the \doxylink{class_graphics_1_1_texture}{Texture} class. \Hypertarget{class_graphics_1_1_texture_a7a2d0f063054c5572980b4913395a78e}\index{Graphics::Texture@{Graphics::Texture}!````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}}
+\index{````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Texture()}{\string~Texture()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_a7a2d0f063054c5572980b4913395a78e} 
+Graphics\+::\+Texture\+::\texorpdfstring{$\sim$}{\string~}\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+Default destructor for the \doxylink{class_graphics_1_1_texture}{Texture} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_graphics_1_1_texture_a661b3eb834a720620fc4af42d72736d4}\index{Graphics::Texture@{Graphics::Texture}!GetAspectRatio@{GetAspectRatio}}
+\index{GetAspectRatio@{GetAspectRatio}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{GetAspectRatio()}{GetAspectRatio()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_a661b3eb834a720620fc4af42d72736d4} 
+float Graphics\+::\+Texture\+::\+Get\+Aspect\+Ratio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the aspect ratio of the texture. 
+
+\begin{DoxyReturn}{Returns}
+The aspect ratio of the texture.
+\end{DoxyReturn}
+Get the aspect ratio of the texture. \Hypertarget{class_graphics_1_1_texture_aaf5cdf8c1a63a2005dbdf5ba9dadfd82}\index{Graphics::Texture@{Graphics::Texture}!GetErrorStatus@{GetErrorStatus}}
+\index{GetErrorStatus@{GetErrorStatus}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{GetErrorStatus()}{GetErrorStatus()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_aaf5cdf8c1a63a2005dbdf5ba9dadfd82} 
+bool Graphics\+::\+Texture\+::\+Get\+Error\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the texture error status. 
+
+\begin{DoxyReturn}{Returns}
+True if there is an error, false otherwise.
+\end{DoxyReturn}
+Get the error status of the texture. \Hypertarget{class_graphics_1_1_texture_abc5ebf4e6007479905b29e98856909f1}\index{Graphics::Texture@{Graphics::Texture}!GetTextureId@{GetTextureId}}
+\index{GetTextureId@{GetTextureId}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{GetTextureId()}{GetTextureId()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_abc5ebf4e6007479905b29e98856909f1} 
+unsigned int \& Graphics\+::\+Texture\+::\+Get\+Texture\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the Open\+GL texture ID. 
+
+\begin{DoxyReturn}{Returns}
+The Open\+GL texture ID.
+\end{DoxyReturn}
+Get the Open\+GL texture ID. \Hypertarget{class_graphics_1_1_texture_ae33b31ad422c2216513c7d97a0f96189}\index{Graphics::Texture@{Graphics::Texture}!operator=@{operator=}}
+\index{operator=@{operator=}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_ae33b31ad422c2216513c7d97a0f96189} 
+\mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \& Graphics\+::\+Texture\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted move assignment operator. 
+
+\Hypertarget{class_graphics_1_1_texture_af0cb79f937035a0baea0adf65597e296}\index{Graphics::Texture@{Graphics::Texture}!operator=@{operator=}}
+\index{operator=@{operator=}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_af0cb79f937035a0baea0adf65597e296} 
+\mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \& Graphics\+::\+Texture\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy assignment operator. 
+
+\Hypertarget{class_graphics_1_1_texture_a8074905f09c1807c93e29b655fea43c4}\index{Graphics::Texture@{Graphics::Texture}!Render@{Render}}
+\index{Render@{Render}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_a8074905f09c1807c93e29b655fea43c4} 
+void Graphics\+::\+Texture\+::\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Render the texture. 
+
+Render the texture with the texture\textquotesingle{}s variables. \Hypertarget{class_graphics_1_1_texture_a403ceba0a68d04ff23ede6b26acee9ff}\index{Graphics::Texture@{Graphics::Texture}!SetupFramebufferAndTexture@{SetupFramebufferAndTexture}}
+\index{SetupFramebufferAndTexture@{SetupFramebufferAndTexture}!Graphics::Texture@{Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{SetupFramebufferAndTexture()}{SetupFramebufferAndTexture()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_texture_a403ceba0a68d04ff23ede6b26acee9ff} 
+void Graphics\+::\+Texture\+::\+Setup\+Framebuffer\+And\+Texture (\begin{DoxyParamCaption}\item[{const int \&}]{width}{, }\item[{const int \&}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Setup the framebuffer and texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the texture. \\
+\hline
+{\em height} & The height of the texture.\\
+\hline
+\end{DoxyParams}
+Pass the width and height to the PIMPL implementation to setup the frame buffer and texture. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/graphics/\mbox{\hyperlink{_texture_8hpp}{Texture.\+hpp}}\item 
+src/graphics/\mbox{\hyperlink{_texture_8cpp}{Texture.\+cpp}}\end{DoxyCompactItemize}

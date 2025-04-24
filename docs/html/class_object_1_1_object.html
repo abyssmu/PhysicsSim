@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PhysicsSim: Object::Object Class Reference</title>
+<title>Physics Simulation: Object::Object Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">PhysicsSim
+   <div id="projectname">Physics Simulation
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -155,15 +155,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab1ce1a8d62c280fa04482622c73fecde" id="r_ab1ce1a8d62c280fa04482622c73fecde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1ce1a8d62c280fa04482622c73fecde">~Object</a> ()</td></tr>
 <tr class="memdesc:ab1ce1a8d62c280fa04482622c73fecde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:ab1ce1a8d62c280fa04482622c73fecde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad488ce33aac204503fa09a3dfe51a828" id="r_ad488ce33aac204503fa09a3dfe51a828"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad488ce33aac204503fa09a3dfe51a828">Draw</a> (<a class="el" href="_shader_8hpp.html#aa311c7f0d6ec4f1a33f9235c3651b86b">GLuint</a> shader) const</td></tr>
+<tr class="memitem:ad488ce33aac204503fa09a3dfe51a828" id="r_ad488ce33aac204503fa09a3dfe51a828"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad488ce33aac204503fa09a3dfe51a828">Draw</a> (<a class="el" href="_circle_8hpp.html#aa311c7f0d6ec4f1a33f9235c3651b86b">GLuint</a> shader) const</td></tr>
 <tr class="memdesc:ad488ce33aac204503fa09a3dfe51a828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the object with the given shader.  <br /></td></tr>
 <tr class="separator:ad488ce33aac204503fa09a3dfe51a828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b14cd470286cc766187a9dbda722023" id="r_a4b14cd470286cc766187a9dbda722023"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b14cd470286cc766187a9dbda722023">SetVertices</a> (std::vector&lt; glm::vec2 &gt; vertices)</td></tr>
 <tr class="memdesc:a4b14cd470286cc766187a9dbda722023"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the vertices of the object.  <br /></td></tr>
 <tr class="separator:a4b14cd470286cc766187a9dbda722023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae51ff70a88ddcf8deb93164ee109ee37" id="r_ae51ff70a88ddcf8deb93164ee109ee37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae51ff70a88ddcf8deb93164ee109ee37">GetNumVertices</a> () const</td></tr>
+<tr class="memdesc:ae51ff70a88ddcf8deb93164ee109ee37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of vertices in the object.  <br /></td></tr>
+<tr class="separator:ae51ff70a88ddcf8deb93164ee109ee37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a755df6cb788d72c52ecab1425d10d38b" id="r_a755df6cb788d72c52ecab1425d10d38b"><td class="memItemLeft" align="right" valign="top">glm::vec3 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a755df6cb788d72c52ecab1425d10d38b">GetPosition</a> () const</td></tr>
 <tr class="memdesc:a755df6cb788d72c52ecab1425d10d38b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the position of the object.  <br /></td></tr>
 <tr class="separator:a755df6cb788d72c52ecab1425d10d38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc1fed20fd03f10b5690e3b50ff0257c" id="r_acc1fed20fd03f10b5690e3b50ff0257c"><td class="memItemLeft" align="right" valign="top">glm::vec3 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc1fed20fd03f10b5690e3b50ff0257c">GetColor</a> () const</td></tr>
+<tr class="memdesc:acc1fed20fd03f10b5690e3b50ff0257c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the color of the object.  <br /></td></tr>
+<tr class="separator:acc1fed20fd03f10b5690e3b50ff0257c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8750ece794c33a38948bea1bff1f64e9" id="r_a8750ece794c33a38948bea1bff1f64e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_circle_8hpp.html#aa311c7f0d6ec4f1a33f9235c3651b86b">GLuint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8750ece794c33a38948bea1bff1f64e9">GetVBO</a> () const</td></tr>
+<tr class="memdesc:a8750ece794c33a38948bea1bff1f64e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vertex buffer array object.  <br /></td></tr>
+<tr class="separator:a8750ece794c33a38948bea1bff1f64e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e6a1154c6db9f7dd02aeaff5a2a2e3" id="r_a75e6a1154c6db9f7dd02aeaff5a2a2e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_circle_8hpp.html#aa311c7f0d6ec4f1a33f9235c3651b86b">GLuint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75e6a1154c6db9f7dd02aeaff5a2a2e3">GetVAO</a> () const</td></tr>
+<tr class="memdesc:a75e6a1154c6db9f7dd02aeaff5a2a2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vertex array object.  <br /></td></tr>
+<tr class="separator:a75e6a1154c6db9f7dd02aeaff5a2a2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -349,7 +361,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Object::Object::Draw </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_shader_8hpp.html#aa311c7f0d6ec4f1a33f9235c3651b86b">GLuint</a></td>          <td class="paramname"><span class="paramname"><em>shader</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="_circle_8hpp.html#aa311c7f0d6ec4f1a33f9235c3651b86b">GLuint</a></td>          <td class="paramname"><span class="paramname"><em>shader</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -363,6 +375,48 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <p>Draws the object with the given shader. Sets the color and model matrix and then binds the vertex array object. Draws the object using the triangle fan. </p>
+
+</div>
+</div>
+<a id="acc1fed20fd03f10b5690e3b50ff0257c" name="acc1fed20fd03f10b5690e3b50ff0257c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc1fed20fd03f10b5690e3b50ff0257c">&#9670;&#160;</a></span>GetColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 &amp; Object::Object::GetColor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the color of the object. </p>
+<dl class="section return"><dt>Returns</dt><dd>GLM vector of the object's color.</dd></dl>
+<p>Get the color of the object. Returns a reference to the color. </p>
+
+</div>
+</div>
+<a id="ae51ff70a88ddcf8deb93164ee109ee37" name="ae51ff70a88ddcf8deb93164ee109ee37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae51ff70a88ddcf8deb93164ee109ee37">&#9670;&#160;</a></span>GetNumVertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Object::Object::GetNumVertices </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of vertices in the object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of vertices in the object.</dd></dl>
+<p>Get the number of vertices in the object. </p>
 
 </div>
 </div>
@@ -383,7 +437,49 @@ Protected Attributes</h2></td></tr>
 
 <p>Get the position of the object. </p>
 <dl class="section return"><dt>Returns</dt><dd>GLM vector of the object's position.</dd></dl>
-<p>Gets the position of the object. Returns a reference to the position. </p>
+<p>Get the position of the object. Returns a reference to the position. </p>
+
+</div>
+</div>
+<a id="a75e6a1154c6db9f7dd02aeaff5a2a2e3" name="a75e6a1154c6db9f7dd02aeaff5a2a2e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e6a1154c6db9f7dd02aeaff5a2a2e3">&#9670;&#160;</a></span>GetVAO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_circle_8hpp.html#aa311c7f0d6ec4f1a33f9235c3651b86b">GLuint</a> &amp; Object::Object::GetVAO </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the vertex array object. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the vertex array object.</dd></dl>
+<p>Gets the vertex array object. Returns a reference to the vertex array object. </p>
+
+</div>
+</div>
+<a id="a8750ece794c33a38948bea1bff1f64e9" name="a8750ece794c33a38948bea1bff1f64e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8750ece794c33a38948bea1bff1f64e9">&#9670;&#160;</a></span>GetVBO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_circle_8hpp.html#aa311c7f0d6ec4f1a33f9235c3651b86b">GLuint</a> &amp; Object::Object::GetVBO </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the vertex buffer array object. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the vertex buffer array object.</dd></dl>
+<p>Gets the vertex buffer object. Returns a reference to the vertex buffer object. </p>
 
 </div>
 </div>
@@ -493,8 +589,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>PhysicsSim/src/objects/<a class="el" href="_object_8hpp_source.html">Object.hpp</a></li>
-<li>PhysicsSim/src/objects/<a class="el" href="_object_8cpp.html">Object.cpp</a></li>
+<li>src/graphics/objects/<a class="el" href="_object_8hpp_source.html">Object.hpp</a></li>
+<li>src/graphics/objects/<a class="el" href="_object_8cpp.html">Object.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -6,9 +6,9 @@
 */
 
 #include "Application.hpp"
+#include "ImGuiManager.hpp"
 
 #include "utils/GlfwIncludes.hpp"
-#include "graphics/ImGuiManager.hpp"
 #include "graphics/Scene.hpp"
 #include "objects/Object.hpp"
 #include "simulation/Simulation.hpp"
@@ -87,7 +87,7 @@ namespace App
 		/// @brief Unique pointer to the ImGuiManager.
 		std::unique_ptr<ImGuiManager> imgui;
 		/// @brief Unique pointer to the Scene.
-		std::unique_ptr<Scene::Scene> scene;
+		std::unique_ptr<Graphics::Scene> scene;
 		/// @brief Unique pointer to the ThermodynamicParticleSimulator.
 		std::unique_ptr<Simulation::ThermodynamicParticleSimulator> simulation;
 		/// @brief The width of the simulation box as a percentage of the window.
@@ -106,9 +106,9 @@ namespace App
 		const int& width,
 		const int& height)
 	{
-		scene = std::make_unique<Scene::Scene>(name, width, height);
+		scene = std::make_unique<Graphics::Scene>(name, width, height);
 
-		//If the scene creation failed, return false to exit program
+		// If the scene creation failed, return false to exit program
 		if (scene->GetWindow() == nullptr) return false;
 
 		imgui = std::make_unique<ImGuiManager>(
@@ -116,7 +116,7 @@ namespace App
 			scene->GetWindow(),
 			scene->GetGlslVersion());
 
-		//If the ImGuiManager creation failed, return false to exit program
+		// If the ImGuiManager creation failed, return false to exit program
 		if (imgui == nullptr) return false;
 
 		return true;
@@ -136,43 +136,43 @@ namespace App
 	*/
 	void Application::ApplicationImpl::Run(bool demo)
 	{
-		//Check each frame if the window should close
+		// Check each frame if the window should close
 		while (!scene->WindowShouldClose())
 		{
-			//Poll GLFW events for input processing
+			// Poll GLFW events for input processing
 			glfwPollEvents();
 
-			//If the window is minimized, prevent rendering
+			// If the window is minimized, prevent rendering
 			if (glfwGetWindowAttrib(scene->GetWindow(), GLFW_ICONIFIED) != 0)
 			{
 				ImGui_ImplGlfw_Sleep(10);
 				continue;
 			}
 
-			//Create new ImGui frame
+			// Create new ImGui frame
 			imgui->NewFrame();
 
-			//Render either the demo or the actual application window
+			// Render either the demo or the actual application window
 			if (demo) imgui->SetupDemoWindow();
 			else
 			{
-				//Build the ImGui UI dockspace and framework for rendering
-				imgui->SetupWindow(scene->GetTexture(),
-									scene->GetTextureAspectRatio());
+				// Build the ImGui UI dockspace and framework for rendering
+				imgui->SetupWindow(scene->GetTexture(), scene->GetTextureAspectRatio());
 			}
 
-			//Check for ImGui state changes
+			// Check for ImGui state changes
 			std::string& current_state = imgui->CheckForStateChanged();
 			if (current_state == "InitThermoSim")
 			{
-				//Create the simulation object
+				// Get the simulation variables from the ImGuiManager
 				ThermodynamicSimulationVariables vars =
 					imgui->GetSimulationVariables();
 
-				if (simulation != nullptr)
-				{
-					simulation->ClearParticles();
-					simulation->UpdateThermodynamicSimulation(
+				// Clear the simulation if it exists
+				if (simulation != nullptr) simulation.release();
+
+				// Setup the simulation with the parameters from the ImGuiManager
+				simulation = std::make_unique<Simulation::ThermodynamicParticleSimulator>(
 						vars.num_particles,
 						vars.box_width_perc,
 						vars.box_height_perc,
@@ -180,18 +180,11 @@ namespace App
 						vars.temperature,
 						vars.chem_potential,
 						vars.radius);
-				}
-				else
-				{
-					simulation = std::make_unique<Simulation::ThermodynamicParticleSimulator>(
-						vars.num_particles,
-						vars.box_width_perc,
-						vars.box_height_perc,
-						vars.energy_value,
-						vars.temperature,
-						vars.chem_potential,
-						vars.radius);
-				}
+
+				// Pass the simulation instance data to the RenderManager
+				scene->SetThermodynamicParticlesInstanceData(
+					simulation->GetParticleInstanceData(),
+					vars.radius);
 
 				box_width_perc = vars.box_width_perc;
 				box_height_perc = vars.box_height_perc;
@@ -210,18 +203,18 @@ namespace App
 				ThermodynamicSimulationVariables vars =
 					imgui->GetSimulationVariables();
 
-				//Render the texture for the ImGui render window
-				scene->RenderTexture(
-					simulation->GetParticleCircles(),
-					box_height_perc,
-					box_width_perc);
+				// Render the texture for the ImGui render window
+				scene->RenderTexture();
+				scene->RenderThermodynamicSimulationItems(
+					box_width_perc,
+					box_height_perc);
 			}
 
-			//Get ImGui background color and render scene
+			// Get ImGui background color and render scene
 			ImVec4& cc = imgui->GetClearColor();
 			scene->Render(cc.x * cc.w, cc.y * cc.w, cc.z * cc.w, cc.w);
 
-			//Draw ImGui to OpenGL window and swap buffers to present frame to screen
+			// Draw ImGui to OpenGL window and swap buffers to present frame to screen
 			imgui->RenderDrawData();
 			scene->SwapBuffers();
 		}

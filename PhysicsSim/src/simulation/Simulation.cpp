@@ -6,10 +6,13 @@
 */
 
 #include "Simulation.hpp"
-
-#include "objects/Circle.hpp"
-#include "objects/Object.hpp"
 #include "Particle.hpp"
+
+#include "graphics/Shader.hpp"
+#include "graphics/objects/Object.hpp"
+
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/type_ptr.hpp"
 
 #include <random>
 
@@ -83,8 +86,6 @@ namespace Simulation
 
 		/// @brief Vector of particles in the simulation
 		std::vector<std::shared_ptr<SimulationItems::Particle>> particles;
-		/// @brief Vector of circles representing the particles in the simulation
-		std::vector<std::shared_ptr<Object::Object>> circles;
 	};
 
 	/**
@@ -126,34 +127,42 @@ namespace Simulation
 		const float chem_potential,
 		const float radius)
 	{
-		const float width = 1.50f;
-		const float width_perc = float(box_width_perc) / 100.0f;
-		const float height = 0.90f;
-		const float height_perc = float(box_height_perc) / 100.0f;
+		particles.clear();
+
+		/*
+		* Setup the particles using uniform distribution for the X and Y
+		* coordinates. With the given width and height percentages as the limits.
+		* 
+		*/
+		const float width_perc = float(box_width_perc) / 100.0f * 0.90f;
+		const float height_perc = float(box_height_perc) / 100.0f * 0.90f;
 		std::random_device rd;
 		std::mt19937 gen(rd());
-		std::uniform_real_distribution<float> xdis(
-			-width * width_perc,
-			width * width_perc);
-		std::uniform_real_distribution<float> ydis(
-			-height * height_perc,
-			height * height_perc);
+		std::uniform_real_distribution<float> xdis(-width_perc, width_perc);
+		std::uniform_real_distribution<float> ydis(-height_perc, height_perc);
 		for (int i = 0; i < num_particles; i++)
 		{
 			float x = xdis(gen);
 			float y = ydis(gen);
 			float z = 0.0f;
+			float red = 1.0f;
+			float green = 0.0f;
+			float blue = 0.0f;
+			float x_scale = 1.0f;
+			float y_scale = 1.0f;
+			float z_scale = 1.0f;
 			std::shared_ptr<SimulationItems::Particle> p =
 				std::make_shared<SimulationItems::Particle>(
-					radius,
 					x,
 					y,
 					z,
-					1.0f,
-					0.0f,
-					0.0f);
+					red,
+					green,
+					blue,
+					x_scale,
+					y_scale,
+					z_scale);
 			particles.push_back(p);
-			circles.push_back(particles[i]->GetCircle());
 		}
 	}
 
@@ -168,6 +177,14 @@ namespace Simulation
 	* Default destructor for the ThermodynamicParticleSimulator class.
 	*/
 	ThermodynamicParticleSimulator::~ThermodynamicParticleSimulator() = default;
+
+	/**
+	* @details
+	* Empty the vector of particles
+	*/
+	void ThermodynamicParticleSimulator::ClearParticles()
+	{
+	}
 
 	/**
 	* @details
@@ -194,23 +211,26 @@ namespace Simulation
 
 	/**
 	* @details
-	* Clear the particles in the simulation. Clears both the particle and circle
-	* vectors in the PIMPL implementation.
+	* Generate and return the instance data for the particles.
 	*/
-	void ThermodynamicParticleSimulator::ClearParticles()
+	std::vector<float> ThermodynamicParticleSimulator::GetParticleInstanceData()
 	{
-		_thermodynamic_impl->particles.clear();
-		_thermodynamic_impl->circles.clear();
-	}
+		std::vector<float> out;
 
-	/**
-	* @details
-	* Get the particle circles in the simulation. Returns a reference to the
-	* vector of circles in the PIMPL implementation.
-	*/
-	std::vector<std::shared_ptr<Object::Object>>& ThermodynamicParticleSimulator::GetParticleCircles()
-	{
-		return _thermodynamic_impl->circles;
+		for (const auto& particle : _thermodynamic_impl->particles)
+		{
+			auto p = particle->GetPosition();
+			auto c = particle->GetColor();
+			auto s = particle->GetScale();
+			out.insert(out.end(), p.begin(), p.end());
+			out.push_back(1.0f);
+			out.insert(out.end(), c.begin(), c.end());
+			out.push_back(1.0f);
+			out.insert(out.end(), s.begin(), s.end());
+			out.push_back(1.0f);
+		}
+
+		return out;
 	}
 
 	/**

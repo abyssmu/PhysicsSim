@@ -7,7 +7,7 @@
 
 #include "Particle.hpp"
 
-#include "objects/Circle.hpp"
+#include "graphics/objects/Circle.hpp"
 
 /// @brief Simulation namespace
 namespace Simulation
@@ -41,15 +41,20 @@ namespace Simulation
 			* @param red The red color value of the particle.
 			* @param green The green color value of the particle.
 			* @param blue The blue color value of the particle.
+			* @param x_scale The x scale value of the particle.
+			* @param y_scale The y scale value of the particle.
+			* @param z_scale The z scale value of the particle.
 			*/
 			ParticleImpl(
-				const float radius,
 				const float x,
 				const float y,
 				const float z,
 				const float red,
 				const float green,
-				const float blue);
+				const float blue,
+				const float x_scale,
+				const float y_scale,
+				const float z_scale);
 
 			//Default constructors/destructor
 
@@ -63,43 +68,54 @@ namespace Simulation
 
 			//Member variables
 
-			/// @brief Circle object representing the particle.
-			std::shared_ptr<Object::Object> circle;
+			/// @brief Position vector of the particle.
+			std::vector<float> position;
+			/// @brief Color vector of the particle.
+			std::vector<float> color;
+			/// @brief Scale vector of the particle.
+			std::vector<float> scale;
 		};
 
 		/**
 		* @details
-		* Custom constructor for the ParticleImpl class. Passes the radius, position,
-		* and color values to the Circle constructor.
+		* Custom constructor for the ParticleImpl class. Initializes position,
+		* color, and scale via lists with the corresponding parameters.
 		*/
 		Particle::ParticleImpl::ParticleImpl(
-			const float radius,
 			const float x,
 			const float y,
 			const float z,
 			const float red,
 			const float green,
-			const float blue) :
-			circle(std::make_shared<Object::Circle>(radius, x, y, z, red, green, blue))
-		{
-		}
+			const float blue,
+			const float x_scale,
+			const float y_scale,
+			const float z_scale) :
+			position({ x, y, z }),
+			color({ red, green, blue }),
+			scale({ x_scale, y_scale, z_scale })
+		{}
 
 		/**
 		* @details
-		* Custom constructor for the Particle class. Passes the radius, position, and
-		* color values to the ParticleImpl constructor.
+		* Custom constructor for the Particle class. Passes the position, color
+		* and scale values to the ParticleImpl constructor.
 		*/
 		Particle::Particle(
-			const float radius,
 			const float x,
 			const float y,
 			const float z,
 			const float red,
 			const float green,
-			const float blue) :
-			_impl(std::make_unique<ParticleImpl>(radius, x, y, z, red, green, blue))
-		{
-		}
+			const float blue,
+			const float x_scale,
+			const float y_scale,
+			const float z_scale) :
+			_impl(std::make_unique<ParticleImpl>(
+				x, y, z,
+				red, green, blue,
+				x_scale, y_scale, z_scale))
+		{}
 
 		/**
 		* @details
@@ -115,11 +131,30 @@ namespace Simulation
 
 		/**
 		* @details
-		* Get the circle object representing the particle.
+		* Get the position vector of the particle. The order of the vector is
+		* x, y, z.
 		*/
-		std::shared_ptr<Object::Object> Particle::GetCircle()
+		std::vector<float> Particle::GetPosition() const
 		{
-			return _impl->circle;
+			return _impl->position;
+		}
+
+		/**
+		* @details
+		* Get the color vector of the particle. The order of the vector is r, g, b.
+		*/
+		std::vector<float> Particle::GetColor() const
+		{
+			return _impl->color;
+		}
+
+		/**
+		* @details
+		* Get the scale vector of the particle. The order of the vector is x, y, z.
+		*/
+		std::vector<float> Particle::GetScale() const
+		{
+			return _impl->scale;
 		}
 	}
 }

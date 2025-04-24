@@ -32,9 +32,9 @@ struct \mbox{\hyperlink{struct_simulation_1_1_thermodynamic_particle_simulator_1
 \mbox{\hyperlink{class_simulation_1_1_thermodynamic_particle_simulator_a0d45bf5cb0116838a965603bbc1062e5}{\texorpdfstring{$\sim$}{\string~}\+Thermodynamic\+Particle\+Simulator}} ()
 \begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_simulation_1_1_thermodynamic_particle_simulator}{Thermodynamic\+Particle\+Simulator} class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_1_1_thermodynamic_particle_simulator_af7be21bf9ebcd566e0f28c3ed605dd6b}{Clear\+Particles}} ()
-\begin{DoxyCompactList}\small\item\em Clear the particles in the simulation. \end{DoxyCompactList}\item 
-std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_object_1_1_object}{Object\+::\+Object}} $>$ $>$ \& \mbox{\hyperlink{class_simulation_1_1_thermodynamic_particle_simulator_a0e9bd86b01f40d8997b49643d59c7ffa}{Get\+Particle\+Circles}} ()
-\begin{DoxyCompactList}\small\item\em Get the particle circles in the simulation. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Clear particle data. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{class_simulation_1_1_thermodynamic_particle_simulator_a420c92da3320310e23ef808542fc6709}{Get\+Particle\+Instance\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Get particle instance data. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simulation_1_1_thermodynamic_particle_simulator_aeaedc86871c14acaa85687423d214016}{Update\+Thermodynamic\+Simulation}} (const int num\+\_\+particles, const int box\+\_\+width\+\_\+perc, const int box\+\_\+height\+\_\+perc, const float energy\+\_\+value, const float temperature, const float chem\+\_\+potential, const float radius)
 \begin{DoxyCompactList}\small\item\em Update the thermodynamic simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -121,22 +121,22 @@ void Simulation\+::\+Thermodynamic\+Particle\+Simulator\+::\+Clear\+Particles (\
 
 
 
-Clear the particles in the simulation. 
+Clear particle data. 
 
-Clear the particles in the simulation. Clears both the particle and circle vectors in the PIMPL implementation. \Hypertarget{class_simulation_1_1_thermodynamic_particle_simulator_a0e9bd86b01f40d8997b49643d59c7ffa}\index{Simulation::ThermodynamicParticleSimulator@{Simulation::ThermodynamicParticleSimulator}!GetParticleCircles@{GetParticleCircles}}
-\index{GetParticleCircles@{GetParticleCircles}!Simulation::ThermodynamicParticleSimulator@{Simulation::ThermodynamicParticleSimulator}}
-\doxysubsubsection{\texorpdfstring{GetParticleCircles()}{GetParticleCircles()}}
-{\footnotesize\ttfamily \label{class_simulation_1_1_thermodynamic_particle_simulator_a0e9bd86b01f40d8997b49643d59c7ffa} 
-std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_object_1_1_object}{Object\+::\+Object}} $>$ $>$ \& Simulation\+::\+Thermodynamic\+Particle\+Simulator\+::\+Get\+Particle\+Circles (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+Empty the vector of particles \Hypertarget{class_simulation_1_1_thermodynamic_particle_simulator_a420c92da3320310e23ef808542fc6709}\index{Simulation::ThermodynamicParticleSimulator@{Simulation::ThermodynamicParticleSimulator}!GetParticleInstanceData@{GetParticleInstanceData}}
+\index{GetParticleInstanceData@{GetParticleInstanceData}!Simulation::ThermodynamicParticleSimulator@{Simulation::ThermodynamicParticleSimulator}}
+\doxysubsubsection{\texorpdfstring{GetParticleInstanceData()}{GetParticleInstanceData()}}
+{\footnotesize\ttfamily \label{class_simulation_1_1_thermodynamic_particle_simulator_a420c92da3320310e23ef808542fc6709} 
+std\+::vector$<$ float $>$ Simulation\+::\+Thermodynamic\+Particle\+Simulator\+::\+Get\+Particle\+Instance\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Get the particle circles in the simulation. 
+Get particle instance data. 
 
 \begin{DoxyReturn}{Returns}
-A vector of shared pointers to the particle circles.
+Vector of floats representing the instance data of the particles.
 \end{DoxyReturn}
-Get the particle circles in the simulation. Returns a reference to the vector of circles in the PIMPL implementation. \Hypertarget{class_simulation_1_1_thermodynamic_particle_simulator_a35d84c9b286ecb7ebc16a7f1c363f991}\index{Simulation::ThermodynamicParticleSimulator@{Simulation::ThermodynamicParticleSimulator}!operator=@{operator=}}
+Generate and return the instance data for the particles. \Hypertarget{class_simulation_1_1_thermodynamic_particle_simulator_a35d84c9b286ecb7ebc16a7f1c363f991}\index{Simulation::ThermodynamicParticleSimulator@{Simulation::ThermodynamicParticleSimulator}!operator=@{operator=}}
 \index{operator=@{operator=}!Simulation::ThermodynamicParticleSimulator@{Simulation::ThermodynamicParticleSimulator}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{class_simulation_1_1_thermodynamic_particle_simulator_a35d84c9b286ecb7ebc16a7f1c363f991} 
@@ -187,5 +187,5 @@ Update the thermodynamics simulation. Passes the parameters to the Setup\+Simula
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Physics\+Sim/src/simulation/\mbox{\hyperlink{_simulation_8hpp}{Simulation.\+hpp}}\item 
-Physics\+Sim/src/simulation/\mbox{\hyperlink{_simulation_8cpp}{Simulation.\+cpp}}\end{DoxyCompactItemize}
+src/simulation/\mbox{\hyperlink{_simulation_8hpp}{Simulation.\+hpp}}\item 
+src/simulation/\mbox{\hyperlink{_simulation_8cpp}{Simulation.\+cpp}}\end{DoxyCompactItemize}

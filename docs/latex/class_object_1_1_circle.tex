@@ -56,12 +56,20 @@ float \mbox{\hyperlink{class_object_1_1_circle_ab8427ba0b0de47dc5137dd2c7a62b706
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_object_1_1_object_ab1ce1a8d62c280fa04482622c73fecde}{\texorpdfstring{$\sim$}{\string~}\+Object}} ()
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_object_1_1_object_ad488ce33aac204503fa09a3dfe51a828}{Draw}} (\mbox{\hyperlink{_shader_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} shader) const
+void \mbox{\hyperlink{class_object_1_1_object_ad488ce33aac204503fa09a3dfe51a828}{Draw}} (\mbox{\hyperlink{_circle_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} shader) const
 \begin{DoxyCompactList}\small\item\em Draw the object with the given shader. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_object_1_1_object_a4b14cd470286cc766187a9dbda722023}{Set\+Vertices}} (std\+::vector$<$ glm\+::vec2 $>$ vertices)
 \begin{DoxyCompactList}\small\item\em Set the vertices of the object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_object_1_1_object_ae51ff70a88ddcf8deb93164ee109ee37}{Get\+Num\+Vertices}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of vertices in the object. \end{DoxyCompactList}\item 
 glm\+::vec3 \& \mbox{\hyperlink{class_object_1_1_object_a755df6cb788d72c52ecab1425d10d38b}{Get\+Position}} () const
-\begin{DoxyCompactList}\small\item\em Get the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the position of the object. \end{DoxyCompactList}\item 
+glm\+::vec3 \& \mbox{\hyperlink{class_object_1_1_object_acc1fed20fd03f10b5690e3b50ff0257c}{Get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the color of the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_circle_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} \& \mbox{\hyperlink{class_object_1_1_object_a8750ece794c33a38948bea1bff1f64e9}{Get\+VBO}} () const
+\begin{DoxyCompactList}\small\item\em Get the vertex buffer array object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_circle_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}} \& \mbox{\hyperlink{class_object_1_1_object_a75e6a1154c6db9f7dd02aeaff5a2a2e3}{Get\+VAO}} () const
+\begin{DoxyCompactList}\small\item\em Get the vertex array object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_object_1_1_object}{Object\+::\+Object}}}
 \begin{DoxyCompactItemize}
@@ -181,5 +189,5 @@ Deleted copy assignment operator.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Physics\+Sim/src/objects/\mbox{\hyperlink{_circle_8hpp}{Circle.\+hpp}}\item 
-Physics\+Sim/src/objects/\mbox{\hyperlink{_circle_8cpp}{Circle.\+cpp}}\end{DoxyCompactItemize}
+src/graphics/objects/\mbox{\hyperlink{_circle_8hpp}{Circle.\+hpp}}\item 
+src/graphics/objects/\mbox{\hyperlink{_circle_8cpp}{Circle.\+cpp}}\end{DoxyCompactItemize}

@@ -1,27 +1,32 @@
-\doxysection{Physics\+Sim/src/graphics/\+Scene.cpp File Reference}
-\hypertarget{_scene_8cpp}{}\label{_scene_8cpp}\index{PhysicsSim/src/graphics/Scene.cpp@{PhysicsSim/src/graphics/Scene.cpp}}
+\doxysection{src/graphics/\+Scene.cpp File Reference}
+\hypertarget{_scene_8cpp}{}\label{_scene_8cpp}\index{src/graphics/Scene.cpp@{src/graphics/Scene.cpp}}
 
 
-Function definitions for the \doxylink{namespace_scene}{Scene} class. Uses the PIMPL idiom to hide implementation details.  
+Function definitions for the Scene class. Uses the PIMPL idiom to hide implementation details.  
 
 
 {\ttfamily \#include "{}Scene.\+hpp"{}}\newline
+{\ttfamily \#include "{}Simulation\+Render\+Items.\+hpp"{}}\newline
+{\ttfamily \#include "{}Thermodynamics\+Render\+Items.\+hpp"{}}\newline
 {\ttfamily \#include "{}utils/\+Glfw\+Includes.\+hpp"{}}\newline
-{\ttfamily \#include "{}graphics/\+Render\+Manager.\+hpp"{}}\newline
-{\ttfamily \#include "{}graphics/\+Window\+Manager.\+hpp"{}}\newline
-{\ttfamily \#include "{}objects/\+Object.\+hpp"{}}\newline
+{\ttfamily \#include "{}graphics/\+Shader.\+hpp"{}}\newline
+{\ttfamily \#include "{}graphics/\+Texture.\+hpp"{}}\newline
+{\ttfamily \#include "{}glm/glm.\+hpp"{}}\newline
+{\ttfamily \#include "{}glm/gtc/matrix\+\_\+transform.\+hpp"{}}\newline
+{\ttfamily \#include "{}glm/gtc/type\+\_\+ptr.\+hpp"{}}\newline
+{\ttfamily \#include "{}spdlog/spdlog.\+h"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_scene_1_1_scene_1_1_scene_impl}{Scene\+::\+Scene\+::\+Scene\+Impl}}
-\begin{DoxyCompactList}\small\item\em \doxylink{class_scene_1_1_scene}{Scene} PIMPL implementation structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+struct \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Graphics\+::\+Scene\+::\+Scene\+Impl}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_graphics_1_1_scene}{Scene} PIMPL implementation structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-namespace \mbox{\hyperlink{namespace_scene}{Scene}}
-\begin{DoxyCompactList}\small\item\em Forward declaration of \doxylink{class_scene_1_1_scene}{Scene} namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+namespace \mbox{\hyperlink{namespace_graphics}{Graphics}}
+\begin{DoxyCompactList}\small\item\em Forward declaration of \doxylink{class_graphics_1_1_scene}{Scene} namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Function definitions for the \doxylink{namespace_scene}{Scene} class. Uses the PIMPL idiom to hide implementation details. 
+Function definitions for the Scene class. Uses the PIMPL idiom to hide implementation details. 
 

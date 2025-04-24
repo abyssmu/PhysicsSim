@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PhysicsSim: PhysicsSim/src/graphics/ImGuiManager.hpp Source File</title>
+<title>Physics Simulation: src/core/ImGuiManager.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">PhysicsSim
+   <div id="projectname">Physics Simulation
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -121,9 +121,9 @@ $(function(){initNavTree('_im_gui_manager_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">struct </span>ImVec2;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">struct </span>ImVec4;</div>
 <div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespace_scene.html">   25</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_scene.html">Scene</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespace_graphics.html">   25</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_graphics.html">Graphics</a></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">class </span><a class="code hl_class" href="class_scene_1_1_texture.html">Texture</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">class </span><a class="code hl_class" href="class_graphics_1_1_texture.html">Texture</a>;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
 </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
@@ -170,8 +170,8 @@ $(function(){initNavTree('_im_gui_manager_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="comment">//Application specific methods</span></div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_app_1_1_im_gui_manager.html#a0c4ed40ff891cdaa06546ef1df1fb8eb">SetupWindow</a>(</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            std::shared_ptr&lt;Scene::Texture&gt; texture,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_app_1_1_im_gui_manager.html#a7e165fd6a18b45884bfe3be1d811726d">SetupWindow</a>(</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            std::shared_ptr&lt;Graphics::Texture&gt; texture,</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="keywordtype">float</span> aspect_ratio);</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="comment">//Simulation methods</span></div>
@@ -190,11 +190,11 @@ $(function(){initNavTree('_im_gui_manager_8hpp_source.html',''); initResizable(t
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_app_1_1_im_gui_manager_html_a0947b6e3433c7f8425a85e497bb82e50"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#a0947b6e3433c7f8425a85e497bb82e50">App::ImGuiManager::operator=</a></div><div class="ttdeci">ImGuiManager &amp; operator=(const ImGuiManager &amp;&amp;other)=delete</div><div class="ttdoc">Deleted move assignment operator.</div></div>
-<div class="ttc" id="aclass_app_1_1_im_gui_manager_html_a0c4ed40ff891cdaa06546ef1df1fb8eb"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#a0c4ed40ff891cdaa06546ef1df1fb8eb">App::ImGuiManager::SetupWindow</a></div><div class="ttdeci">void SetupWindow(std::shared_ptr&lt; Scene::Texture &gt; texture, float aspect_ratio)</div><div class="ttdoc">Setup simulation window.</div><div class="ttdef"><b>Definition</b> ImGuiManager.cpp:731</div></div>
 <div class="ttc" id="aclass_app_1_1_im_gui_manager_html_a1b3ee66454a9c57781e33989c6093c0a"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#a1b3ee66454a9c57781e33989c6093c0a">App::ImGuiManager::NewFrame</a></div><div class="ttdeci">void NewFrame()</div><div class="ttdoc">Generate a new frame for ImGui.</div><div class="ttdef"><b>Definition</b> ImGuiManager.cpp:638</div></div>
 <div class="ttc" id="aclass_app_1_1_im_gui_manager_html_a38fdd5c6cf48c8984940fae9da0d32ae"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#a38fdd5c6cf48c8984940fae9da0d32ae">App::ImGuiManager::CheckForStateChanged</a></div><div class="ttdeci">std::string &amp; CheckForStateChanged()</div><div class="ttdoc">Check for state change in the ImGuiManager.</div><div class="ttdef"><b>Definition</b> ImGuiManager.cpp:747</div></div>
 <div class="ttc" id="aclass_app_1_1_im_gui_manager_html_a448af8a5fc2ee9aef6aa47d9888fa019"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#a448af8a5fc2ee9aef6aa47d9888fa019">App::ImGuiManager::ImGuiManager</a></div><div class="ttdeci">ImGuiManager()</div><div class="ttdoc">Default constructor.</div></div>
 <div class="ttc" id="aclass_app_1_1_im_gui_manager_html_a4d63f2cebe41c02d8125676d19618396"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#a4d63f2cebe41c02d8125676d19618396">App::ImGuiManager::GetSimulationVariables</a></div><div class="ttdeci">ThermodynamicSimulationVariables GetSimulationVariables()</div><div class="ttdoc">Get the simulation variables.</div><div class="ttdef"><b>Definition</b> ImGuiManager.cpp:756</div></div>
+<div class="ttc" id="aclass_app_1_1_im_gui_manager_html_a7e165fd6a18b45884bfe3be1d811726d"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#a7e165fd6a18b45884bfe3be1d811726d">App::ImGuiManager::SetupWindow</a></div><div class="ttdeci">void SetupWindow(std::shared_ptr&lt; Graphics::Texture &gt; texture, float aspect_ratio)</div><div class="ttdoc">Setup simulation window.</div><div class="ttdef"><b>Definition</b> ImGuiManager.cpp:731</div></div>
 <div class="ttc" id="aclass_app_1_1_im_gui_manager_html_a84192d943202b68069810f64ca0611dc"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#a84192d943202b68069810f64ca0611dc">App::ImGuiManager::SetupDemoWindow</a></div><div class="ttdeci">void SetupDemoWindow()</div><div class="ttdoc">Setup ImGui&#39;s demo window.</div><div class="ttdef"><b>Definition</b> ImGuiManager.cpp:687</div></div>
 <div class="ttc" id="aclass_app_1_1_im_gui_manager_html_a9f1c5749d6947644572766e52918f0cc"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#a9f1c5749d6947644572766e52918f0cc">App::ImGuiManager::GetClearColor</a></div><div class="ttdeci">ImVec4 &amp; GetClearColor()</div><div class="ttdoc">Get the background color for the ImGui.</div><div class="ttdef"><b>Definition</b> ImGuiManager.cpp:649</div></div>
 <div class="ttc" id="aclass_app_1_1_im_gui_manager_html_ad9f69b2db60fe3003ecfb4deaaab73c2"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#ad9f69b2db60fe3003ecfb4deaaab73c2">App::ImGuiManager::~ImGuiManager</a></div><div class="ttdeci">~ImGuiManager()</div><div class="ttdoc">Default destructor.</div></div>
@@ -203,9 +203,9 @@ $(function(){initNavTree('_im_gui_manager_8hpp_source.html',''); initResizable(t
 <div class="ttc" id="aclass_app_1_1_im_gui_manager_html_aecdd089cc9b3b22e6f1243ae2e26a3de"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#aecdd089cc9b3b22e6f1243ae2e26a3de">App::ImGuiManager::RenderDrawData</a></div><div class="ttdeci">void RenderDrawData()</div><div class="ttdoc">Render the ImGui draw data.</div><div class="ttdef"><b>Definition</b> ImGuiManager.cpp:667</div></div>
 <div class="ttc" id="aclass_app_1_1_im_gui_manager_html_af68463b62c8ab90c5e88f625c73aa8ef"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#af68463b62c8ab90c5e88f625c73aa8ef">App::ImGuiManager::GetRenderSize</a></div><div class="ttdeci">ImVec2 &amp; GetRenderSize()</div><div class="ttdoc">Get the size of the render window.</div><div class="ttdef"><b>Definition</b> ImGuiManager.cpp:658</div></div>
 <div class="ttc" id="aclass_app_1_1_im_gui_manager_html_afe0c439583a96bdad00ca8eda5dfa0e5"><div class="ttname"><a href="class_app_1_1_im_gui_manager.html#afe0c439583a96bdad00ca8eda5dfa0e5">App::ImGuiManager::ImGuiManager</a></div><div class="ttdeci">ImGuiManager(const ImGuiManager &amp;&amp;other)=delete</div><div class="ttdoc">Deleted move constructor.</div></div>
-<div class="ttc" id="aclass_scene_1_1_texture_html"><div class="ttname"><a href="class_scene_1_1_texture.html">Scene::Texture</a></div><div class="ttdoc">Texture class.</div><div class="ttdef"><b>Definition</b> Texture.hpp:39</div></div>
+<div class="ttc" id="aclass_graphics_1_1_texture_html"><div class="ttname"><a href="class_graphics_1_1_texture.html">Graphics::Texture</a></div><div class="ttdoc">Texture class.</div><div class="ttdef"><b>Definition</b> Texture.hpp:29</div></div>
 <div class="ttc" id="anamespace_app_html"><div class="ttname"><a href="namespace_app.html">App</a></div><div class="ttdoc">Application namespace.</div><div class="ttdef"><b>Definition</b> Application.cpp:21</div></div>
-<div class="ttc" id="anamespace_scene_html"><div class="ttname"><a href="namespace_scene.html">Scene</a></div><div class="ttdoc">Forward declaration of Scene namespace.</div><div class="ttdef"><b>Definition</b> ImGuiManager.hpp:26</div></div>
+<div class="ttc" id="anamespace_graphics_html"><div class="ttname"><a href="namespace_graphics.html">Graphics</a></div><div class="ttdoc">Forward declaration of Scene namespace.</div><div class="ttdef"><b>Definition</b> ImGuiManager.hpp:26</div></div>
 <div class="ttc" id="astruct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl_html"><div class="ttname"><a href="struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html">App::ImGuiManager::ImGuiManagerImpl</a></div><div class="ttdoc">ImGuiManager PIMPL implementation structure.</div><div class="ttdef"><b>Definition</b> ImGuiManager.cpp:38</div></div>
 <div class="ttc" id="astruct_app_1_1_thermodynamic_simulation_variables_html"><div class="ttname"><a href="struct_app_1_1_thermodynamic_simulation_variables.html">App::ThermodynamicSimulationVariables</a></div><div class="ttdoc">Structure to hold the thermodynamic simulation variables.</div><div class="ttdef"><b>Definition</b> Application.cpp:35</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -213,7 +213,7 @@ $(function(){initNavTree('_im_gui_manager_8hpp_source.html',''); initResizable(t
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_efa0be1464ff3d0b431aaf5bca6c9050.html">PhysicsSim</a></li><li class="navelem"><a class="el" href="dir_ed49fd3e41db6305d4fd034cf0107a0e.html">src</a></li><li class="navelem"><a class="el" href="dir_720cfc10202877f558f843bd694fedcf.html">graphics</a></li><li class="navelem"><a class="el" href="_im_gui_manager_8hpp.html">ImGuiManager.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_aebb8dcc11953d78e620bbef0b9e2183.html">core</a></li><li class="navelem"><a class="el" href="_im_gui_manager_8hpp.html">ImGuiManager.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

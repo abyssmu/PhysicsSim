@@ -1,0 +1,339 @@
+\doxysection{Graphics\+::Scene\+::Scene\+Impl Struct Reference}
+\hypertarget{struct_graphics_1_1_scene_1_1_scene_impl}{}\label{struct_graphics_1_1_scene_1_1_scene_impl}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+
+
+\doxylink{class_graphics_1_1_scene}{Scene} PIMPL implementation structure.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a0c8445500b5c754efde65bca368a443c}{Scene\+Impl}} ()=delete
+\begin{DoxyCompactList}\small\item\em Deleted default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a49d93578a270542546f73fb5f208650f}{Scene\+Impl}} (const \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \& \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_ad98a80015dc6661e2bb5a514881227b2}{operator=}} (const \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_afb90bb7f8a51daa7afb28152d415bd60}{Scene\+Impl}} (const \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \& \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a16985339268e6a9bcd024201016449bc}{operator=}} (const \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a367a5f0a7eb3d5d02a1559a71a34901b}{Scene\+Impl}} (const std\+::string \&\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_ac095ac7293b733d37a3105ed93b826c2}{name}}, const int \&\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a5be59937d4b09a2e8d0f5434609bad6d}{width}}, const int \&\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a30032723587f9dbabf03044af906302f}{height}}, const float \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_aa7ba2f5c6c432ad5a10041d6a488dbfb}{bg\+\_\+color}})
+\begin{DoxyCompactList}\small\item\em Custom constructor for the \doxylink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a19a406ec5c9604aaf5f04e88fe51fb85}{\texorpdfstring{$\sim$}{\string~}\+Scene\+Impl}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a3916971feeb40038c8982e61164a109c}{Apply\+Clear\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Apply the background color (clear color) to the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_ac760ed79579ca7e074eef979ee306a12}{Poll\+Events}} ()
+\begin{DoxyCompactList}\small\item\em Poll for and process GLFW events. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a44b3e0ae7d28fb04cf479d2a2ecb4916}{Window\+Should\+Close}} () const
+\begin{DoxyCompactList}\small\item\em Check if the window should close. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a52411172875a14cacf5da699fc228a47}{Swap\+Buffers}} () const
+\begin{DoxyCompactList}\small\item\em Swap the buffers for the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a0a3f4341cd30caa3bab48087cf0c57d5}{GLFWError\+Callback}} (int error, const char \texorpdfstring{$\ast$}{*}description)
+\begin{DoxyCompactList}\small\item\em Callback function for GLFW error handling. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a84e19ee12645facf88e50f2405245764}{GLFWFramebuffer\+Size\+Callback}} (GLFWwindow \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a3181ebb3520c05388edf87831f1aab9c}{window}}, int \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a5be59937d4b09a2e8d0f5434609bad6d}{width}}, int \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a30032723587f9dbabf03044af906302f}{height}})
+\begin{DoxyCompactList}\small\item\em Set the window size in Open\+GL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_ac095ac7293b733d37a3105ed93b826c2}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the scene. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_ac25d2b44a531d55626ff85413feda54b}{glsl\+\_\+version}} = nullptr
+\begin{DoxyCompactList}\small\item\em GLSL version. \end{DoxyCompactList}\item 
+GLFWwindow \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a3181ebb3520c05388edf87831f1aab9c}{window}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the window handle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a5be59937d4b09a2e8d0f5434609bad6d}{width}}
+\begin{DoxyCompactList}\small\item\em Width of the window. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a30032723587f9dbabf03044af906302f}{height}}
+\begin{DoxyCompactList}\small\item\em Height of the window. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_aa7ba2f5c6c432ad5a10041d6a488dbfb}{bg\+\_\+color}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em Background color. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_graphics_1_1_texture}{Texture}} $>$ \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a3220f2d8e5aaeb9d9d66f71754df0bef}{texture}}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the \doxylink{class_graphics_1_1_texture}{Texture}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_graphics_1_1_shader}{Shader}} $>$ \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_aedd6694a3ba6613982d5f820267003b2}{shader}}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the shader. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items}{Simulation\+Render\+Structs\+::\+Simulation\+Render\+Items}} $>$ \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_af39f054700c6cc2489f57e1d9c4944d0}{sim\+\_\+render}}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the thermodynamic simulation render structure. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl_a3b3bb43b5adb8b408ce3ce2731a1ef0c}{error\+\_\+status}} = false
+\begin{DoxyCompactList}\small\item\em Error status of the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_graphics_1_1_scene}{Scene} PIMPL implementation structure. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a0c8445500b5c754efde65bca368a443c}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!SceneImpl@{SceneImpl}}
+\index{SceneImpl@{SceneImpl}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{SceneImpl()}{SceneImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a0c8445500b5c754efde65bca368a443c} 
+Graphics\+::\+Scene\+::\+Scene\+Impl\+::\+Scene\+Impl (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted default constructor. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a49d93578a270542546f73fb5f208650f}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!SceneImpl@{SceneImpl}}
+\index{SceneImpl@{SceneImpl}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{SceneImpl()}{SceneImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a49d93578a270542546f73fb5f208650f} 
+Graphics\+::\+Scene\+::\+Scene\+Impl\+::\+Scene\+Impl (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy constructor. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_afb90bb7f8a51daa7afb28152d415bd60}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!SceneImpl@{SceneImpl}}
+\index{SceneImpl@{SceneImpl}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{SceneImpl()}{SceneImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_afb90bb7f8a51daa7afb28152d415bd60} 
+Graphics\+::\+Scene\+::\+Scene\+Impl\+::\+Scene\+Impl (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted move constructor. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a367a5f0a7eb3d5d02a1559a71a34901b}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!SceneImpl@{SceneImpl}}
+\index{SceneImpl@{SceneImpl}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{SceneImpl()}{SceneImpl()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a367a5f0a7eb3d5d02a1559a71a34901b} 
+Graphics\+::\+Scene\+::\+Scene\+Impl\+::\+Scene\+Impl (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const int \&}]{width}{, }\item[{const int \&}]{height}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{bg\+\_\+color}{}\end{DoxyParamCaption})}
+
+
+
+Custom constructor for the \doxylink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the scene. \\
+\hline
+{\em width} & The width of the scene. \\
+\hline
+{\em height} & The height of the scene. \\
+\hline
+{\em bg\+\_\+color} & The background color of the scene.\\
+\hline
+\end{DoxyParams}
+Custom constructor for the \doxylink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl} class. Initializes the name, window manager, and render manager. \Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a19a406ec5c9604aaf5f04e88fe51fb85}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!````~SceneImpl@{\texorpdfstring{$\sim$}{\string~}SceneImpl}}
+\index{````~SceneImpl@{\texorpdfstring{$\sim$}{\string~}SceneImpl}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SceneImpl()}{\string~SceneImpl()}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a19a406ec5c9604aaf5f04e88fe51fb85} 
+Graphics\+::\+Scene\+::\+Scene\+Impl\+::\texorpdfstring{$\sim$}{\string~}\+Scene\+Impl (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Destructor that terminates the GLFW library. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a3916971feeb40038c8982e61164a109c}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!ApplyClearColor@{ApplyClearColor}}
+\index{ApplyClearColor@{ApplyClearColor}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{ApplyClearColor()}{ApplyClearColor()}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a3916971feeb40038c8982e61164a109c} 
+void Graphics\+::\+Scene\+::\+Scene\+Impl\+::\+Apply\+Clear\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Apply the background color (clear color) to the window. 
+
+Apply the background color (clear color) to the window. \Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a0a3f4341cd30caa3bab48087cf0c57d5}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!GLFWErrorCallback@{GLFWErrorCallback}}
+\index{GLFWErrorCallback@{GLFWErrorCallback}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{GLFWErrorCallback()}{GLFWErrorCallback()}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a0a3f4341cd30caa3bab48087cf0c57d5} 
+void Graphics\+::\+Scene\+::\+Scene\+Impl\+::\+GLFWError\+Callback (\begin{DoxyParamCaption}\item[{int}]{error}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{description}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Callback function for GLFW error handling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & The error code. \\
+\hline
+{\em description} & The error description.\\
+\hline
+\end{DoxyParams}
+Open\+GL error callback function. Logs the error with spdlog. \Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a84e19ee12645facf88e50f2405245764}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!GLFWFramebufferSizeCallback@{GLFWFramebufferSizeCallback}}
+\index{GLFWFramebufferSizeCallback@{GLFWFramebufferSizeCallback}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{GLFWFramebufferSizeCallback()}{GLFWFramebufferSizeCallback()}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a84e19ee12645facf88e50f2405245764} 
+void Graphics\+::\+Scene\+::\+Scene\+Impl\+::\+GLFWFramebuffer\+Size\+Callback (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set the window size in Open\+GL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window handle. \\
+\hline
+{\em width} & The width of the window. \\
+\hline
+{\em height} & The height of the window.\\
+\hline
+\end{DoxyParams}
+Open\+GL frame buffer callback function. Sets the viewport to the new width and height. \Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a16985339268e6a9bcd024201016449bc}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!operator=@{operator=}}
+\index{operator=@{operator=}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a16985339268e6a9bcd024201016449bc} 
+\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \& Graphics\+::\+Scene\+::\+Scene\+Impl\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted move assignment operator. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_ad98a80015dc6661e2bb5a514881227b2}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!operator=@{operator=}}
+\index{operator=@{operator=}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_ad98a80015dc6661e2bb5a514881227b2} 
+\mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \& Graphics\+::\+Scene\+::\+Scene\+Impl\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy assignment operator. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_ac760ed79579ca7e074eef979ee306a12}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!PollEvents@{PollEvents}}
+\index{PollEvents@{PollEvents}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{PollEvents()}{PollEvents()}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_ac760ed79579ca7e074eef979ee306a12} 
+void Graphics\+::\+Scene\+::\+Scene\+Impl\+::\+Poll\+Events (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Poll for and process GLFW events. 
+
+Poll for and process GLFW events. \Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a52411172875a14cacf5da699fc228a47}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!SwapBuffers@{SwapBuffers}}
+\index{SwapBuffers@{SwapBuffers}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{SwapBuffers()}{SwapBuffers()}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a52411172875a14cacf5da699fc228a47} 
+void Graphics\+::\+Scene\+::\+Scene\+Impl\+::\+Swap\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Swap the buffers for the window. 
+
+Swap the buffers in Open\+GL. \Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a44b3e0ae7d28fb04cf479d2a2ecb4916}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!WindowShouldClose@{WindowShouldClose}}
+\index{WindowShouldClose@{WindowShouldClose}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{WindowShouldClose()}{WindowShouldClose()}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a44b3e0ae7d28fb04cf479d2a2ecb4916} 
+bool Graphics\+::\+Scene\+::\+Scene\+Impl\+::\+Window\+Should\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Check if the window should close. 
+
+\begin{DoxyReturn}{Returns}
+True if the window should close, false otherwise.
+\end{DoxyReturn}
+Get whether the window should close from Open\+GL. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_aa7ba2f5c6c432ad5a10041d6a488dbfb}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!bg\_color@{bg\_color}}
+\index{bg\_color@{bg\_color}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{bg\_color}{bg\_color}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_aa7ba2f5c6c432ad5a10041d6a488dbfb} 
+float Graphics\+::\+Scene\+::\+Scene\+Impl\+::bg\+\_\+color\mbox{[}4\mbox{]}}
+
+
+
+Background color. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a3b3bb43b5adb8b408ce3ce2731a1ef0c}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!error\_status@{error\_status}}
+\index{error\_status@{error\_status}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{error\_status}{error\_status}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a3b3bb43b5adb8b408ce3ce2731a1ef0c} 
+bool Graphics\+::\+Scene\+::\+Scene\+Impl\+::error\+\_\+status = false}
+
+
+
+Error status of the scene. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_ac25d2b44a531d55626ff85413feda54b}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!glsl\_version@{glsl\_version}}
+\index{glsl\_version@{glsl\_version}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{glsl\_version}{glsl\_version}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_ac25d2b44a531d55626ff85413feda54b} 
+const char\texorpdfstring{$\ast$}{*} Graphics\+::\+Scene\+::\+Scene\+Impl\+::glsl\+\_\+version = nullptr}
+
+
+
+GLSL version. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a30032723587f9dbabf03044af906302f}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!height@{height}}
+\index{height@{height}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a30032723587f9dbabf03044af906302f} 
+int Graphics\+::\+Scene\+::\+Scene\+Impl\+::height}
+
+
+
+Height of the window. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_ac095ac7293b733d37a3105ed93b826c2}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!name@{name}}
+\index{name@{name}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_ac095ac7293b733d37a3105ed93b826c2} 
+std\+::string Graphics\+::\+Scene\+::\+Scene\+Impl\+::name}
+
+
+
+Name of the scene. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_aedd6694a3ba6613982d5f820267003b2}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!shader@{shader}}
+\index{shader@{shader}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{shader}{shader}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_aedd6694a3ba6613982d5f820267003b2} 
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_graphics_1_1_shader}{Shader}}$>$ Graphics\+::\+Scene\+::\+Scene\+Impl\+::shader}
+
+
+
+Unique pointer to the shader. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_af39f054700c6cc2489f57e1d9c4944d0}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!sim\_render@{sim\_render}}
+\index{sim\_render@{sim\_render}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{sim\_render}{sim\_render}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_af39f054700c6cc2489f57e1d9c4944d0} 
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items}{Simulation\+Render\+Structs\+::\+Simulation\+Render\+Items}}$>$ Graphics\+::\+Scene\+::\+Scene\+Impl\+::sim\+\_\+render}
+
+
+
+Unique pointer to the thermodynamic simulation render structure. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a3220f2d8e5aaeb9d9d66f71754df0bef}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!texture@{texture}}
+\index{texture@{texture}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a3220f2d8e5aaeb9d9d66f71754df0bef} 
+std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_graphics_1_1_texture}{Texture}}$>$ Graphics\+::\+Scene\+::\+Scene\+Impl\+::texture}
+
+
+
+Shared pointer to the \doxylink{class_graphics_1_1_texture}{Texture}. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a5be59937d4b09a2e8d0f5434609bad6d}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!width@{width}}
+\index{width@{width}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a5be59937d4b09a2e8d0f5434609bad6d} 
+int Graphics\+::\+Scene\+::\+Scene\+Impl\+::width}
+
+
+
+Width of the window. 
+
+\Hypertarget{struct_graphics_1_1_scene_1_1_scene_impl_a3181ebb3520c05388edf87831f1aab9c}\index{Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}!window@{window}}
+\index{window@{window}!Graphics::Scene::SceneImpl@{Graphics::Scene::SceneImpl}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily \label{struct_graphics_1_1_scene_1_1_scene_impl_a3181ebb3520c05388edf87831f1aab9c} 
+GLFWwindow\texorpdfstring{$\ast$}{*} Graphics\+::\+Scene\+::\+Scene\+Impl\+::window = nullptr}
+
+
+
+Pointer to the window handle. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/graphics/\mbox{\hyperlink{_scene_8cpp}{Scene.\+cpp}}\end{DoxyCompactItemize}

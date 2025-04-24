@@ -29,8 +29,8 @@ void \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl_aa08954387
 \item 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}} $>$ \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl_ab2b18f0340844518b066b90dea511805}{imgui}}
 \begin{DoxyCompactList}\small\item\em Unique pointer to the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}. \end{DoxyCompactList}\item 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_scene_1_1_scene}{Scene\+::\+Scene}} $>$ \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl_ad42c30a039ad386d72079b7989b68b7f}{scene}}
-\begin{DoxyCompactList}\small\item\em Unique pointer to the \doxylink{namespace_scene}{Scene}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_graphics_1_1_scene}{Graphics\+::\+Scene}} $>$ \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl_af961e68a0a6e079490b97b3e1e10eb1b}{scene}}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the Scene. \end{DoxyCompactList}\item 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_simulation_1_1_thermodynamic_particle_simulator}{Simulation\+::\+Thermodynamic\+Particle\+Simulator}} $>$ \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl_a727a086a65a7ec2b313cdacea8d82aa9}{simulation}}
 \begin{DoxyCompactList}\small\item\em Unique pointer to the Thermodynamic\+Particle\+Simulator. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{struct_app_1_1_application_1_1_application_impl_a5f671ccf28375c8e0781bc4537f1fbc6}{box\+\_\+width\+\_\+perc}} = 0
@@ -108,7 +108,7 @@ Initialize the application.
 \begin{DoxyReturn}{Returns}
 True if the application was initialized successfully, false otherwise.
 \end{DoxyReturn}
-Create the \doxylink{namespace_scene}{Scene} and \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager} objects for the application. Return false if either object creation fails. \Hypertarget{struct_app_1_1_application_1_1_application_impl_adc1ca7a1a84b4aa765852f5a52704ee7}\index{App::Application::ApplicationImpl@{App::Application::ApplicationImpl}!operator=@{operator=}}
+Create the Scene and \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager} objects for the application. Return false if either object creation fails. \Hypertarget{struct_app_1_1_application_1_1_application_impl_adc1ca7a1a84b4aa765852f5a52704ee7}\index{App::Application::ApplicationImpl@{App::Application::ApplicationImpl}!operator=@{operator=}}
 \index{operator=@{operator=}!App::Application::ApplicationImpl@{App::Application::ApplicationImpl}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{struct_app_1_1_application_1_1_application_impl_adc1ca7a1a84b4aa765852f5a52704ee7} 
@@ -186,15 +186,15 @@ std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_app_1_1_im_gui_manager}{Im\+Gui\
 
 Unique pointer to the \doxylink{class_app_1_1_im_gui_manager}{Im\+Gui\+Manager}. 
 
-\Hypertarget{struct_app_1_1_application_1_1_application_impl_ad42c30a039ad386d72079b7989b68b7f}\index{App::Application::ApplicationImpl@{App::Application::ApplicationImpl}!scene@{scene}}
+\Hypertarget{struct_app_1_1_application_1_1_application_impl_af961e68a0a6e079490b97b3e1e10eb1b}\index{App::Application::ApplicationImpl@{App::Application::ApplicationImpl}!scene@{scene}}
 \index{scene@{scene}!App::Application::ApplicationImpl@{App::Application::ApplicationImpl}}
 \doxysubsubsection{\texorpdfstring{scene}{scene}}
-{\footnotesize\ttfamily \label{struct_app_1_1_application_1_1_application_impl_ad42c30a039ad386d72079b7989b68b7f} 
-std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_scene_1_1_scene}{Scene\+::\+Scene}}$>$ App\+::\+Application\+::\+Application\+Impl\+::scene}
+{\footnotesize\ttfamily \label{struct_app_1_1_application_1_1_application_impl_af961e68a0a6e079490b97b3e1e10eb1b} 
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_graphics_1_1_scene}{Graphics\+::\+Scene}}$>$ App\+::\+Application\+::\+Application\+Impl\+::scene}
 
 
 
-Unique pointer to the \doxylink{namespace_scene}{Scene}. 
+Unique pointer to the Scene. 
 
 \Hypertarget{struct_app_1_1_application_1_1_application_impl_a727a086a65a7ec2b313cdacea8d82aa9}\index{App::Application::ApplicationImpl@{App::Application::ApplicationImpl}!simulation@{simulation}}
 \index{simulation@{simulation}!App::Application::ApplicationImpl@{App::Application::ApplicationImpl}}
@@ -210,4 +210,4 @@ Unique pointer to the Thermodynamic\+Particle\+Simulator.
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Physics\+Sim/src/core/\mbox{\hyperlink{_application_8cpp}{Application.\+cpp}}\end{DoxyCompactItemize}
+src/core/\mbox{\hyperlink{_application_8cpp}{Application.\+cpp}}\end{DoxyCompactItemize}

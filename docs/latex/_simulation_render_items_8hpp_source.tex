@@ -1,0 +1,64 @@
+\doxysection{Simulation\+Render\+Items.\+hpp}
+\hypertarget{_simulation_render_items_8hpp_source}{}\label{_simulation_render_items_8hpp_source}\index{src/graphics/SimulationRenderItems.hpp@{src/graphics/SimulationRenderItems.hpp}}
+\mbox{\hyperlink{_simulation_render_items_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ \_SIMULATIONRENDERSTRUCTS\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ \_SIMULATIONRENDERSTRUCTS\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_graphics}{Graphics}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{namespace\ }SimulationRenderStructs}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a03cbffc067de6465d40e5856ddf08968}{SimulationRenderItems}}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Deleted\ constructors}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a03cbffc067de6465d40e5856ddf08968}{SimulationRenderItems}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a03cbffc067de6465d40e5856ddf08968}{SimulationRenderItems}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a03cbffc067de6465d40e5856ddf08968}{SimulationRenderItems}}\&\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a7d4ec553c24e852a924f4d3c2976f748}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a03cbffc067de6465d40e5856ddf08968}{SimulationRenderItems}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a49ac458105612e605150ec454e39ff12}{SimulationRenderItems}}(\mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a03cbffc067de6465d40e5856ddf08968}{SimulationRenderItems}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a03cbffc067de6465d40e5856ddf08968}{SimulationRenderItems}}\&\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_afb84aefcc7899578ca326d2cf2c08f1e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a03cbffc067de6465d40e5856ddf08968}{SimulationRenderItems}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Custom\ constructors}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a8ca33ff6d90bbd9e79837446e4eda33b}{SimulationRenderItems}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ vs\_file,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ fs\_file);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Default\ constructors/destructor}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a8ca33ff6d90bbd9e79837446e4eda33b}{SimulationRenderItems}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a061e5ee35cce169485c5016b150748c5}{\string~SimulationRenderItems}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Member\ Methods}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a4a8e39e2b9b15e025d8eaa758df1b5a1}{GetShader}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a21fd78e19c80fcbdf28a5d57285c5f0b}{Render}}()\ =\ 0;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//PIMPL\ idiom}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_1_1_simulation_render_items_impl}{SimulationRenderItemsImpl}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<SimulationRenderItemsImpl>\ \_impl;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

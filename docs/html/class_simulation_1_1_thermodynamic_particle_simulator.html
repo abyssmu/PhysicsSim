@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PhysicsSim: Simulation::ThermodynamicParticleSimulator Class Reference</title>
+<title>Physics Simulation: Simulation::ThermodynamicParticleSimulator Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">PhysicsSim
+   <div id="projectname">Physics Simulation
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -145,11 +145,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0d45bf5cb0116838a965603bbc1062e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor for the <a class="el" href="class_simulation_1_1_thermodynamic_particle_simulator.html" title="ThermodynamicParticleSimulator class.">ThermodynamicParticleSimulator</a> class.  <br /></td></tr>
 <tr class="separator:a0d45bf5cb0116838a965603bbc1062e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7be21bf9ebcd566e0f28c3ed605dd6b" id="r_af7be21bf9ebcd566e0f28c3ed605dd6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7be21bf9ebcd566e0f28c3ed605dd6b">ClearParticles</a> ()</td></tr>
-<tr class="memdesc:af7be21bf9ebcd566e0f28c3ed605dd6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the particles in the simulation.  <br /></td></tr>
+<tr class="memdesc:af7be21bf9ebcd566e0f28c3ed605dd6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear particle data.  <br /></td></tr>
 <tr class="separator:af7be21bf9ebcd566e0f28c3ed605dd6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e9bd86b01f40d8997b49643d59c7ffa" id="r_a0e9bd86b01f40d8997b49643d59c7ffa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_object_1_1_object.html">Object::Object</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e9bd86b01f40d8997b49643d59c7ffa">GetParticleCircles</a> ()</td></tr>
-<tr class="memdesc:a0e9bd86b01f40d8997b49643d59c7ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the particle circles in the simulation.  <br /></td></tr>
-<tr class="separator:a0e9bd86b01f40d8997b49643d59c7ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a420c92da3320310e23ef808542fc6709" id="r_a420c92da3320310e23ef808542fc6709"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a420c92da3320310e23ef808542fc6709">GetParticleInstanceData</a> ()</td></tr>
+<tr class="memdesc:a420c92da3320310e23ef808542fc6709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get particle instance data.  <br /></td></tr>
+<tr class="separator:a420c92da3320310e23ef808542fc6709"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaedc86871c14acaa85687423d214016" id="r_aeaedc86871c14acaa85687423d214016"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeaedc86871c14acaa85687423d214016">UpdateThermodynamicSimulation</a> (const int num_particles, const int box_width_perc, const int box_height_perc, const float energy_value, const float temperature, const float chem_potential, const float radius)</td></tr>
 <tr class="memdesc:aeaedc86871c14acaa85687423d214016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the thermodynamic simulation.  <br /></td></tr>
 <tr class="separator:aeaedc86871c14acaa85687423d214016"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -344,19 +344,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Clear the particles in the simulation. </p>
-<p>Clear the particles in the simulation. Clears both the particle and circle vectors in the PIMPL implementation. </p>
+<p>Clear particle data. </p>
+<p>Empty the vector of particles </p>
 
 </div>
 </div>
-<a id="a0e9bd86b01f40d8997b49643d59c7ffa" name="a0e9bd86b01f40d8997b49643d59c7ffa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e9bd86b01f40d8997b49643d59c7ffa">&#9670;&#160;</a></span>GetParticleCircles()</h2>
+<a id="a420c92da3320310e23ef808542fc6709" name="a420c92da3320310e23ef808542fc6709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a420c92da3320310e23ef808542fc6709">&#9670;&#160;</a></span>GetParticleInstanceData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_object_1_1_object.html">Object::Object</a> &gt; &gt; &amp; Simulation::ThermodynamicParticleSimulator::GetParticleCircles </td>
+          <td class="memname">std::vector&lt; float &gt; Simulation::ThermodynamicParticleSimulator::GetParticleInstanceData </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -364,9 +364,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the particle circles in the simulation. </p>
-<dl class="section return"><dt>Returns</dt><dd>A vector of shared pointers to the particle circles.</dd></dl>
-<p>Get the particle circles in the simulation. Returns a reference to the vector of circles in the PIMPL implementation. </p>
+<p>Get particle instance data. </p>
+<dl class="section return"><dt>Returns</dt><dd>Vector of floats representing the instance data of the particles.</dd></dl>
+<p>Generate and return the instance data for the particles. </p>
 
 </div>
 </div>
@@ -486,8 +486,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>PhysicsSim/src/simulation/<a class="el" href="_simulation_8hpp_source.html">Simulation.hpp</a></li>
-<li>PhysicsSim/src/simulation/<a class="el" href="_simulation_8cpp.html">Simulation.cpp</a></li>
+<li>src/simulation/<a class="el" href="_simulation_8hpp_source.html">Simulation.hpp</a></li>
+<li>src/simulation/<a class="el" href="_simulation_8cpp.html">Simulation.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

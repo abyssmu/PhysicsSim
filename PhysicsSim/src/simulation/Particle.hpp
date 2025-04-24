@@ -11,6 +11,7 @@
 #define _PARTICLE_
 
 #include <memory>
+#include <vector>
 
 //External forward declarations
 
@@ -61,13 +62,15 @@ namespace Simulation
 			* @param blue The blue color value of the particle.
 			*/
 			Particle(
-				const float radius,
 				const float x,
 				const float y,
 				const float z,
 				const float red,
 				const float green,
-				const float blue);
+				const float blue,
+				const float x_scale,
+				const float y_scale,
+				const float z_scale);
 
 			//Default constructors/destructor
 
@@ -79,10 +82,22 @@ namespace Simulation
 			//Member methods
 
 			/**
-			* @brief Get the circle object representing the particle.
-			* @return A shared pointer to the circle object.
+			* @brief Get the position vector of the particle.
+			* @return The position vector of the particle.
 			*/
-			std::shared_ptr<Object::Object> GetCircle();
+			std::vector<float> GetPosition() const;
+
+			/**
+			* @brief Get the color vector of the particle.
+			* @return The color vector of the particle.
+			*/
+			std::vector<float> GetColor() const;
+
+			/**
+			* @brief Get the scale vector of the particle.
+			* @return The scale vector of the particle.
+			*/
+			std::vector<float> GetScale() const;
 
 			//PIMPL idiom
 		private:

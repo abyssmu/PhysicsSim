@@ -6,8 +6,8 @@
 
 #pragma once
 
-#ifndef _GLFWANDDEBUG_
-#define _GLFWANDDEBUG_
+#ifndef _GLFWINCLUDES_
+#define _GLFWINCLUDES_
 
 #define GL_SILENCE_DEPRECATION
 #ifdef IMGUI_IMPL_OPENGL_ES2

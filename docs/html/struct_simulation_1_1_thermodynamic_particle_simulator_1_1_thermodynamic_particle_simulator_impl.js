@@ -8,6 +8,5 @@ var struct_simulation_1_1_thermodynamic_particle_simulator_1_1_thermodynamic_par
     [ "operator=", "struct_simulation_1_1_thermodynamic_particle_simulator_1_1_thermodynamic_particle_simulator_impl.html#a78f463652127b9f2f8e1bc810aba9d6f", null ],
     [ "operator=", "struct_simulation_1_1_thermodynamic_particle_simulator_1_1_thermodynamic_particle_simulator_impl.html#a4bfe66602ad692a22e544a27948b226d", null ],
     [ "SetupSimulation", "struct_simulation_1_1_thermodynamic_particle_simulator_1_1_thermodynamic_particle_simulator_impl.html#a16953f442592ed06c37158462c5b3d07", null ],
-    [ "circles", "struct_simulation_1_1_thermodynamic_particle_simulator_1_1_thermodynamic_particle_simulator_impl.html#a82f9311fcb77617e9c7a00fb690f8f7b", null ],
     [ "particles", "struct_simulation_1_1_thermodynamic_particle_simulator_1_1_thermodynamic_particle_simulator_impl.html#aa5081f6ddaf09072d150632d45e9972a", null ]
 ];

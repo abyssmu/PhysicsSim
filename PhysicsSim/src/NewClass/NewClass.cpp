@@ -5,7 +5,7 @@
 * implementation details.
 */
 
-#include "NewClass.h"
+#include "NewClass.hpp"
 
 /// @brief NewNamespace namespace
 namespace NewNamespace

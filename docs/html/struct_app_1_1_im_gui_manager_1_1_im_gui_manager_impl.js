@@ -9,7 +9,7 @@ var struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl =
     [ "CreateDebugWindow", "struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html#a934cea95a8d0963e214ccde01ce47ff7", null ],
     [ "CreateDockspace", "struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html#aa531a537a6810564bb6bdb4bab82b981", null ],
     [ "CreateGraphWindow", "struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html#a1edde08e3d8d46e213a44c6153d247fb", null ],
-    [ "CreateRenderWindow", "struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html#a128cc4a23b4a5c4c94a3cc2627f045d9", null ],
+    [ "CreateRenderWindow", "struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html#a269c99eacc136f09fa300afadf8286d6", null ],
     [ "CreateSelectionWindow", "struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html#a8ced36f447c847ed4a722b4e22a3a8ea", null ],
     [ "CreateStatsWindow", "struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html#a01a839edc19aafbadca5ea2d1fc995b0", null ],
     [ "GetSimulationVariables", "struct_app_1_1_im_gui_manager_1_1_im_gui_manager_impl.html#aafdf34742094d91df4b4f99f14880580", null ],

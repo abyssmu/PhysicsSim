@@ -1,0 +1,270 @@
+\doxysection{Graphics\+::Scene Class Reference}
+\hypertarget{class_graphics_1_1_scene}{}\label{class_graphics_1_1_scene}\index{Graphics::Scene@{Graphics::Scene}}
+
+
+\doxylink{class_graphics_1_1_scene}{Scene} class.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_graphics_1_1_scene_1_1_scene_impl}{Scene\+Impl}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_graphics_1_1_scene}{Scene} PIMPL implementation structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graphics_1_1_scene_a7b0d729a48a15371884a78792b7124ea}{Scene}} (const \mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \& \mbox{\hyperlink{class_graphics_1_1_scene_aafdebf36a20b34c39b85dd0f054b713b}{operator=}} (const \mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_scene_aff937d1e7eaabdbdac91787eb87fa66a}{Scene}} (\mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \& \mbox{\hyperlink{class_graphics_1_1_scene_a78921391c0710a177c61bb121fd14b74}{operator=}} (const \mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Deleted move assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_scene_a13f73b95d6bff739cf78c9cfd8b7422f}{Scene}} (const std\+::string \&name, const int \&width, const int \&height, const float \texorpdfstring{$\ast$}{*}bg\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Custom constructor for the \doxylink{class_graphics_1_1_scene}{Scene} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_scene_ac28a88ed1cf6dc20efa8f19da93a00f7}{Scene}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graphics_1_1_scene_af413546bde242bf4d38f66cdf5833e06}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_graphics_1_1_scene_ae1195a35bfed1577a8b81cc4f141bdb4}{Get\+Error\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Get the error status of the scene. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_graphics_1_1_scene_a731e959e1ef4aa65cf1852d6db915787}{Get\+Texture\+Aspect\+Ratio}} () const
+\begin{DoxyCompactList}\small\item\em Get the texture aspect ratio. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{class_graphics_1_1_scene_a5c8272cdc4c645a6cbfab390dfb6b3de}{Get\+Window\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the window size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graphics_1_1_scene_ae3d7c8ae399640bb724cd897b4edab6a}{Initialize\+Simulation\+Render\+Items}} (\mbox{\hyperlink{namespace_graphics_a4952784116e28c009591ee4f1b4949bd}{Simulation\+Types}} type, std\+::vector$<$ float $>$ \&particles, const float radius)
+\begin{DoxyCompactList}\small\item\em Initialize the given simulation render items. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graphics_1_1_scene_a44b12180c79c8211e46506d308c0bb70}{Poll\+Events}} ()
+\begin{DoxyCompactList}\small\item\em Poll the Open\+GL events and process them. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graphics_1_1_scene_a9062bb7734c37fad9c41780c98bb7261}{Render}} ()
+\begin{DoxyCompactList}\small\item\em Render the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graphics_1_1_scene_a43e42bc7cf5a63ed2b7e4f65c8789485}{Render\+Simulation\+Items}} ()
+\begin{DoxyCompactList}\small\item\em Render the simulation items. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graphics_1_1_scene_a3b36faafebc07d8ee9dc3325f1c86abe}{Render\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Render the texture for the Im\+Gui render window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graphics_1_1_scene_af651f57c13b9ec18920ad8166621021f}{Swap\+Buffers}} () const
+\begin{DoxyCompactList}\small\item\em Swap the buffers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_graphics_1_1_scene_adb7d7c9a53f8edac59cc2fbe595a0014}{Window\+Should\+Close}} () const
+\begin{DoxyCompactList}\small\item\em Check if the window should close. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_graphics_1_1_scene}{Scene} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_graphics_1_1_scene_a7b0d729a48a15371884a78792b7124ea}\index{Graphics::Scene@{Graphics::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_a7b0d729a48a15371884a78792b7124ea} 
+Graphics\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy constructor. 
+
+\Hypertarget{class_graphics_1_1_scene_aff937d1e7eaabdbdac91787eb87fa66a}\index{Graphics::Scene@{Graphics::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_aff937d1e7eaabdbdac91787eb87fa66a} 
+Graphics\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted move constructor. 
+
+\Hypertarget{class_graphics_1_1_scene_a13f73b95d6bff739cf78c9cfd8b7422f}\index{Graphics::Scene@{Graphics::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_a13f73b95d6bff739cf78c9cfd8b7422f} 
+Graphics\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const int \&}]{width}{, }\item[{const int \&}]{height}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{bg\+\_\+color}{}\end{DoxyParamCaption})}
+
+
+
+Custom constructor for the \doxylink{class_graphics_1_1_scene}{Scene} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the scene. \\
+\hline
+{\em width} & The width of the scene window. \\
+\hline
+{\em height} & The height of the scene window. \\
+\hline
+{\em bg\+\_\+color} & The background color of the scene.\\
+\hline
+\end{DoxyParams}
+Custom constructor for the \doxylink{class_graphics_1_1_scene}{Scene} class. Passes the name, width, and height to the PIMPL implementation. \Hypertarget{class_graphics_1_1_scene_ac28a88ed1cf6dc20efa8f19da93a00f7}\index{Graphics::Scene@{Graphics::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_ac28a88ed1cf6dc20efa8f19da93a00f7} 
+Graphics\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+Default constructor for the \doxylink{class_graphics_1_1_scene}{Scene} class. \Hypertarget{class_graphics_1_1_scene_af413546bde242bf4d38f66cdf5833e06}\index{Graphics::Scene@{Graphics::Scene}!````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}}
+\index{````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Scene()}{\string~Scene()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_af413546bde242bf4d38f66cdf5833e06} 
+Graphics\+::\+Scene\+::\texorpdfstring{$\sim$}{\string~}\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+Default destructor for the \doxylink{class_graphics_1_1_scene}{Scene} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_graphics_1_1_scene_ae1195a35bfed1577a8b81cc4f141bdb4}\index{Graphics::Scene@{Graphics::Scene}!GetErrorStatus@{GetErrorStatus}}
+\index{GetErrorStatus@{GetErrorStatus}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{GetErrorStatus()}{GetErrorStatus()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_ae1195a35bfed1577a8b81cc4f141bdb4} 
+bool Graphics\+::\+Scene\+::\+Get\+Error\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the error status of the scene. 
+
+\begin{DoxyReturn}{Returns}
+True if there is an error, false otherwise.
+\end{DoxyReturn}
+Get the error status of the scene. \Hypertarget{class_graphics_1_1_scene_a731e959e1ef4aa65cf1852d6db915787}\index{Graphics::Scene@{Graphics::Scene}!GetTextureAspectRatio@{GetTextureAspectRatio}}
+\index{GetTextureAspectRatio@{GetTextureAspectRatio}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{GetTextureAspectRatio()}{GetTextureAspectRatio()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_a731e959e1ef4aa65cf1852d6db915787} 
+float Graphics\+::\+Scene\+::\+Get\+Texture\+Aspect\+Ratio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the texture aspect ratio. 
+
+\begin{DoxyReturn}{Returns}
+The texture aspect ratio.
+\end{DoxyReturn}
+Get the aspect ratio of the texture from the render manager. \Hypertarget{class_graphics_1_1_scene_a5c8272cdc4c645a6cbfab390dfb6b3de}\index{Graphics::Scene@{Graphics::Scene}!GetWindowSize@{GetWindowSize}}
+\index{GetWindowSize@{GetWindowSize}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{GetWindowSize()}{GetWindowSize()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_a5c8272cdc4c645a6cbfab390dfb6b3de} 
+std\+::pair$<$ int, int $>$ Graphics\+::\+Scene\+::\+Get\+Window\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the window size. 
+
+\begin{DoxyReturn}{Returns}
+The window size.
+\end{DoxyReturn}
+Get the window size as a pair of ints from the window manager. \Hypertarget{class_graphics_1_1_scene_ae3d7c8ae399640bb724cd897b4edab6a}\index{Graphics::Scene@{Graphics::Scene}!InitializeSimulationRenderItems@{InitializeSimulationRenderItems}}
+\index{InitializeSimulationRenderItems@{InitializeSimulationRenderItems}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{InitializeSimulationRenderItems()}{InitializeSimulationRenderItems()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_ae3d7c8ae399640bb724cd897b4edab6a} 
+void Graphics\+::\+Scene\+::\+Initialize\+Simulation\+Render\+Items (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_graphics_a4952784116e28c009591ee4f1b4949bd}{Simulation\+Types}}}]{type}{, }\item[{std\+::vector$<$ float $>$ \&}]{particles}{, }\item[{const float}]{radius}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the given simulation render items. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the simulation render items. \\
+\hline
+{\em particles} & The vector of particles. \\
+\hline
+{\em radius} & The radius of the particles.\\
+\hline
+\end{DoxyParams}
+Initialize the given simulation render items. \Hypertarget{class_graphics_1_1_scene_a78921391c0710a177c61bb121fd14b74}\index{Graphics::Scene@{Graphics::Scene}!operator=@{operator=}}
+\index{operator=@{operator=}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_a78921391c0710a177c61bb121fd14b74} 
+\mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \& Graphics\+::\+Scene\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted move assignment operator. 
+
+\Hypertarget{class_graphics_1_1_scene_aafdebf36a20b34c39b85dd0f054b713b}\index{Graphics::Scene@{Graphics::Scene}!operator=@{operator=}}
+\index{operator=@{operator=}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_aafdebf36a20b34c39b85dd0f054b713b} 
+\mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \& Graphics\+::\+Scene\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graphics_1_1_scene}{Scene}} \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Deleted copy assignment operator. 
+
+\Hypertarget{class_graphics_1_1_scene_a44b12180c79c8211e46506d308c0bb70}\index{Graphics::Scene@{Graphics::Scene}!PollEvents@{PollEvents}}
+\index{PollEvents@{PollEvents}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{PollEvents()}{PollEvents()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_a44b12180c79c8211e46506d308c0bb70} 
+void Graphics\+::\+Scene\+::\+Poll\+Events (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Poll the Open\+GL events and process them. 
+
+Poll the Open\+GL events and process them. \Hypertarget{class_graphics_1_1_scene_a9062bb7734c37fad9c41780c98bb7261}\index{Graphics::Scene@{Graphics::Scene}!Render@{Render}}
+\index{Render@{Render}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_a9062bb7734c37fad9c41780c98bb7261} 
+void Graphics\+::\+Scene\+::\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Render the scene. 
+
+Passes the color values to the render manager for rendering the scene. \Hypertarget{class_graphics_1_1_scene_a43e42bc7cf5a63ed2b7e4f65c8789485}\index{Graphics::Scene@{Graphics::Scene}!RenderSimulationItems@{RenderSimulationItems}}
+\index{RenderSimulationItems@{RenderSimulationItems}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{RenderSimulationItems()}{RenderSimulationItems()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_a43e42bc7cf5a63ed2b7e4f65c8789485} 
+void Graphics\+::\+Scene\+::\+Render\+Simulation\+Items (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Render the simulation items. 
+
+Render the simulation items. \Hypertarget{class_graphics_1_1_scene_a3b36faafebc07d8ee9dc3325f1c86abe}\index{Graphics::Scene@{Graphics::Scene}!RenderTexture@{RenderTexture}}
+\index{RenderTexture@{RenderTexture}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{RenderTexture()}{RenderTexture()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_a3b36faafebc07d8ee9dc3325f1c86abe} 
+void Graphics\+::\+Scene\+::\+Render\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Render the texture for the Im\+Gui render window. 
+
+Render the texture for the Im\+Gui render window. \Hypertarget{class_graphics_1_1_scene_af651f57c13b9ec18920ad8166621021f}\index{Graphics::Scene@{Graphics::Scene}!SwapBuffers@{SwapBuffers}}
+\index{SwapBuffers@{SwapBuffers}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{SwapBuffers()}{SwapBuffers()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_af651f57c13b9ec18920ad8166621021f} 
+void Graphics\+::\+Scene\+::\+Swap\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Swap the buffers. 
+
+Swap the buffers in the window manager. \Hypertarget{class_graphics_1_1_scene_adb7d7c9a53f8edac59cc2fbe595a0014}\index{Graphics::Scene@{Graphics::Scene}!WindowShouldClose@{WindowShouldClose}}
+\index{WindowShouldClose@{WindowShouldClose}!Graphics::Scene@{Graphics::Scene}}
+\doxysubsubsection{\texorpdfstring{WindowShouldClose()}{WindowShouldClose()}}
+{\footnotesize\ttfamily \label{class_graphics_1_1_scene_adb7d7c9a53f8edac59cc2fbe595a0014} 
+bool Graphics\+::\+Scene\+::\+Window\+Should\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Check if the window should close. 
+
+\begin{DoxyReturn}{Returns}
+True if the window should close, false otherwise.
+\end{DoxyReturn}
+Get whether the window should close. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/graphics/\mbox{\hyperlink{_scene_8hpp}{Scene.\+hpp}}\item 
+src/graphics/\mbox{\hyperlink{_scene_8cpp}{Scene.\+cpp}}\end{DoxyCompactItemize}

@@ -9,11 +9,13 @@
 
 #include "utils/GlfwIncludes.hpp"
 
+#include "spdlog/spdlog.h"
+
 #include <fstream>
 #include <sstream>
 
 /// @brief Scene namespace
-namespace Scene
+namespace Graphics
 {
 	/// @brief Shader PIMPL implementation structure.
 	struct Shader::ShaderImpl
@@ -52,32 +54,30 @@ namespace Scene
 		* @param shader The shader to check.
 		* @param type The type of shader to check.
 		*/
-		void CheckCompileErrors(unsigned int shader, std::string type) const;
+		void CheckCompileErrors(unsigned int& shader, std::string type);
 
 		//Member variables
 
 		/// @brief OpenGL shader ID.
 		GLuint shader;
+		/// @brief Error status of the shader.
+		bool error_status = false;
 	};
-
-	/**
-	* @details
-	* Destructor for the ShaderImpl class. Deletes the OpenGL shader program.
-	*/
-	Shader::ShaderImpl::~ShaderImpl()
-	{
-		glDeleteProgram(shader);
-	}
 
 	/**
 	* @details
 	* Custom constructor for the ShaderImpl class. Reads the vertex and fragment
 	* shader files and compiles them into an OpenGL shader program.
 	*/
-	Shader::ShaderImpl::ShaderImpl(const std::string& vs_file, const std::string& fs_file)
+	Shader::ShaderImpl::ShaderImpl(
+		const std::string& vs_file,
+		const std::string& fs_file)
 	{
-		std::string vertex_code;
-		std::string fragment_code;
+		spdlog::info(
+			"Creating OpenGL shader for files vs: {}, fs: {}",
+			vs_file,
+			fs_file);
+
 		std::ifstream vertex_shader_file;
 		std::ifstream fragment_shader_file;
 		std::stringstream vertex_shader_stream;
@@ -96,19 +96,18 @@ namespace Scene
 
 			vertex_shader_file.close();
 			fragment_shader_file.close();
-
-			vertex_code = vertex_shader_stream.str();
-			fragment_code = fragment_shader_stream.str();
 		}
 		catch (std::ifstream::failure& e)
 		{
-			//DebugMessage("ERROR::SHADER::FILE_NOT_READ: " + std::string(e.what()), __func__);
+			spdlog::error("ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ: {}", e.what());
+			spdlog::error("Vertex shader file: {}", vs_file);
+			spdlog::error("Fragment shader file: {}", fs_file);
+			error_status = true;
 			return;
 		}
 
-		vertex_code = vertex_shader_stream.str();
-		fragment_code = fragment_shader_stream.str();
-
+		std::string vertex_code = vertex_shader_stream.str();
+		std::string fragment_code = fragment_shader_stream.str();
 		const char* vertex_shader_code = vertex_code.c_str();
 		const char* fragment_shader_code = fragment_code.c_str();
 
@@ -134,14 +133,30 @@ namespace Scene
 		glDeleteShader(fragment);
 
 		GLenum err = glGetError();
-		//if (err != GL_NO_ERROR) DebugMessage("Shader failed to compile: " + std::to_string(err), __func__);
+		if (err != GL_NO_ERROR)
+		{
+			spdlog::error("Shader creation failed: {}", err);
+			error_status = true;
+		}
+
+		spdlog::info("Successfully created OpenGL shader");
+	}
+
+	/**
+	* @details
+	* Destructor for the ShaderImpl class. Deletes the OpenGL shader program.
+	*/
+	Shader::ShaderImpl::~ShaderImpl()
+	{
+		spdlog::info("Destroying OpenGL shader");
+		if (shader) glDeleteProgram(shader);
 	}
 
 	/**
 	* @details
 	* Check for shader compilation errors. If there are any, log it with spdlog.
 	*/
-	void Shader::ShaderImpl::CheckCompileErrors(unsigned int shader, std::string type) const
+	void Shader::ShaderImpl::CheckCompileErrors(unsigned int& shader, std::string type)
 	{
 		int success;
 		char infoLog[1024];
@@ -151,7 +166,11 @@ namespace Scene
 			if (!success)
 			{
 				glGetShaderInfoLog(shader, 1024, nullptr, infoLog);
-				//DebugMessage("ERROR::SHADER_COMPILATION_ERROR of type: " + type, __func__);
+				spdlog::error(
+					"ERROR::SHADER_COMPILATION_ERROR of type: {}\n{}",
+					type,
+					infoLog);
+				error_status = true;
 			}
 		}
 		else
@@ -160,7 +179,11 @@ namespace Scene
 			if (!success)
 			{
 				glGetProgramInfoLog(shader, 1024, nullptr, infoLog);
-				//DebugMessage("ERROR::PROGRAM_LINKING_ERROR of type: " + type, __func__);
+				spdlog::error(
+					"ERROR::PROGRAM_LINKING_ERROR of type: {}\n{}",
+					type,
+					infoLog);
+				error_status = true;
 			}
 		}
 	}
@@ -188,9 +211,18 @@ namespace Scene
 
 	/**
 	* @details
+	* Get the error status of the shader.
+	*/
+	bool Shader::GetErrorStatus() const
+	{
+		return _impl->error_status;
+	}
+
+	/**
+	* @details
 	* Get the OpenGL shader ID.
 	*/
-	GLuint& Shader::GetShader()
+	GLuint& Shader::GetGLFWShader()
 	{
 		return _impl->shader;
 	}

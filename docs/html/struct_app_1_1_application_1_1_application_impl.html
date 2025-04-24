@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PhysicsSim: App::Application::ApplicationImpl Struct Reference</title>
+<title>Physics Simulation: App::Application::ApplicationImpl Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">PhysicsSim
+   <div id="projectname">Physics Simulation
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -145,9 +145,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ab2b18f0340844518b066b90dea511805" id="r_ab2b18f0340844518b066b90dea511805"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_app_1_1_im_gui_manager.html">ImGuiManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2b18f0340844518b066b90dea511805">imgui</a></td></tr>
 <tr class="memdesc:ab2b18f0340844518b066b90dea511805"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the <a class="el" href="class_app_1_1_im_gui_manager.html" title="ImGuiManager class.">ImGuiManager</a>.  <br /></td></tr>
 <tr class="separator:ab2b18f0340844518b066b90dea511805"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad42c30a039ad386d72079b7989b68b7f" id="r_ad42c30a039ad386d72079b7989b68b7f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_scene_1_1_scene.html">Scene::Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad42c30a039ad386d72079b7989b68b7f">scene</a></td></tr>
-<tr class="memdesc:ad42c30a039ad386d72079b7989b68b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the <a class="el" href="namespace_scene.html" title="Forward declaration of Scene namespace.">Scene</a>.  <br /></td></tr>
-<tr class="separator:ad42c30a039ad386d72079b7989b68b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af961e68a0a6e079490b97b3e1e10eb1b" id="r_af961e68a0a6e079490b97b3e1e10eb1b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_graphics_1_1_scene.html">Graphics::Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af961e68a0a6e079490b97b3e1e10eb1b">scene</a></td></tr>
+<tr class="memdesc:af961e68a0a6e079490b97b3e1e10eb1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the Scene.  <br /></td></tr>
+<tr class="separator:af961e68a0a6e079490b97b3e1e10eb1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a727a086a65a7ec2b313cdacea8d82aa9" id="r_a727a086a65a7ec2b313cdacea8d82aa9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_simulation_1_1_thermodynamic_particle_simulator.html">Simulation::ThermodynamicParticleSimulator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a727a086a65a7ec2b313cdacea8d82aa9">simulation</a></td></tr>
 <tr class="memdesc:a727a086a65a7ec2b313cdacea8d82aa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique pointer to the ThermodynamicParticleSimulator.  <br /></td></tr>
 <tr class="separator:a727a086a65a7ec2b313cdacea8d82aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -304,7 +304,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the application was initialized successfully, false otherwise.</dd></dl>
-<p>Create the <a class="el" href="namespace_scene.html" title="Forward declaration of Scene namespace.">Scene</a> and <a class="el" href="class_app_1_1_im_gui_manager.html" title="ImGuiManager class.">ImGuiManager</a> objects for the application. Return false if either object creation fails. </p>
+<p>Create the Scene and <a class="el" href="class_app_1_1_im_gui_manager.html" title="ImGuiManager class.">ImGuiManager</a> objects for the application. Return false if either object creation fails. </p>
 
 </div>
 </div>
@@ -446,19 +446,19 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad42c30a039ad386d72079b7989b68b7f" name="ad42c30a039ad386d72079b7989b68b7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad42c30a039ad386d72079b7989b68b7f">&#9670;&#160;</a></span>scene</h2>
+<a id="af961e68a0a6e079490b97b3e1e10eb1b" name="af961e68a0a6e079490b97b3e1e10eb1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af961e68a0a6e079490b97b3e1e10eb1b">&#9670;&#160;</a></span>scene</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_scene_1_1_scene.html">Scene::Scene</a>&gt; App::Application::ApplicationImpl::scene</td>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_graphics_1_1_scene.html">Graphics::Scene</a>&gt; App::Application::ApplicationImpl::scene</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Unique pointer to the <a class="el" href="namespace_scene.html" title="Forward declaration of Scene namespace.">Scene</a>. </p>
+<p>Unique pointer to the Scene. </p>
 
 </div>
 </div>
@@ -479,7 +479,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>PhysicsSim/src/core/<a class="el" href="_application_8cpp.html">Application.cpp</a></li>
+<li>src/core/<a class="el" href="_application_8cpp.html">Application.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

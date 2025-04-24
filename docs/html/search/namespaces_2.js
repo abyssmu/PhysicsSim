@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['object_0',['Object',['../namespace_object.html',1,'']]]
+  ['newnamespace_0',['NewNamespace',['../namespace_new_namespace.html',1,'']]]
 ];

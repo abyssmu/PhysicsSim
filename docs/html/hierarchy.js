@@ -15,17 +15,18 @@ var hierarchy =
     [ "Object::Object::ObjectImpl", "struct_object_1_1_object_1_1_object_impl.html", null ],
     [ "Simulation::SimulationItems::Particle", "class_simulation_1_1_simulation_items_1_1_particle.html", null ],
     [ "Simulation::SimulationItems::Particle::ParticleImpl", "struct_simulation_1_1_simulation_items_1_1_particle_1_1_particle_impl.html", null ],
-    [ "Scene::RenderManager", "class_scene_1_1_render_manager.html", null ],
-    [ "Scene::RenderManager::RenderManagerImpl", "struct_scene_1_1_render_manager_1_1_render_manager_impl.html", null ],
-    [ "Scene::Scene", "class_scene_1_1_scene.html", null ],
-    [ "Scene::Scene::SceneImpl", "struct_scene_1_1_scene_1_1_scene_impl.html", null ],
-    [ "Scene::Shader", "class_scene_1_1_shader.html", null ],
-    [ "Scene::Shader::ShaderImpl", "struct_scene_1_1_shader_1_1_shader_impl.html", null ],
-    [ "Scene::Texture", "class_scene_1_1_texture.html", null ],
-    [ "Scene::Texture::TextureImpl", "struct_scene_1_1_texture_1_1_texture_impl.html", null ],
+    [ "Graphics::Scene", "class_graphics_1_1_scene.html", null ],
+    [ "Graphics::Scene::SceneImpl", "struct_graphics_1_1_scene_1_1_scene_impl.html", null ],
+    [ "Graphics::Shader", "class_graphics_1_1_shader.html", null ],
+    [ "Graphics::Shader::ShaderImpl", "struct_graphics_1_1_shader_1_1_shader_impl.html", null ],
+    [ "Graphics::SimulationRenderStructs::SimulationRenderItems", "class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items.html", [
+      [ "Graphics::SimulationRenderStructs::ThermodynamicsRenderItems", "class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items.html", null ]
+    ] ],
+    [ "Graphics::SimulationRenderStructs::SimulationRenderItems::SimulationRenderItemsImpl", "struct_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_1_1_simulation_render_items_impl.html", null ],
+    [ "Graphics::Texture", "class_graphics_1_1_texture.html", null ],
+    [ "Graphics::Texture::TextureImpl", "struct_graphics_1_1_texture_1_1_texture_impl.html", null ],
     [ "Simulation::ThermodynamicParticleSimulator", "class_simulation_1_1_thermodynamic_particle_simulator.html", null ],
     [ "Simulation::ThermodynamicParticleSimulator::ThermodynamicParticleSimulatorImpl", "struct_simulation_1_1_thermodynamic_particle_simulator_1_1_thermodynamic_particle_simulator_impl.html", null ],
     [ "App::ThermodynamicSimulationVariables", "struct_app_1_1_thermodynamic_simulation_variables.html", null ],
-    [ "Scene::WindowManager", "class_scene_1_1_window_manager.html", null ],
-    [ "Scene::WindowManager::WindowManagerImpl", "struct_scene_1_1_window_manager_1_1_window_manager_impl.html", null ]
+    [ "Graphics::SimulationRenderStructs::ThermodynamicsRenderItems::ThermodynamicsRenderItemsImpl", "struct_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_1_1_thermodynamics_render_items_impl.html", null ]
 ];

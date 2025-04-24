@@ -1,5 +1,5 @@
 \doxysection{Object.\+hpp}
-\hypertarget{_object_8hpp_source}{}\label{_object_8hpp_source}\index{PhysicsSim/src/objects/Object.hpp@{PhysicsSim/src/objects/Object.hpp}}
+\hypertarget{_object_8hpp_source}{}\label{_object_8hpp_source}\index{src/graphics/objects/Object.hpp@{src/graphics/objects/Object.hpp}}
 \mbox{\hyperlink{_object_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
@@ -15,7 +15,7 @@
 \DoxyCodeLine{00016\ }
 \DoxyCodeLine{00017\ \textcolor{comment}{//External\ forward\ declarations}}
 \DoxyCodeLine{00018\ }
-\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_shader_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_circle_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}};}
 \DoxyCodeLine{00021\ }
 \DoxyCodeLine{00022\ \textcolor{comment}{//Internal\ declarations}}
 \DoxyCodeLine{00023\ }
@@ -52,19 +52,27 @@
 \DoxyCodeLine{00071\ }
 \DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Member\ methods}}
 \DoxyCodeLine{00073\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_1_1_object_ad488ce33aac204503fa09a3dfe51a828}{Draw}}(\mbox{\hyperlink{_shader_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}}\ shader)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_1_1_object_ad488ce33aac204503fa09a3dfe51a828}{Draw}}(\mbox{\hyperlink{_circle_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}}\ shader)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00079\ }
 \DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_1_1_object_a4b14cd470286cc766187a9dbda722023}{SetVertices}}(std::vector<glm::vec2>\ vertices);}
 \DoxyCodeLine{00085\ }
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ glm::vec3\&\ \mbox{\hyperlink{class_object_1_1_object_a755df6cb788d72c52ecab1425d10d38b}{GetPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_object_1_1_object_ae51ff70a88ddcf8deb93164ee109ee37}{GetNumVertices}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//PIMPL\ idiom}}
-\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_object_1_1_object_1_1_object_impl}{ObjectImpl}};}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ std::unique\_ptr<ObjectImpl>\ \mbox{\hyperlink{class_object_1_1_object_a109588085b0d20958e32b8a74da8da99}{\_object\_impl}};}
-\DoxyCodeLine{00098\ \ \ \ \ \};}
-\DoxyCodeLine{00099\ \}}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ glm::vec3\&\ \mbox{\hyperlink{class_object_1_1_object_a755df6cb788d72c52ecab1425d10d38b}{GetPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ glm::vec3\&\ \mbox{\hyperlink{class_object_1_1_object_acc1fed20fd03f10b5690e3b50ff0257c}{GetColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_circle_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}}\&\ \mbox{\hyperlink{class_object_1_1_object_a8750ece794c33a38948bea1bff1f64e9}{GetVBO}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_circle_8hpp_aa311c7f0d6ec4f1a33f9235c3651b86b}{GLuint}}\&\ \mbox{\hyperlink{class_object_1_1_object_a75e6a1154c6db9f7dd02aeaff5a2a2e3}{GetVAO}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//PIMPL\ idiom}}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_object_1_1_object_1_1_object_impl}{ObjectImpl}};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ std::unique\_ptr<ObjectImpl>\ \mbox{\hyperlink{class_object_1_1_object_a109588085b0d20958e32b8a74da8da99}{\_object\_impl}};}
+\DoxyCodeLine{00122\ \ \ \ \ \};}
+\DoxyCodeLine{00123\ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

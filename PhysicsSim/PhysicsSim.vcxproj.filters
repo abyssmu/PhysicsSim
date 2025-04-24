@@ -27,9 +27,6 @@
     <ClInclude Include="src\graphics\ImGuiManager.hpp">
       <Filter>graphics</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\RenderManager.hpp">
-      <Filter>graphics</Filter>
-    </ClInclude>
     <ClInclude Include="src\graphics\Scene.hpp">
       <Filter>graphics</Filter>
     </ClInclude>
@@ -71,9 +68,6 @@
     <ClCompile Include="src\graphics\ImGuiManager.cpp">
       <Filter>graphics</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\RenderManager.cpp">
-      <Filter>graphics</Filter>
-    </ClCompile>
     <ClCompile Include="src\graphics\Scene.cpp">
       <Filter>graphics</Filter>
     </ClCompile>
@@ -103,10 +97,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\shader\FragmentShader.fs">
+    <None Include="src\shader\BaseFragmentShader.fs">
       <Filter>shader</Filter>
     </None>
-    <None Include="src\shader\VertexShader.vs">
+    <None Include="src\shader\BaseVertexShader.vs">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="src\shader\ParticleFragmentShader.fs">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="src\shader\ParticleVertexShader.vs">
       <Filter>shader</Filter>
     </None>
   </ItemGroup>

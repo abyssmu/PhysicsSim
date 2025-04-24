@@ -25,14 +25,18 @@ struct \mbox{\hyperlink{struct_simulation_1_1_simulation_items_1_1_particle_1_1_
 \begin{DoxyCompactList}\small\item\em Deleted move constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle}{Particle}} \& \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_a269c2338079e0b1021ebe7e77fd1e222}{operator=}} (const \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle}{Particle}} \&\&other)=delete
 \begin{DoxyCompactList}\small\item\em Deleted move assignment operator. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_a693a38ce4b41c3ea67147bd3f755d40b}{Particle}} (const float radius, const float x, const float y, const float z, const float red, const float green, const float blue)
+\mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_a15906db63a404ce128e156fa997ee4a5}{Particle}} (const float x, const float y, const float z, const float red, const float green, const float blue, const float x\+\_\+scale, const float y\+\_\+scale, const float z\+\_\+scale)
 \begin{DoxyCompactList}\small\item\em Custom constructor for the \doxylink{class_simulation_1_1_simulation_items_1_1_particle}{Particle} class. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ad1e020fe21cbe4e398244be21326ee79}{Particle}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_simulation_1_1_simulation_items_1_1_particle}{Particle} class. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_a8fc505fe163396b718c337aee880300a}{\texorpdfstring{$\sim$}{\string~}\+Particle}} ()
 \begin{DoxyCompactList}\small\item\em Default destructor for the \doxylink{class_simulation_1_1_simulation_items_1_1_particle}{Particle} class. \end{DoxyCompactList}\item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_object_1_1_object}{Object\+::\+Object}} $>$ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_ae8d59e107f43d2a0b602e16caf98e4c3}{Get\+Circle}} ()
-\begin{DoxyCompactList}\small\item\em Get the circle object representing the particle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::vector$<$ float $>$ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_a86d05f38687a8a439d6d3dce70aa1b67}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the position vector of the particle. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_a4f14bc79e65fe3fdb8804e418d67fabf}{Get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the color vector of the particle. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{class_simulation_1_1_simulation_items_1_1_particle_af36b0b6d0b00b041ca13b82f97e8cf76}{Get\+Scale}} () const
+\begin{DoxyCompactList}\small\item\em Get the scale vector of the particle. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -59,11 +63,11 @@ Simulation\+::\+Simulation\+Items\+::\+Particle\+::\+Particle (\begin{DoxyParamC
 
 Deleted move constructor. 
 
-\Hypertarget{class_simulation_1_1_simulation_items_1_1_particle_a693a38ce4b41c3ea67147bd3f755d40b}\index{Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}!Particle@{Particle}}
+\Hypertarget{class_simulation_1_1_simulation_items_1_1_particle_a15906db63a404ce128e156fa997ee4a5}\index{Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}!Particle@{Particle}}
 \index{Particle@{Particle}!Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}}
 \doxysubsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily \label{class_simulation_1_1_simulation_items_1_1_particle_a693a38ce4b41c3ea67147bd3f755d40b} 
-Simulation\+::\+Simulation\+Items\+::\+Particle\+::\+Particle (\begin{DoxyParamCaption}\item[{const float}]{radius}{, }\item[{const float}]{x}{, }\item[{const float}]{y}{, }\item[{const float}]{z}{, }\item[{const float}]{red}{, }\item[{const float}]{green}{, }\item[{const float}]{blue}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_simulation_1_1_simulation_items_1_1_particle_a15906db63a404ce128e156fa997ee4a5} 
+Simulation\+::\+Simulation\+Items\+::\+Particle\+::\+Particle (\begin{DoxyParamCaption}\item[{const float}]{x}{, }\item[{const float}]{y}{, }\item[{const float}]{z}{, }\item[{const float}]{red}{, }\item[{const float}]{green}{, }\item[{const float}]{blue}{, }\item[{const float}]{x\+\_\+scale}{, }\item[{const float}]{y\+\_\+scale}{, }\item[{const float}]{z\+\_\+scale}{}\end{DoxyParamCaption})}
 
 
 
@@ -86,7 +90,7 @@ Custom constructor for the \doxylink{class_simulation_1_1_simulation_items_1_1_p
 {\em blue} & The blue color value of the particle.\\
 \hline
 \end{DoxyParams}
-Custom constructor for the \doxylink{class_simulation_1_1_simulation_items_1_1_particle}{Particle} class. Passes the radius, position, and color values to the \doxylink{struct_simulation_1_1_simulation_items_1_1_particle_1_1_particle_impl}{Particle\+Impl} constructor. \Hypertarget{class_simulation_1_1_simulation_items_1_1_particle_ad1e020fe21cbe4e398244be21326ee79}\index{Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}!Particle@{Particle}}
+Custom constructor for the \doxylink{class_simulation_1_1_simulation_items_1_1_particle}{Particle} class. Passes the position, color and scale values to the \doxylink{struct_simulation_1_1_simulation_items_1_1_particle_1_1_particle_impl}{Particle\+Impl} constructor. \Hypertarget{class_simulation_1_1_simulation_items_1_1_particle_ad1e020fe21cbe4e398244be21326ee79}\index{Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}!Particle@{Particle}}
 \index{Particle@{Particle}!Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}}
 \doxysubsubsection{\texorpdfstring{Particle()}{Particle()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily \label{class_simulation_1_1_simulation_items_1_1_particle_ad1e020fe21cbe4e398244be21326ee79} 
@@ -109,20 +113,46 @@ Default destructor for the \doxylink{class_simulation_1_1_simulation_items_1_1_p
 Default destructor for the \doxylink{class_simulation_1_1_simulation_items_1_1_particle}{Particle} class. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_simulation_1_1_simulation_items_1_1_particle_ae8d59e107f43d2a0b602e16caf98e4c3}\index{Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}!GetCircle@{GetCircle}}
-\index{GetCircle@{GetCircle}!Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}}
-\doxysubsubsection{\texorpdfstring{GetCircle()}{GetCircle()}}
-{\footnotesize\ttfamily \label{class_simulation_1_1_simulation_items_1_1_particle_ae8d59e107f43d2a0b602e16caf98e4c3} 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_object_1_1_object}{Object\+::\+Object}} $>$ Simulation\+::\+Simulation\+Items\+::\+Particle\+::\+Get\+Circle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\Hypertarget{class_simulation_1_1_simulation_items_1_1_particle_a4f14bc79e65fe3fdb8804e418d67fabf}\index{Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}!GetColor@{GetColor}}
+\index{GetColor@{GetColor}!Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}}
+\doxysubsubsection{\texorpdfstring{GetColor()}{GetColor()}}
+{\footnotesize\ttfamily \label{class_simulation_1_1_simulation_items_1_1_particle_a4f14bc79e65fe3fdb8804e418d67fabf} 
+std\+::vector$<$ float $>$ Simulation\+::\+Simulation\+Items\+::\+Particle\+::\+Get\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
 
 
-Get the circle object representing the particle. 
+Get the color vector of the particle. 
 
 \begin{DoxyReturn}{Returns}
-A shared pointer to the circle object.
+The color vector of the particle.
 \end{DoxyReturn}
-Get the circle object representing the particle. \Hypertarget{class_simulation_1_1_simulation_items_1_1_particle_a269c2338079e0b1021ebe7e77fd1e222}\index{Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}!operator=@{operator=}}
+Get the color vector of the particle. The order of the vector is r, g, b. \Hypertarget{class_simulation_1_1_simulation_items_1_1_particle_a86d05f38687a8a439d6d3dce70aa1b67}\index{Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{class_simulation_1_1_simulation_items_1_1_particle_a86d05f38687a8a439d6d3dce70aa1b67} 
+std\+::vector$<$ float $>$ Simulation\+::\+Simulation\+Items\+::\+Particle\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the position vector of the particle. 
+
+\begin{DoxyReturn}{Returns}
+The position vector of the particle.
+\end{DoxyReturn}
+Get the position vector of the particle. The order of the vector is x, y, z. \Hypertarget{class_simulation_1_1_simulation_items_1_1_particle_af36b0b6d0b00b041ca13b82f97e8cf76}\index{Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}!GetScale@{GetScale}}
+\index{GetScale@{GetScale}!Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}}
+\doxysubsubsection{\texorpdfstring{GetScale()}{GetScale()}}
+{\footnotesize\ttfamily \label{class_simulation_1_1_simulation_items_1_1_particle_af36b0b6d0b00b041ca13b82f97e8cf76} 
+std\+::vector$<$ float $>$ Simulation\+::\+Simulation\+Items\+::\+Particle\+::\+Get\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the scale vector of the particle. 
+
+\begin{DoxyReturn}{Returns}
+The scale vector of the particle.
+\end{DoxyReturn}
+Get the scale vector of the particle. The order of the vector is x, y, z. \Hypertarget{class_simulation_1_1_simulation_items_1_1_particle_a269c2338079e0b1021ebe7e77fd1e222}\index{Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}!operator=@{operator=}}
 \index{operator=@{operator=}!Simulation::SimulationItems::Particle@{Simulation::SimulationItems::Particle}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{class_simulation_1_1_simulation_items_1_1_particle_a269c2338079e0b1021ebe7e77fd1e222} 
@@ -146,5 +176,5 @@ Deleted copy assignment operator.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Physics\+Sim/src/simulation/\mbox{\hyperlink{_particle_8hpp}{Particle.\+hpp}}\item 
-Physics\+Sim/src/simulation/\mbox{\hyperlink{_particle_8cpp}{Particle.\+cpp}}\end{DoxyCompactItemize}
+src/simulation/\mbox{\hyperlink{_particle_8hpp}{Particle.\+hpp}}\item 
+src/simulation/\mbox{\hyperlink{_particle_8cpp}{Particle.\+cpp}}\end{DoxyCompactItemize}

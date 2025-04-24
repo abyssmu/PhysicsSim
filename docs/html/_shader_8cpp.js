@@ -1,4 +1,4 @@
 var _shader_8cpp =
 [
-    [ "Scene::Shader::ShaderImpl", "struct_scene_1_1_shader_1_1_shader_impl.html", "struct_scene_1_1_shader_1_1_shader_impl" ]
+    [ "Graphics::Shader::ShaderImpl", "struct_graphics_1_1_shader_1_1_shader_impl.html", "struct_graphics_1_1_shader_1_1_shader_impl" ]
 ];

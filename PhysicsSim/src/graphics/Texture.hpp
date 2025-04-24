@@ -15,20 +15,10 @@
 
 //External forward declarations
 
-/// @brief Forward declaration of GLuint.
-typedef unsigned int GLuint;
-
-/// @brief Forward declaration of Object namespace.
-namespace Object
-{
-	/// @brief Forward declaration of Object class in Object namespace.
-	class Object;
-}
-
 //Internal declarations
 
 /// @brief Scene namespace
-namespace Scene
+namespace Graphics
 {
 	//External forward declarations
 
@@ -68,23 +58,19 @@ namespace Scene
 		//Member methods
 
 		/**
+		* @brief Get the texture error status.
+		* @return True if there is an error, false otherwise.
+		*/
+		bool GetErrorStatus() const;
+
+		/**
 		* @brief Get the OpenGL texture ID.
 		* @return The OpenGL texture ID.
 		*/
-		GLuint& GetTextureId();
+		unsigned int& GetTextureId();
 
-		/**
-		* @brief Render the texture.
-		* @param shader The shader to use for rendering.
-		* @param objects A vector of objects to render to the texture.
-		* @param box_height_perc The height of the bounding box as a percentage of the window.
-		* @param box_width_perc The width of the bounding box as a percentage of the window.
-		*/
-		void Render(
-			GLuint& shader,
-			std::vector<std::shared_ptr<Object::Object>>& objects,
-			const int box_height_perc,
-			const int box_width_perc);
+		/// @brief Render the texture.
+		void Render();
 
 		/**
 		* @brief Setup the framebuffer and texture.

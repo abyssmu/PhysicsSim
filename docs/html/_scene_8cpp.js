@@ -1,4 +1,4 @@
 var _scene_8cpp =
 [
-    [ "Scene::Scene::SceneImpl", "struct_scene_1_1_scene_1_1_scene_impl.html", "struct_scene_1_1_scene_1_1_scene_impl" ]
+    [ "Graphics::Scene::SceneImpl", "struct_graphics_1_1_scene_1_1_scene_impl.html", "struct_graphics_1_1_scene_1_1_scene_impl" ]
 ];

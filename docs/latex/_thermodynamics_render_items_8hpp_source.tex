@@ -1,0 +1,69 @@
+\doxysection{Thermodynamics\+Render\+Items.\+hpp}
+\hypertarget{_thermodynamics_render_items_8hpp_source}{}\label{_thermodynamics_render_items_8hpp_source}\index{src/graphics/ThermodynamicsRenderItems.hpp@{src/graphics/ThermodynamicsRenderItems.hpp}}
+\mbox{\hyperlink{_thermodynamics_render_items_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ \_ThermodynamicsRenderItems\_}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ \_ThermodynamicsRenderItems\_}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_simulation_render_items_8hpp}{SimulationRenderItems.hpp}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_graphics}{Graphics}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//External\ forward\ declarations}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//Internal\ declarations}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{namespace\ }SimulationRenderStructs}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ PARTICLE\_VS\_PATH\ =}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}src/graphics/shaders/ParticleVertexShader.vs"{}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ PARTICLE\_FS\_PATH\ =}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}src/graphics/shaders/ParticleFragmentShader.fs"{}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_af57be99ba6db3b3653e75c61ca441c5c}{ThermodynamicsRenderItems}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_simulation_render_items_a03cbffc067de6465d40e5856ddf08968}{SimulationRenderItems}}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Deleted\ constructors}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_af57be99ba6db3b3653e75c61ca441c5c}{ThermodynamicsRenderItems}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_af57be99ba6db3b3653e75c61ca441c5c}{ThermodynamicsRenderItems}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_af57be99ba6db3b3653e75c61ca441c5c}{ThermodynamicsRenderItems}}\&\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_a774f56a9bbfc702fbd851188b0de2581}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_af57be99ba6db3b3653e75c61ca441c5c}{ThermodynamicsRenderItems}}\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_a04f74384850a11be32c9d3d28d3e711f}{ThermodynamicsRenderItems}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_af57be99ba6db3b3653e75c61ca441c5c}{ThermodynamicsRenderItems}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_af57be99ba6db3b3653e75c61ca441c5c}{ThermodynamicsRenderItems}}\&\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_a3150d36ff2599539f3b1779c2eee5753}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_af57be99ba6db3b3653e75c61ca441c5c}{ThermodynamicsRenderItems}}\&\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Custom\ constructors}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_a2c5a093831cb476f7b5335c537c52fd3}{ThermodynamicsRenderItems}}(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<float>\&\ particles,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ radius);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Default\ constructors/destructor}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_a2c5a093831cb476f7b5335c537c52fd3}{ThermodynamicsRenderItems}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_a16b70b53eef3667b9186d9e71c485b28}{\string~ThermodynamicsRenderItems}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Member\ methods}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_a2a23d38b96a8818fa8c52bd248dd230e}{Render}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//PIMPL\ idiom}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_graphics_1_1_simulation_render_structs_1_1_thermodynamics_render_items_1_1_thermodynamics_render_items_impl}{ThermodynamicsRenderItemsImpl}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<ThermodynamicsRenderItemsImpl>\ \_impl;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -17,27 +17,27 @@
 
 //External forward declarations
 
-/// @brief Forward declaration of GLFWwindow.
-struct GLFWwindow;
-
-/// @brief Forward declaration of Object namespace.
-namespace Object
-{
-	/// @brief Forward declaration of Object class in Object namespace.
-	class Object;
-}
-
 //Internal declarations
 
 /// @brief Scene namespace
-namespace Scene
+namespace Graphics
 {
 	//External forward declarations
-
-	/// @brief Forward declaration of Texture class.
-	class Texture;
 	
 	//Internal declarations
+
+	/// @brief Basic vertex shader for testing.
+	static const std::string BASE_VS_PATH =
+		"src/graphics/shaders/BaseVertexShader.vs";
+	/// @brief Basic fragment shader for testing.
+	static const std::string BASE_FS_PATH =
+		"src/graphics/shaders/BaseFragmentShader.fs";
+
+	/// @brief Simulation types enumeration
+	enum SimulationTypes
+	{
+		THERMODYNAMICS
+	};
 
 	/// @brief Scene class
 	class Scene
@@ -61,8 +61,13 @@ namespace Scene
 		* @param name The name of the scene.
 		* @param width The width of the scene window.
 		* @param height The height of the scene window.
+		* @param bg_color The background color of the scene.
 		*/
-		Scene(const std::string& name, const int& width, const int& height);
+		Scene(
+			const std::string& name,
+			const int& width,
+			const int& height,
+			const float* bg_color);
 
 		//Default constructors/destructor
 
@@ -74,48 +79,10 @@ namespace Scene
 		//Member methods
 
 		/**
-		* @brief Render the texture for the ImGui render window.
-		* @param objects The vector of objects to render.
-		* @param box_height_perc The height of the box as a percentage of the window.
-		* @param box_width_perc The width of the box as a percentage of the window.
+		* @brief Get the error status of the scene.
+		* @return True if there is an error, false otherwise.
 		*/
-		void RenderTexture(
-			std::vector<std::shared_ptr<Object::Object>>& objects,
-			const int box_height_perc,
-			const int box_width_perc);
-
-		/**
-		* @brief Render the scene with the specified color.
-		* @param r The red color value.
-		* @param g The green color value.
-		* @param b The blue color value.
-		* @param a The alpha color value.
-		*/
-		void Render(const float& r, const float& g, const float& b, const float& a);
-		
-		/**
-		* @brief Get the GLSL version.
-		* @return The GLSL version.
-		*/
-		const char* GetGlslVersion() const;
-
-		/**
-		* @brief Get the window handle.
-		* @return A pointer to the window handle.
-		*/
-		GLFWwindow* GetWindow() const;
-
-		/**
-		* @brief Get the window size.
-		* @return The window size.
-		*/
-		std::pair<int, int> GetWindowSize() const;
-
-		/**
-		* @brief Get the texture.
-		* @return A pointer to the texture.
-		*/
-		std::shared_ptr<Texture> GetTexture() const;
+		bool GetErrorStatus() const;
 
 		/**
 		* @brief Get the texture aspect ratio.
@@ -124,13 +91,42 @@ namespace Scene
 		float GetTextureAspectRatio() const;
 
 		/**
+		* @brief Get the window size.
+		* @return The window size.
+		*/
+		std::pair<int, int> GetWindowSize() const;
+
+		/**
+		* @brief Initialize the given simulation render items.
+		* @param name The name of the simulation render items.
+		* @param particles The vector of particles.
+		* @param radius The radius of the particles.
+		*/
+		void InitializeSimulationRenderItems(
+			SimulationTypes type,
+			std::vector<float>& particles,
+			const float radius);
+
+		/// @brief Poll the OpenGL events and process them.
+		void PollEvents();
+
+		/// @brief Render the scene.
+		void Render();
+
+		/// @brief Render the simulation items.
+		void RenderSimulationItems();
+
+		/// @brief Render the texture for the ImGui render window.
+		void RenderTexture();
+
+		/// @brief Swap the buffers.
+		void SwapBuffers() const;
+
+		/**
 		* @brief Check if the window should close.
 		* @return True if the window should close, false otherwise.
 		*/
 		bool WindowShouldClose() const;
-
-		/// @brief Swap the buffers.
-		void SwapBuffers() const;
 
 		//PIMPL idiom
 	private:

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['name_0',['name',['../struct_scene_1_1_scene_1_1_scene_impl.html#a3e6f5a3d7db2bf6140b0aad8f2858fda',1,'Scene::Scene::SceneImpl::name'],['../struct_scene_1_1_window_manager_1_1_window_manager_impl.html#a63978cb5be22537c86566d74e777134c',1,'Scene::WindowManager::WindowManagerImpl::name']]],
+  ['name_0',['name',['../struct_graphics_1_1_scene_1_1_scene_impl.html#ac095ac7293b733d37a3105ed93b826c2',1,'Graphics::Scene::SceneImpl']]],
   ['newclass_1',['NewClass',['../class_new_namespace_1_1_new_class.html',1,'NewNamespace::NewClass'],['../class_new_namespace_1_1_new_class.html#a3a17aad1788e5112bfdaf7ecd9072bdb',1,'NewNamespace::NewClass::NewClass(const NewClass &amp;other)=delete'],['../class_new_namespace_1_1_new_class.html#a3b1b47e9ac290788b9dee4ec7f4f9a76',1,'NewNamespace::NewClass::NewClass(const NewClass &amp;&amp;other)=delete'],['../class_new_namespace_1_1_new_class.html#a7a9627dfb2cca1d6845bfb7a14602cb0',1,'NewNamespace::NewClass::NewClass()']]],
   ['newclass_2ecpp_2',['NewClass.cpp',['../_new_class_8cpp.html',1,'']]],
   ['newclass_2ehpp_3',['NewClass.hpp',['../_new_class_8hpp.html',1,'']]],

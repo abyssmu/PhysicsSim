@@ -81,14 +81,14 @@ namespace Simulation
 
 		//Member methods
 
-		/// @brief Clear the particles in the simulation.
+		/// @brief Clear particle data.
 		void ClearParticles();
 
 		/**
-		* @brief Get the particle circles in the simulation.
-		* @return A vector of shared pointers to the particle circles.
+		* @brief Get particle instance data.
+		* @return Vector of floats representing the instance data of the particles.
 		*/
-		std::vector<std::shared_ptr<Object::Object>>& GetParticleCircles();
+		std::vector<float> GetParticleInstanceData();
 
 		/**
 		* @brief Update the thermodynamic simulation.

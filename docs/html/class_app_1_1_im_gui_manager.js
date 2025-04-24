@@ -15,5 +15,5 @@ var class_app_1_1_im_gui_manager =
     [ "operator=", "class_app_1_1_im_gui_manager.html#ae738272aea93989111b1092619dbc858", null ],
     [ "RenderDrawData", "class_app_1_1_im_gui_manager.html#aecdd089cc9b3b22e6f1243ae2e26a3de", null ],
     [ "SetupDemoWindow", "class_app_1_1_im_gui_manager.html#a84192d943202b68069810f64ca0611dc", null ],
-    [ "SetupWindow", "class_app_1_1_im_gui_manager.html#a0c4ed40ff891cdaa06546ef1df1fb8eb", null ]
+    [ "SetupWindow", "class_app_1_1_im_gui_manager.html#a7e165fd6a18b45884bfe3be1d811726d", null ]
 ];

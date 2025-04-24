@@ -39,9 +39,16 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.sln
+*.vcxproj
+*.vcxproj.user
+*.vcxproj.filters
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+
+# ImGui config file
+*.ini
 
 # Build results
 [Dd]ebug/
