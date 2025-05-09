@@ -60,23 +60,20 @@ namespace Object
 		/// @brief Vector of vertices for the object.
 		std::vector<glm::vec2> vertices;
 		/// @brief Vertex array object.
-		GLuint vao;
+		GLuint vao = 0;
 		/// @brief Vertex buffer object.
-		GLuint vbo;
+		GLuint vbo = 0;
 	};
 
 	/**
 	* @details
 	* Custom constructor for the ObjectImpl class. Initializes the position and
-	* the color of the object. Sets the vertices to an empty vector and the
-	* vertex array object and vertex buffer object to 0.
+	* the color of the object. Sets the vertices to an empty vector.
 	*/
 	Object::ObjectImpl::ObjectImpl(glm::vec3 pos, glm::vec3 color) :
 		position(pos),
 		color(color),
-		vertices(),
-		vao(0),
-		vbo(0)
+		vertices()
 	{}
 
 	/**

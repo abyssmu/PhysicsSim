@@ -10,9 +10,6 @@
 #ifndef _BOX_
 #define _BOX_
 
-#include "Object.hpp"
-
-#include <glm/glm.hpp>
 #include <memory>
 
 //External forward declarations
@@ -26,8 +23,8 @@ namespace Object
 
 	//Internal declarations
 
-	/// @brief Box class. Inherits from public Object.
-	class Box : public Object
+	/// @brief Box class
+	class Box
 	{
 	public:
 		//Deleted constructors
@@ -45,20 +42,22 @@ namespace Object
 
 		/**
 		* @brief Custom constructor for the Box class.
-		* @param center_x The x-coordinate of the center of the box.
-		* @param center_y The y-coordinate of the center of the box.
-		* @param box_width_perc The width of the box as a percentage of the window.
-		* @param box_height_perc The height of the box as a percentage of the window.
-		* @param max_width The maximum width of the window.
-		* @param max_height The maximum height of the window.
+		* @param box_width_perc The width of the box as a percentage of the window width.
+		* @param box_height_perc The height of the box as a percentage of the window height.
+		* @param window_width The width of the window.
+		* @param window_height The height of the window.
+		* @param red The red color value of the box.
+		* @param green The green color value of the box.
+		* @param blue The blue color value of the box.
 		*/
 		Box(
-			const int center_x,
-			const int center_y,
 			const int box_width_perc,
 			const int box_height_perc,
-			const int max_width,
-			const int max_height);
+			const int window_width,
+			const int window_height,
+			const float red,
+			const float green,
+			const float blue);
 
 		//Default constructors/destructor
 
@@ -69,6 +68,12 @@ namespace Object
 		~Box();
 
 		//Member methods
+		
+		/**
+		* @brief Draw the box.
+		* @param shader The ID of the shader program to use for rendering.
+		*/
+		void Draw(const unsigned int shader);
 
 		//PIMPL idiom
 	private:

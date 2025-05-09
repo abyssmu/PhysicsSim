@@ -298,6 +298,15 @@ namespace Graphics
 
 	/**
 	* @details
+	* Get the OpenGL shader ID..
+	*/
+	unsigned int Scene::GetShaderID() const
+	{
+		return _impl->shader->GetGLFWShader();
+	}
+
+	/**
+	* @details
 	* Get the aspect ratio of the texture from the render manager.
 	*/
 	float Scene::GetTextureAspectRatio() const

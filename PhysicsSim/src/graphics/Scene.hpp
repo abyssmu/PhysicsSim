@@ -85,6 +85,12 @@ namespace Graphics
 		bool GetErrorStatus() const;
 
 		/**
+		* @brief Get the OpenGL shader ID.
+		* @return The OpenGL shader ID.
+		*/
+		unsigned int GetShaderID() const;
+
+		/**
 		* @brief Get the texture aspect ratio.
 		* @return The texture aspect ratio.
 		*/

@@ -11,6 +11,7 @@
 #define _OBJECT_
 
 #include <glm/glm.hpp>
+
 #include <memory>
 #include <vector>
 

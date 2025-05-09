@@ -4,6 +4,9 @@
 * Main function for the graphics library. Used as a testing environment.
 */
 
+#include "objects/Circle.hpp"
+#include "objects/Box.hpp"
+#include "objects/Quad.hpp"
 #include "Scene.hpp"
 #include "ThermodynamicsRenderItems.hpp"
 
@@ -105,6 +108,65 @@ static void TestSceneManager()
 	}
 }
 
+/// @brief Test rendering a simple circle
+static void TestCircleRendering()
+{
+	auto scene = CreateTestScene();
+	float radius = 0.15f;
+	float x = 0.0f;
+	float y = 0.0f;
+	float z = 0.0f;
+	float red = 1.0f;
+	float green = 0.0f;
+	float blue = 0.0f;
+
+	auto circle = std::make_shared<Object::Circle>(
+		radius,
+		x, y, z,
+		red, green, blue);
+
+	while (!scene->WindowShouldClose())
+	{
+		scene->PollEvents();
+		scene->Render();
+		circle->Draw(scene->GetShaderID());
+		scene->RenderTexture();
+		scene->SwapBuffers();
+	}
+}
+
+/// @brief Test rendering a simple quad.
+static void TestQuadRendering()
+{
+	auto scene = CreateTestScene();
+	auto [window_width, window_height] = scene->GetWindowSize();
+
+	float center_x = 0.0f;
+	float center_y = 0.0f;
+	int width = 1000;
+	int height = 100;
+	float width_ndc = static_cast<float>(width) / (window_width / 2.0f);
+	float height_ndc = static_cast<float>(height) / (window_height / 2.0f);
+	float red = 1.0f;
+	float green = 0.0f;
+	float blue = 0.0f;
+
+	auto quad = std::make_shared<Object::Quad>(
+		center_x, center_y,
+		width, height,
+		window_width, window_height,
+		red, green, blue);
+
+	while (!scene->WindowShouldClose())
+	{
+		scene->PollEvents();
+		scene->Render();
+		quad->Draw(scene->GetShaderID());
+		scene->RenderTexture();
+		scene->SwapBuffers();
+	}
+}
+
 /// @brief Test particle generation and rendering.
 static void TestParticleGenerationAndRendering()
 {
@@ -137,7 +199,9 @@ static void TestParticleGenerationAndRendering()
 int main()
 {
 	//TestSceneManager();
-	TestParticleGenerationAndRendering();
+	//TestCircleRendering();
+	TestQuadRendering();
+	//TestParticleGenerationAndRendering();
 
 	return 0;
 }

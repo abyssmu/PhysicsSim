@@ -70,7 +70,9 @@ namespace Object
 	* @details
 	* Custom constructor for the circle class. Passes the position (x, y, z) and
 	* colors (red, green, blue) to the Object constructor, and passes the radius
-	* to the PIMPL implementation.
+	* to the PIMPL implementation. Radius is defined in NDC coordinates (in terms
+	* of the width) and ranges from [-1, 1]. The number of vertices is determined
+	* based on the radius.
 	*/
 	Circle::Circle(
 		const float r,
@@ -86,19 +88,28 @@ namespace Object
 		std::vector<glm::vec2> vertices;
 
 		/*
-		* Determine the number of vertices based on the radius. Essentially scaled
-		* by the equation:
-		* max - (max - min) * max_r / r
-		* Where max_r / r is in (0, 1]. If the number of vertices is less than the
-		* minimum, set it to the minimum.
+		* Determine the number of vertices based on the radius. Scales linearly
+		* between the max and min number of vertices according to a piecewise
+		* function:
+		* min_r for r <= min_r
+		* ((1 / (max_r - min_r)) * (r - min_r)) * (max_verts - min_verts) + min_verts
+		* for min_r < r < max_r
+		* max_r for r >= max_r
 		*/
 		const float max_num_vertices = 30.0f;
-		const float min_num_vertices = 10.0f;
-		const float diff = max_num_vertices - min_num_vertices;
-		const float max_radius = 0.10f;
-		int num_vertices = int(max_num_vertices - diff * max_radius / r);
+		const float min_num_vertices = 5.0f;
+		const float min_r = 0.005f;
+		const float max_r = 0.15f;
+		int num_vertices = 0;
 
-		if (num_vertices < min_num_vertices) num_vertices = int(min_num_vertices);
+		if (r <= min_r) num_vertices = min_num_vertices;
+		else if (r >= max_r) num_vertices = max_num_vertices;
+		else
+		{
+			num_vertices = static_cast<int>(
+				((1.0f / (max_r - min_r)) * (r - min_r)) *
+				(max_num_vertices - min_num_vertices) + min_num_vertices);
+		}
 
 		//Calculate each vertex along the circumference.
 		const float angle = 2.0f * 3.14159f / num_vertices;
